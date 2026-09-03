@@ -68,7 +68,7 @@ Intel针对PyTorch2.14的[Windows前置条件指南](https://www.intel.com/conte
 
 更新后先运行ml/xpu/README.md中的test_device.py，完整通过后再跑两模型测试和CPU/GPU比较。
 模型测试显式local_files_only/offline，不设置系统级断网；CPU Docker离线验收不受影响。
-第一周清洗、Silver、分工和教师材料尚未因此完成。
+本记录只说明 XPU 环境的运行结果，数据清洗和项目汇报进度见各自文档。
 
 ## 更新驱动后的复测：2026-09-03约13:00
 

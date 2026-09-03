@@ -74,5 +74,5 @@ DistilBERT加载时报告原预训练词表预测头UNEXPECTED、新分类头MIS
 按需容器均已正常退出并移除，模型缓存保留。收尾检查：原6个Web/Spark/MongoDB服务
 全部healthy，后端返回`{"service":"ok","mongodb":"ok","active_run":null}`。
 
-第一周仍需真实小样本规则验证、同一管道全量基础清洗与Silver质量报告、商品群画像、
-初版分工和教师确认材料；MongoDB Spark Connector接入也仍待验证。
+真实评论清洗和 MongoDB Spark Connector 接入随后已经完成，记录见同目录的清洗与连接器报告。
+四块初版分工已经确定，商品群分析进入下一阶段。

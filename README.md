@@ -75,6 +75,7 @@ powershell -ExecutionPolicy Bypass -File pipelines/run_silver.ps1 -Mode full
 
 ## 文档
 
+- [环境配置说明](docs/environment-setup.md)
 - [全量 Silver 清洗报告](docs/runs/silver-cleaning-2026-09-03.md)
 - [Silver 清洗规约](specs/001-merchant-review-insights/silver-cleaning.md)
 - [需求规约](specs/001-merchant-review-insights/spec.md)
