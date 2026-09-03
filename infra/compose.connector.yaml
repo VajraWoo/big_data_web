@@ -1,0 +1,26 @@
+# One-shot connector acceptance; merge after compose.yaml.
+services:
+  spark-driver:
+    command:
+      - --master
+      - spark://spark-master:7077
+      - --deploy-mode
+      - client
+      - --driver-memory
+      - 2g
+      - --executor-memory
+      - 3g
+      - --conf
+      - spark.driver.host=spark-driver
+      - --conf
+      - spark.driver.bindAddress=0.0.0.0
+      - --conf
+      - spark.executor.cores=2
+      - --conf
+      - spark.cores.max=4
+      - --conf
+      - spark.sql.shuffle.partitions=8
+      - /checks/mongo_connector_smoke.py
+    depends_on:
+      mongodb:
+        condition: service_healthy

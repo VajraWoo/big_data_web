@@ -1,0 +1,80 @@
+{
+  "processing_run_id": "silver-full-20260903T154909-6c310067",
+  "mode": "full",
+  "started_at": "2026-09-03T07:49:14.279014+00:00",
+  "rule_version": "silver-basic-v1",
+  "data_release_id": "amazon-reviews-2023-appliances-v1",
+  "status": "passed_basic_silver",
+  "command": [
+    "/pipelines/silver_job.py",
+    "--mode",
+    "full",
+    "--run-id",
+    "silver-full-20260903T154909-6c310067"
+  ],
+  "seed": 20260903,
+  "shuffle_partitions": 16,
+  "python": "3.12.12",
+  "image": "big-data-web-spark:4.1.2-python3.12.12-v2",
+  "code_sha256": {
+    "cleaning.py": "f6009a02f8e0ac419f1dbe28ec494a6433457891c949453e1ab04528ef62601c",
+    "event_summary.py": "9bb48d7057f295eb366263c44391a195b512e76ea145868dc87f2dd3141ff767",
+    "fixture_spark.py": "38411006e3030836c337638cc25032033db3e55daf53d8f07511d74c96065c35",
+    "replay_check.py": "6f23b5060b1a566479fe1508d6da816f173fa433423ab0b6a92d7969c5dee786",
+    "silver_job.py": "d606459b67c02fbf34ee510755b8719753dcf441268d976147fd6fcfab100ce5",
+    "__init__.py": "e52403437dba528a0c1f8d807336904bace26fcf58d0e347c054e304715038b5"
+  },
+  "manifest_sha256": "f7a9c73c6c035a5f526cf7ca8a08e49621143eab3e41a3712659b437bdeacfe3",
+  "manifest": {
+    "dataset": "Amazon Reviews 2023",
+    "category": "Appliances",
+    "publisher": "McAuley Lab, UCSD",
+    "retrieved_at": "2026-09-02",
+    "files": [
+      {
+        "role": "reviews",
+        "path": "Appliances.jsonl.gz",
+        "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Appliances.jsonl.gz",
+        "bytes": 270209794,
+        "records": 2128605,
+        "sha256": "150F209BEFCEAA6F837ABC997065B2D251034BBBDA19BEBC4AD56DAC779730C2",
+        "gzip_read_to_eof": true
+      },
+      {
+        "role": "product_metadata",
+        "path": "meta_Appliances.jsonl.gz",
+        "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/meta_categories/meta_Appliances.jsonl.gz",
+        "bytes": 66406659,
+        "records": 94327,
+        "sha256": "5A94CFFB9EC3BE23E42B99643FCAB5F48160B3C7A53835451C4457AADCDF9365",
+        "gzip_read_to_eof": true
+      }
+    ]
+  },
+  "inputs": {
+    "reviews": {
+      "source_file": "Appliances.jsonl.gz",
+      "sha256": "150f209befceaa6f837abc997065b2d251034bbbda19bebc4ad56dac779730c2",
+      "bytes": 270209794,
+      "rows_scanned": 2128605,
+      "rows_selected": 2128605,
+      "gzip_read_to_eof": true
+    },
+    "product_metadata": {
+      "source_file": "meta_Appliances.jsonl.gz",
+      "sha256": "5a94cffb9ec3be23e42b99643fcab5f48160b3c7a53835451c4457aadcdf9365",
+      "bytes": 66406659,
+      "rows_scanned": 94327,
+      "rows_selected": 94327,
+      "gzip_read_to_eof": true
+    }
+  },
+  "elapsed_seconds": 315.99,
+  "application_id": "app-20260903075039-0004",
+  "spark": "4.1.2",
+  "java": "21.0.12",
+  "actual_parser_hosts": [
+    "spark-worker-1",
+    "spark-worker-2"
+  ]
+}

@@ -1,0 +1,5 @@
+35f189464f3895855a93c2b71529cca120d94bee98bc337f34ab2ffd998d3d80  mongo-spark-connector_2.13-11.1.0.jar
+341880078296edd762756440e9d6b1d6d2bf4d6b91975c2638e3da611f28b1c2  mongodb-driver-sync-5.1.4.jar
+ae3dbfd439d5afe9e0d6abbd61ef27d858ca2d38083bb7361f69e243aff31dec  mongodb-driver-core-5.1.4.jar
+bba556a8acd4e87545c1b9a1cb25c12ce9587ed5bf01685f236c5d92abf1e676  bson-5.1.4.jar
+698b2b9a10fdd49a3ed99ad2b7bcc8e797639c8c4a5c974de7f6fc8654bda655  bson-record-codec-5.1.4.jar

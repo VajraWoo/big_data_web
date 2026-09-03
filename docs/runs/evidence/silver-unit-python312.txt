@@ -1,0 +1,17 @@
+test_bad_json_nonobject_duplicate_keys_nonfinite_are_quarantined (test_cleaning.CleaningRules.test_bad_json_nonobject_duplicate_keys_nonfinite_are_quarantined) ... ok
+test_exact_hash_and_body_hash_have_different_meanings (test_cleaning.CleaningRules.test_exact_hash_and_body_hash_have_different_meanings) ... ok
+test_extreme_scores_empty_text_remain_rating_eligible (test_cleaning.CleaningRules.test_extreme_scores_empty_text_remain_rating_eligible) ... ok
+test_field_issues_distinguish_missing_null_and_type (test_cleaning.CleaningRules.test_field_issues_distinguish_missing_null_and_type) ... ok
+test_invalid_rating_type_range_and_missing (test_cleaning.CleaningRules.test_invalid_rating_type_range_and_missing) ... ok
+test_lineage_identity_is_independent_of_content_and_batch (test_cleaning.CleaningRules.test_lineage_identity_is_independent_of_content_and_batch) ... ok
+test_metadata_preserves_nested_source_and_does_not_fill_price (test_cleaning.CleaningRules.test_metadata_preserves_nested_source_and_does_not_fill_price) ... ok
+test_random_sample_is_stable_distinct_and_spans_source (test_cleaning.CleaningRules.test_random_sample_is_stable_distinct_and_spans_source) ... ok
+test_raw_text_preserved_and_nlp_unknown (test_cleaning.CleaningRules.test_raw_text_preserved_and_nlp_unknown) ... ok
+test_staging_hash_count_selection_and_invalid_utf8 (test_cleaning.CleaningRules.test_staging_hash_count_selection_and_invalid_utf8) ... ok
+test_timestamp_utc_and_invalid_fields (test_cleaning.CleaningRules.test_timestamp_utc_and_invalid_fields) ... ok
+test_counts_actual_executors_tasks_failures_and_peak_metric (test_event_summary.EventEvidence.test_counts_actual_executors_tasks_failures_and_peak_metric) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.015s
+
+OK

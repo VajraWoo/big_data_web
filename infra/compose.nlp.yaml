@@ -1,0 +1,31 @@
+name: big-data-web-nlp
+
+x-nlp: &nlp
+  image: big-data-web-nlp:0.1.0
+  build:
+    context: ../ml
+  platform: linux/amd64
+  profiles: [ml]
+  init: true
+  mem_limit: 12g
+  cpus: 8
+
+services:
+  nlp-download:
+    <<: *nlp
+    command: ["python", "download_models.py"]
+    volumes:
+      - models:/models
+  nlp-check:
+    <<: *nlp
+    network_mode: none
+    environment:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - models:/models:ro
+      - reports:/reports
+
+volumes:
+  models:
+  reports:

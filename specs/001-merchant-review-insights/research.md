@@ -6,6 +6,11 @@
 
 ## 1. 运行时与 Spark 版本
 
+**2026-09-03 实施修正**：以下是最初调研决策，不是安装结果。4.1.3 的官方 Docker
+标签 API 实测 404；本轮固定官方 Spark 4.1.2 / Java 21 / Python3 镜像及 digest，
+MongoDB 固定 8.0.29。当前可运行版本以 `infra/compose.yaml` 和环境验收报告为准。
+不更改双 Worker、Spark ML、后续 NLP/Web 方案；这些依赖仍需实施时逐项验收。
+
 **Decision**: 使用 Python 3.12.x、Java 21 LTS、Spark/PySpark 4.1.3、Scala 2.13，
 MongoDB Spark Connector 使用
 `org.mongodb.spark:mongo-spark-connector_2.13:11.1.0`。

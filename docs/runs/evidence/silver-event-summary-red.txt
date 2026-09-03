@@ -1,0 +1,21 @@
+test_event_summary (unittest.loader._FailedTest.test_event_summary) ... ERROR
+
+======================================================================
+ERROR: test_event_summary (unittest.loader._FailedTest.test_event_summary)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_event_summary
+Traceback (most recent call last):
+  File "D:\CS_software\Python\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "D:\CS_software\Python\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "D:\CS_Projects\big_data_web\pipelines\tests\test_event_summary.py", line 2, in <module>
+    from pipelines.event_summary import summarize
+ModuleNotFoundError: No module named 'pipelines.event_summary'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

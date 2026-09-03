@@ -22,13 +22,13 @@ API，Vue 3 与 ECharts 完成组合、商品群、商品和证据下钻。
 **Language/Version**: Python 3.12.x；Java 21 LTS；Scala ABI 2.13（Spark 依赖）；
 TypeScript 5.x；Node.js 24 LTS
 
-**Primary Dependencies**: Apache Spark/PySpark 4.1.3、MongoDB Spark Connector 11.1.0、
+**Primary Dependencies**: Apache Spark/PySpark 4.1.2（镜像可获取性修正见 environment.md）、MongoDB Spark Connector 11.1.0、
 FastAPI 0.141.1、Pydantic 2.x、PyMongo 4.17.x、Transformers/PyTorch、
 sentence-transformers（MiniLM）、可选 OpenVINO/ONNX Runtime、Vue 3.5.38、Vite 8.x、
 ECharts 6.x
 
 **Storage**: 不可变原始 gzip/manifest（Bronze）；分区 Parquet（Silver 及可复算 Gold）；
-MongoDB Community 8.0.x（在线 Gold 结果、证据索引、批次与评价元数据）
+MongoDB Community 8.0.29（在线 Gold 结果、证据索引、批次与评价元数据）
 
 **Testing**: pytest 9.x、pytest-cov、FastAPI TestClient/httpx、PySpark `local[2]`
 确定性 fixture、真实 MongoDB Compose 集成测试；Vitest 4.1.x、Vue Test Utils、
@@ -43,15 +43,38 @@ Intel Core Ultra 5 225H、32 GB RAM、Intel Arc 集成显卡；现代桌面浏�
 运行记录总耗时、Stage/Task、峰值资源和失败信息；NLP 各后端在同一 10,000 句基准上
 记录吞吐、延迟和精度差，是否启用加速由基准决定
 
-**Constraints**: Docker/WSL 总预算 20–22 GiB、最多 10 个逻辑 CPU、swap 4–8 GiB；
+**Constraints**: Docker/WSL 总预算 20 GiB、项目容器 CPU 配额最多 10.5、swap 4 GiB；
 Spark Master 0.5 GiB，两个 Worker 各最多 5 GiB，Driver 3 GiB，MongoDB 3–4 GiB；
 不得对百万级数据无界 `collect()`/`toPandas()`；Spark 全量作业与模型训练不同时运行；
 所有正式门槛必须经分布、区间、覆盖率、人工评价或回测校准；第一版只读且不宣称实时
+
+2026-09-03 环境实施细化见 [environment.md](environment.md)：用户已设置 WSL memory=20GB，
+WSL 可见 14 个逻辑 CPU 暂不更改；常驻容器 CPU 配额合计 9.5，另有按需 Driver 1 CPU。
+本轮只完成基础设施准备，不进入完整功能开发；后续 Web/ML 版本仍需各自实施时验证和锁定。
+
+同日Web环境增量已按 [web-environment.md](web-environment.md) 完成：FastAPI/PyMongo
+依赖锁于backend/uv.lock，Vue/Vite/ECharts锁于frontend/package-lock.json。Web额外上限
+1.5GiB/2CPU；整套环境含按需Driver最高18GiB/12.5CPU，不与模型训练同时满载。
+同日CPU NLP环境按 [nlp-environment.md](nlp-environment.md) 完成：Python3.12.12、
+torch2.14.0+cpu、Transformers5.16.1、sentence-transformers6.0.1已锁定；固定revision的
+DistilBERT与MiniLM在断网容器完成文件校验、CPU前向/反向参数更新与3×384句向量检查。
+证据见 ../../docs/runs/nlp-environment-2026-09-03.md。仅验证环境，不是正式模型训练；
+这次CPU验收不包含Intel GPU/OpenVINO，正式业务仍待教师确认后开发。
+
+后续用户授权补充本机Intel GPU验证，见[xpu-environment.md](xpu-environment.md)。
+独立Windows XPU环境已安装，不更改上面的CPU Docker环境；旧驱动下线性层和两模型
+曾报运行时引擎初始化错误。用户更新驱动至32.0.101.8991后，不修改测试或模型，两者
+全部通过；同环境CPU对照通过。FP32/batch8的小基准中，DistilBERT训练步骤GPU速度
+约为CPU的3.67倍，MiniLM encode约1.14倍。可以在本机使用XPU继续开发/训练验证；
+正式设备与批次选择仍须真实样本基准和质量评测，不把合成小基准当成上文10,000句验收。
+记录见../../docs/runs/xpu-environment-2026-09-03.md；OpenVINO仍未安装。
 
 **Scale/Scope**: 2,128,605 条评论、94,327 条商品元数据、104,237 个 ASIN 变体、
 94,319 个父商品；全量进入可信明细与通用聚合；至少两个经选择报告确认的商品群进入精细
 分析。当前候选为 Ice Makers（105,100 条评论）和 Portable Washers（53,608 条评论），
 但候选必须与其他群组按 FR-021 的预先声明规则比较后才能转为正式范围
+
+连接器已完成最小运行验收：11.1.0 / Java Driver 5.1.4 固定于 v2 镜像，256条合成记录读写、BSON类型与按_id重放通过。证据见 [连接器验收记录](../../docs/runs/connector-environment-2026-09-03.md)。真实数据基础清洗按 [Silver增量规约](silver-cleaning.md) 实施，不代表Gold或正式模型完成。
 
 ## Constitution Check
 

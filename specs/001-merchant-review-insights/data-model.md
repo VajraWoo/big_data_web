@@ -78,6 +78,15 @@ Validation: 文件摘要在运行前重算并匹配；不匹配则本次运行�
 `text_status` 枚举：`usable`、`empty`、`too_short`、`non_english`、`non_linguistic`、
 `parse_failed`。每条记录无论状态如何都保留并计入去向报告。
 
+2026-09-03 基础 Silver 实施增量（[silver-cleaning.md](silver-cleaning.md)）：增加
+`pending_assessment`、`invalid_type`，非空正文在未完成语言和文本适用性评估前不得标为 usable。
+`eligible_text` 在 silver-basic-v1 中仅表示可做基础正文处理；`eligible_nlp` 为可空布尔值，
+非空正文为 null（待评估），空/错类型正文为 false。各任务使用独立 reasons 数组。
+近似重复、评分文本矛盾和爆发字段为 null，`advanced_quality_status=not_assessed`。
+商品元数据以来源行 `metadata_id` 全量保留；`product_keys` 每父键一行，重复父键标 ambiguous，
+唯一父键才给出 metadata_id_joined；`variants` 保存全部 distinct asin-parent_asin 关系。
+这些输出不代表最终 Gold 准入、正式商品群选择或模型验收完成。
+
 ### 4.2 SilverProductVariant
 
 | Field | Type | Rules |

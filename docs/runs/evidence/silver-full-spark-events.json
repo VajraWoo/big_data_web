@@ -1,0 +1,20 @@
+{
+  "application_id": "app-20260903075039-0004",
+  "executors": {
+    "0": "spark-worker-2",
+    "1": "spark-worker-1"
+  },
+  "successful_tasks_by_host": {
+    "spark-worker-1": 533,
+    "spark-worker-2": 524
+  },
+  "failed_task_reasons": {},
+  "completed_stage_attempts": 150,
+  "failed_stage_attempts": 0,
+  "successful_jobs": 150,
+  "failed_jobs": 0,
+  "executor_run_time_ms_sum": 770157,
+  "max_task_peak_execution_memory_bytes": 486539040,
+  "application_end_seen": true,
+  "note": "Peak execution memory is a Spark task metric, not container RSS or total physical memory."
+}

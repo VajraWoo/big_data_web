@@ -2,6 +2,9 @@
 
 本文件描述实现完成后如何证明四层链路满足规约；它不是安装脚本，也不包含业务实现。
 
+2026-09-03：第一周基础环境已另行实现，当前可执行命令见 [infra/README.md](../../infra/README.md)。
+本文件后续 app/ml/spark profiles 与业务命令仍是未来目标；当前仅默认基础服务和 tools profile。
+
 ## 1. Prerequisites
 
 - Windows 11，Docker Desktop 使用 WSL 2 backend；Docker/WSL 建议上限 20–22 GiB、

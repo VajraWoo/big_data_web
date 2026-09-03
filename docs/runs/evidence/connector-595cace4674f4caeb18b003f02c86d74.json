@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "synthetic connector environment only",
+  "application_id": "app-20260903051538-0000",
+  "spark": "4.1.2",
+  "python": "3.12.12",
+  "java": "21.0.12",
+  "mongodb": "8.0.29",
+  "connector": "11.1.0",
+  "java_driver": "5.1.4",
+  "sha256": {
+    "mongo-spark-connector_2.13-11.1.0.jar": "35f189464f3895855a93c2b71529cca120d94bee98bc337f34ab2ffd998d3d80",
+    "mongodb-driver-sync-5.1.4.jar": "341880078296edd762756440e9d6b1d6d2bf4d6b91975c2638e3da611f28b1c2",
+    "mongodb-driver-core-5.1.4.jar": "ae3dbfd439d5afe9e0d6abbd61ef27d858ca2d38083bb7361f69e243aff31dec",
+    "bson-5.1.4.jar": "bba556a8acd4e87545c1b9a1cb25c12ce9587ed5bf01685f236c5d92abf1e676",
+    "bson-record-codec-5.1.4.jar": "698b2b9a10fdd49a3ed99ad2b7bcc8e797639c8c4a5c974de7f6fc8654bda655"
+  },
+  "executor_hosts": [
+    "spark-worker-1",
+    "spark-worker-2"
+  ],
+  "database": "environment_checks",
+  "collection": "connector_595cace4674f4caeb18b003f02c86d74",
+  "rows": 256,
+  "write_partitions": 8,
+  "null_text_rows": 86,
+  "round_trip_equal": true,
+  "bson_types": {
+    "id": "long",
+    "rating": "double",
+    "verified": "bool",
+    "tags": "array",
+    "metadata": "object",
+    "created_at": "date",
+    "_id": "string"
+  },
+  "replay_rows": 256
+}

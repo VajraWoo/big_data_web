@@ -5,6 +5,7 @@ data/gold/
 
 # Local processing artifacts
 tmp/
+.tmp/
 *.log
 
 # Local environments and private configuration
@@ -18,6 +19,10 @@ __pycache__/
 .pytest_cache/
 node_modules/
 dist/
+test-results/
+playwright-report/
+*.inspect.ndjson
+~$*.pptx
 
 # Downloaded model weights and local runtime data
 *.safetensors

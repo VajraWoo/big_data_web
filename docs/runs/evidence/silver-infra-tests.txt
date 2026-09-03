@@ -1,0 +1,17 @@
+test_bronze_is_read_only_on_all_spark_nodes (test_compose.ComposeContract.test_bronze_is_read_only_on_all_spark_nodes) ... ok
+test_images_are_digest_pinned (test_compose.ComposeContract.test_images_are_digest_pinned) ... ok
+test_master_two_workers_and_driver_exist (test_compose.ComposeContract.test_master_two_workers_and_driver_exist) ... ok
+test_no_public_ports_or_database_port (test_compose.ComposeContract.test_no_public_ports_or_database_port) ... ok
+test_resource_limits_and_healthchecks (test_compose.ComposeContract.test_resource_limits_and_healthchecks) ... ok
+test_mongodb_is_reachable_from_executor_network_without_public_port (test_connector_config.ConnectorConfig.test_mongodb_is_reachable_from_executor_network_without_public_port) ... ok
+test_pinned_jars_are_baked_into_spark (test_connector_config.ConnectorConfig.test_pinned_jars_are_baked_into_spark) ... ok
+test_cpu_resources_and_fixed_model_revisions (test_nlp_compose.NLPEnvironmentContract.test_cpu_resources_and_fixed_model_revisions) ... ok
+test_offline_validation_has_no_network_or_raw_data (test_nlp_compose.NLPEnvironmentContract.test_offline_validation_has_no_network_or_raw_data) ... ok
+test_cluster_mounts_and_resources (test_silver_compose.SilverMounts.test_cluster_mounts_and_resources) ... ok
+test_combined_resource_budget_and_locked_base_images (test_web_compose.WebComposeContract.test_combined_resource_budget_and_locked_base_images) ... ok
+test_web_ports_are_localhost_only_and_frontend_has_no_database_access (test_web_compose.WebComposeContract.test_web_ports_are_localhost_only_and_frontend_has_no_database_access) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.077s
+
+OK

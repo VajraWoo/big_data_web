@@ -1,0 +1,131 @@
+name: big-data-web
+
+x-spark: &spark
+  image: big-data-web-spark:4.1.2-python3.12.12-v2
+  build:
+    context: ./spark
+  platform: linux/amd64
+  init: true
+  environment:
+    SPARK_NO_DAEMONIZE: "true"
+    SPARK_DAEMON_MEMORY: 256m
+    PYSPARK_PYTHON: /usr/local/bin/python3
+    PYSPARK_DRIVER_PYTHON: /usr/local/bin/python3
+  volumes:
+    - ../data/bronze:/data/bronze:ro
+    - ./tests:/checks:ro
+    - spark-check-output:/opt/spark/work-dir
+
+services:
+  spark-master:
+    <<: *spark
+    networks: [default]
+    hostname: spark-master
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--host", "spark-master", "--port", "7077", "--webui-port", "8080"]
+    mem_limit: 512m
+    cpus: 0.5
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/json/',timeout=3).read()"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  spark-worker-1:
+    <<: *spark
+    networks: [default]
+    hostname: spark-worker-1
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--host", "spark-worker-1", "--cores", "4", "--memory", "4g", "--webui-port", "8081", "spark://spark-master:7077"]
+    mem_limit: 5g
+    cpus: 4
+    ports:
+      - "127.0.0.1:8081:8081"
+    depends_on:
+      spark-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/json/',timeout=3).read()"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  spark-worker-2:
+    <<: *spark
+    networks: [default]
+    hostname: spark-worker-2
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--host", "spark-worker-2", "--cores", "4", "--memory", "4g", "--webui-port", "8081", "spark://spark-master:7077"]
+    mem_limit: 5g
+    cpus: 4
+    ports:
+      - "127.0.0.1:8082:8081"
+    depends_on:
+      spark-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/json/',timeout=3).read()"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  spark-driver:
+    <<: *spark
+    networks: [default, database]
+    hostname: spark-driver
+    profiles: [tools]
+    mem_limit: 3g
+    cpus: 1
+    entrypoint: ["/opt/spark/bin/spark-submit"]
+    command:
+      - --master
+      - spark://spark-master:7077
+      - --deploy-mode
+      - client
+      - --driver-memory
+      - 2g
+      - --executor-memory
+      - 3g
+      - --conf
+      - spark.driver.host=spark-driver
+      - --conf
+      - spark.driver.bindAddress=0.0.0.0
+      - --conf
+      - spark.executor.cores=2
+      - --conf
+      - spark.cores.max=4
+      - /checks/spark_smoke.py
+    depends_on:
+      spark-worker-1:
+        condition: service_healthy
+      spark-worker-2:
+        condition: service_healthy
+
+  mongodb:
+    networks: [database, default]
+    image: mongo:8.0.29@sha256:02a0cc7939f5ed38f30f9bc714ef5f682d49baf9350c54acf302ce833087fe8a
+    platform: linux/amd64
+    init: true
+    command: ["mongod", "--bind_ip_all", "--wiredTigerCacheSizeGB", "1"]
+    mem_limit: 3g
+    cpus: 1
+    volumes:
+      - mongo-data:/data/db
+      - ./tests:/checks:ro
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.adminCommand({ping:1}).ok === 1 ? 0 : 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+networks:
+  default:
+  database:
+    internal: true
+
+volumes:
+  mongo-data:
+  spark-check-output:

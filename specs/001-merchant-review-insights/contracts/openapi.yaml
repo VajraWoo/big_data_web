@@ -25,6 +25,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Health'
+        '503':
+          description: Database unavailable; no internal connection details are exposed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
   /portfolios:
     get:
       tags: [Portfolios]

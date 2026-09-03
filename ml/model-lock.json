@@ -1,0 +1,14 @@
+{
+  "distilbert": {
+    "repo_id": "distilbert/distilbert-base-uncased",
+    "revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "license": "apache-2.0",
+    "files": ["LICENSE", "README.md", "config.json", "model.safetensors", "tokenizer.json", "tokenizer_config.json", "vocab.txt"]
+  },
+  "minilm": {
+    "repo_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "license": "apache-2.0",
+    "files": ["README.md", "config.json", "model.safetensors", "modules.json", "config_sentence_transformers.json", "sentence_bert_config.json", "special_tokens_map.json", "tokenizer.json", "tokenizer_config.json", "vocab.txt", "1_Pooling/config.json"]
+  }
+}
