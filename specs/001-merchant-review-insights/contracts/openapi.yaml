@@ -1,0 +1,661 @@
+openapi: 3.1.0
+info:
+  title: Amazon Merchant Review Insights API
+  version: 0.1.0
+  description: >-
+    Read-only contract for historical public Amazon Reviews 2023 Appliances
+    analysis. It does not verify store ownership or perform Amazon operations.
+servers:
+  - url: http://localhost:8000/api/v1
+tags:
+  - name: System
+  - name: Portfolios
+  - name: Products
+  - name: Insights
+  - name: Audit
+paths:
+  /health:
+    get:
+      tags: [System]
+      operationId: getHealth
+      responses:
+        '200':
+          description: Service and active analytical run status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /portfolios:
+    get:
+      tags: [Portfolios]
+      operationId: listPortfolios
+      parameters:
+        - $ref: '#/components/parameters/PortfolioType'
+        - $ref: '#/components/parameters/Search'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: Public brand/store dimensions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioPage'
+  /portfolios/{portfolioId}/summary:
+    get:
+      tags: [Portfolios]
+      operationId: getPortfolioSummary
+      parameters:
+        - $ref: '#/components/parameters/PortfolioId'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+      responses:
+        '200':
+          description: Portfolio metrics and group navigation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioSummary'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /portfolios/{portfolioId}/groups:
+    get:
+      tags: [Portfolios]
+      operationId: listPortfolioGroups
+      parameters:
+        - $ref: '#/components/parameters/PortfolioId'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+      responses:
+        '200':
+          description: Selected and unselected groups with analysis state
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, analysis]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductGroupSummary'
+                  analysis:
+                    $ref: '#/components/schemas/AnalysisContext'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /groups/{groupId}/products:
+    get:
+      tags: [Products]
+      operationId: listGroupProducts
+      parameters:
+        - $ref: '#/components/parameters/GroupId'
+        - $ref: '#/components/parameters/PortfolioIdQuery'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: Parent products and tiered qualification state
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, analysis]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductSummary'
+                  next_cursor:
+                    type: [string, 'null']
+                  analysis:
+                    $ref: '#/components/schemas/AnalysisContext'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /products/{parentAsin}/overview:
+    get:
+      tags: [Products]
+      operationId: getProductOverview
+      parameters:
+        - $ref: '#/components/parameters/ParentAsin'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+      responses:
+        '200':
+          description: Product variants, basic metrics and qualification
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductOverview'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /products/{parentAsin}/issues:
+    get:
+      tags: [Insights]
+      operationId: listProductIssues
+      parameters:
+        - $ref: '#/components/parameters/ParentAsin'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+        - name: qualification
+          in: query
+          schema:
+            $ref: '#/components/schemas/Qualification'
+      responses:
+        '200':
+          description: Ranked issues or an explicit insufficient/not-selected state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IssueList'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /products/{parentAsin}/demands:
+    get:
+      tags: [Insights]
+      operationId: listProductDemands
+      parameters:
+        - $ref: '#/components/parameters/ParentAsin'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+        - name: demand_type
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/DemandType'
+      responses:
+        '200':
+          description: Explicit or separately marked experimental demand topics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DemandList'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /products/{parentAsin}/trends:
+    get:
+      tags: [Insights]
+      operationId: getProductTrends
+      parameters:
+        - $ref: '#/components/parameters/ParentAsin'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+        - name: aspect_id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Monthly observations; missing months are not fabricated as zero
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrendResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /products/{parentAsin}/alerts:
+    get:
+      tags: [Insights]
+      operationId: listProductAlerts
+      parameters:
+        - $ref: '#/components/parameters/ParentAsin'
+        - $ref: '#/components/parameters/FromMonth'
+        - $ref: '#/components/parameters/ToMonth'
+      responses:
+        '200':
+          description: Confirmed and suppressed historical analytical alerts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertList'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /evidence:
+    get:
+      tags: [Audit]
+      operationId: listEvidence
+      parameters:
+        - name: conclusion_type
+          in: query
+          required: true
+          schema:
+            enum: [issue, demand, alert]
+        - name: conclusion_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: Original supporting and counterexample reviews
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvidencePage'
+  /quality/runs/latest:
+    get:
+      tags: [Audit]
+      operationId: getLatestQualityRun
+      responses:
+        '200':
+          description: Active run lineage and row disposition report
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QualityRun'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /models/evaluations:
+    get:
+      tags: [Audit]
+      operationId: listModelEvaluations
+      parameters:
+        - name: task
+          in: query
+          schema:
+            enum: [aspect_sentiment, explicit_demand, implicit_demand]
+      responses:
+        '200':
+          description: Baseline and primary model metrics and limits
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, analysis]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ModelEvaluation'
+                  analysis:
+                    $ref: '#/components/schemas/AnalysisContext'
+components:
+  parameters:
+    PortfolioId:
+      name: portfolioId
+      in: path
+      required: true
+      schema: {type: string}
+    PortfolioIdQuery:
+      name: portfolio_id
+      in: query
+      schema: {type: string}
+    GroupId:
+      name: groupId
+      in: path
+      required: true
+      schema: {type: string}
+    ParentAsin:
+      name: parentAsin
+      in: path
+      required: true
+      schema: {type: string}
+    PortfolioType:
+      name: type
+      in: query
+      schema: {enum: [brand, store]}
+    Search:
+      name: q
+      in: query
+      schema: {type: string, maxLength: 100}
+    FromMonth:
+      name: from_month
+      in: query
+      schema: {$ref: '#/components/schemas/YearMonth'}
+    ToMonth:
+      name: to_month
+      in: query
+      schema: {$ref: '#/components/schemas/YearMonth'}
+    Cursor:
+      name: cursor
+      in: query
+      schema: {type: string}
+    PageSize:
+      name: page_size
+      in: query
+      schema: {type: integer, minimum: 1, maximum: 100, default: 20}
+  responses:
+    NotFound:
+      description: Resource does not exist in the active release
+      content:
+        application/problem+json:
+          schema: {$ref: '#/components/schemas/Problem'}
+    Unavailable:
+      description: No validated analytical run is currently published
+      content:
+        application/problem+json:
+          schema: {$ref: '#/components/schemas/Problem'}
+  schemas:
+    YearMonth:
+      type: string
+      pattern: '^\\d{4}-(0[1-9]|1[0-2])$'
+      examples: ['2022-06']
+    AnalysisStatus:
+      type: string
+      enum: [ready, processing, insufficient, failed, not_selected]
+    Qualification:
+      type: string
+      enum: [insufficient, exploratory, qualified]
+    DemandType:
+      type: string
+      enum: [explicit, implicit_experimental]
+    TimeRange:
+      type: object
+      required: [from_month, to_month]
+      properties:
+        from_month: {$ref: '#/components/schemas/YearMonth'}
+        to_month: {$ref: '#/components/schemas/YearMonth'}
+    AnalysisContext:
+      type: object
+      required: [status, run_id, data_release_id, as_of]
+      properties:
+        status: {$ref: '#/components/schemas/AnalysisStatus'}
+        reason_codes:
+          type: array
+          items: {type: string}
+        run_id: {type: string}
+        data_release_id: {type: string}
+        as_of: {type: string, format: date-time}
+        parameter_version: {type: [string, 'null']}
+        model_version: {type: [string, 'null']}
+    RatioMetric:
+      type: object
+      required: [numerator, denominator, value]
+      properties:
+        numerator: {type: integer, minimum: 0}
+        denominator: {type: integer, minimum: 0}
+        value: {type: [number, 'null'], minimum: 0, maximum: 1}
+        interval_low: {type: [number, 'null'], minimum: 0, maximum: 1}
+        interval_high: {type: [number, 'null'], minimum: 0, maximum: 1}
+    BasicMetrics:
+      type: object
+      required: [review_count, average_rating, low_rating_rate, usable_text_rate]
+      properties:
+        review_count: {type: integer, minimum: 0}
+        average_rating: {type: [number, 'null'], minimum: 1, maximum: 5}
+        low_rating_rate: {$ref: '#/components/schemas/RatioMetric'}
+        usable_text_rate: {$ref: '#/components/schemas/RatioMetric'}
+    QualificationDetail:
+      type: object
+      required: [level, observed, threshold_version, reasons]
+      properties:
+        level: {$ref: '#/components/schemas/Qualification'}
+        observed: {type: object, additionalProperties: true}
+        threshold_version: {type: string}
+        reasons:
+          type: array
+          items: {type: string}
+    Health:
+      type: object
+      required: [service, mongodb, active_run]
+      properties:
+        service: {enum: [ok, degraded]}
+        mongodb: {enum: [ok, unavailable]}
+        active_run: {type: [string, 'null']}
+    PortfolioItem:
+      type: object
+      required: [portfolio_id, portfolio_type, display_name, product_count, disclaimer]
+      properties:
+        portfolio_id: {type: string}
+        portfolio_type: {enum: [brand, store]}
+        display_name: {type: string}
+        product_count: {type: integer, minimum: 0}
+        disclaimer: {type: string}
+    PortfolioPage:
+      type: object
+      required: [items, next_cursor, analysis]
+      properties:
+        items:
+          type: array
+          items: {$ref: '#/components/schemas/PortfolioItem'}
+        next_cursor: {type: [string, 'null']}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    PortfolioSummary:
+      type: object
+      required: [portfolio, period, metrics, groups, analysis]
+      properties:
+        portfolio: {$ref: '#/components/schemas/PortfolioItem'}
+        period: {$ref: '#/components/schemas/TimeRange'}
+        metrics: {$ref: '#/components/schemas/BasicMetrics'}
+        groups:
+          type: array
+          items: {$ref: '#/components/schemas/ProductGroupSummary'}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    ProductGroupSummary:
+      type: object
+      required: [group_id, name, selection_state, review_count, product_count, analysis_status]
+      properties:
+        group_id: {type: string}
+        name: {type: string}
+        selection_state: {enum: [candidate, selected, rejected]}
+        review_count: {type: integer, minimum: 0}
+        product_count: {type: integer, minimum: 0}
+        analysis_status: {$ref: '#/components/schemas/AnalysisStatus'}
+        reasons:
+          type: array
+          items: {type: string}
+    ProductSummary:
+      type: object
+      required: [parent_asin, title, variant_asins, metrics, qualification]
+      properties:
+        parent_asin: {type: string}
+        title: {type: [string, 'null']}
+        variant_asins:
+          type: array
+          items: {type: string}
+        metrics: {$ref: '#/components/schemas/BasicMetrics'}
+        qualification:
+          type: object
+          required: [basic_stats, issue_ranking, trend_alert]
+          properties:
+            basic_stats: {$ref: '#/components/schemas/QualificationDetail'}
+            issue_ranking: {$ref: '#/components/schemas/QualificationDetail'}
+            trend_alert: {$ref: '#/components/schemas/QualificationDetail'}
+    ProductOverview:
+      allOf:
+        - $ref: '#/components/schemas/ProductSummary'
+        - type: object
+          required: [period, group, portfolios, analysis]
+          properties:
+            period: {$ref: '#/components/schemas/TimeRange'}
+            group: {$ref: '#/components/schemas/ProductGroupSummary'}
+            portfolios:
+              type: array
+              items: {$ref: '#/components/schemas/PortfolioItem'}
+            analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    ScoreComponent:
+      type: object
+      required: [name, raw_value, normalized_value, weight]
+      properties:
+        name: {enum: [prevalence, severity, momentum, persistence, evidence_quality]}
+        raw_value: {type: number}
+        normalized_value: {type: number, minimum: 0, maximum: 1}
+        weight: {type: number, minimum: 0, maximum: 1}
+    Issue:
+      type: object
+      required:
+        [issue_id, aspect_id, label, qualification, evidence_count, negative_rate,
+         score_components, evidence_ids]
+      properties:
+        issue_id: {type: string}
+        aspect_id: {type: string}
+        label: {type: string}
+        qualification: {$ref: '#/components/schemas/Qualification'}
+        rank: {type: [integer, 'null'], minimum: 1}
+        evidence_count: {type: integer, minimum: 0}
+        negative_rate: {$ref: '#/components/schemas/RatioMetric'}
+        shrunk_rate: {type: [number, 'null'], minimum: 0, maximum: 1}
+        posterior_low: {type: [number, 'null'], minimum: 0, maximum: 1}
+        posterior_high: {type: [number, 'null'], minimum: 0, maximum: 1}
+        priority_score: {type: [number, 'null'], minimum: 0, maximum: 1}
+        score_components:
+          type: array
+          items: {$ref: '#/components/schemas/ScoreComponent'}
+        evidence_ids:
+          type: array
+          items: {type: string}
+          minItems: 3
+    IssueList:
+      type: object
+      required: [items, period, qualification, analysis]
+      properties:
+        items:
+          type: array
+          items: {$ref: '#/components/schemas/Issue'}
+        period: {$ref: '#/components/schemas/TimeRange'}
+        qualification: {$ref: '#/components/schemas/QualificationDetail'}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    DemandTopic:
+      type: object
+      required: [topic_id, label, demand_type, mention_rate, trend, confidence, evidence_ids]
+      properties:
+        topic_id: {type: string}
+        label: {type: string}
+        demand_type: {$ref: '#/components/schemas/DemandType'}
+        official_rank: {type: [integer, 'null'], minimum: 1}
+        mention_rate: {$ref: '#/components/schemas/RatioMetric'}
+        trend: {type: number}
+        confidence: {type: number, minimum: 0, maximum: 1}
+        associated_parent_asins:
+          type: array
+          items: {type: string}
+        evidence_ids:
+          type: array
+          items: {type: string}
+          minItems: 3
+    DemandList:
+      type: object
+      required: [items, demand_type, period, analysis]
+      properties:
+        items:
+          type: array
+          items: {$ref: '#/components/schemas/DemandTopic'}
+        demand_type: {$ref: '#/components/schemas/DemandType'}
+        period: {$ref: '#/components/schemas/TimeRange'}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    TrendPoint:
+      type: object
+      required: [month, review_count, observation_status]
+      properties:
+        month: {$ref: '#/components/schemas/YearMonth'}
+        review_count: {type: integer, minimum: 0}
+        average_rating: {type: [number, 'null'], minimum: 1, maximum: 5}
+        low_rating_rate: {oneOf: [{$ref: '#/components/schemas/RatioMetric'}, {type: 'null'}]}
+        issue_rate: {oneOf: [{$ref: '#/components/schemas/RatioMetric'}, {type: 'null'}]}
+        observation_status: {enum: [observed, insufficient]}
+    TrendResponse:
+      type: object
+      required: [points, period, qualification, analysis]
+      properties:
+        points:
+          type: array
+          items: {$ref: '#/components/schemas/TrendPoint'}
+        period: {$ref: '#/components/schemas/TimeRange'}
+        qualification: {$ref: '#/components/schemas/QualificationDetail'}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    Alert:
+      type: object
+      required:
+        [alert_id, metric, state, baseline, recent, minimum_effect,
+         posterior_probability, trigger_reasons, evidence_ids]
+      properties:
+        alert_id: {type: string}
+        metric: {type: string}
+        aspect_id: {type: [string, 'null']}
+        state: {enum: [candidate, confirmed, suppressed]}
+        severity: {enum: [info, warning, critical]}
+        baseline: {$ref: '#/components/schemas/RatioMetric'}
+        recent: {$ref: '#/components/schemas/RatioMetric'}
+        minimum_effect: {type: number, minimum: 0}
+        posterior_probability: {type: number, minimum: 0, maximum: 1}
+        fdr_adjusted_value: {type: [number, 'null'], minimum: 0, maximum: 1}
+        trigger_reasons:
+          type: array
+          items: {type: string}
+        evidence_ids:
+          type: array
+          items: {type: string}
+          minItems: 3
+    AlertList:
+      type: object
+      required: [items, period, qualification, analysis]
+      properties:
+        items:
+          type: array
+          items: {$ref: '#/components/schemas/Alert'}
+        period: {$ref: '#/components/schemas/TimeRange'}
+        qualification: {$ref: '#/components/schemas/QualificationDetail'}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    EvidenceReview:
+      type: object
+      required:
+        [evidence_id, review_id, role, text, rating, reviewed_at,
+         verified_purchase, helpful_vote, selection_method]
+      properties:
+        evidence_id: {type: string}
+        review_id: {type: string}
+        role: {enum: [support, counterexample]}
+        text: {type: string, description: Original review text, not generated replacement text}
+        rating: {type: number, minimum: 1, maximum: 5}
+        reviewed_at: {type: string, format: date-time}
+        verified_purchase: {type: [boolean, 'null']}
+        helpful_vote: {type: [integer, 'null'], minimum: 0}
+        selection_method: {enum: [medoid_mmr]}
+        model_labels:
+          type: array
+          items: {type: string}
+    EvidencePage:
+      type: object
+      required: [items, next_cursor, analysis]
+      properties:
+        items:
+          type: array
+          items: {$ref: '#/components/schemas/EvidenceReview'}
+        next_cursor: {type: [string, 'null']}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    QualityRun:
+      type: object
+      required:
+        [run_id, state, data_release_id, code_revision, input_counts,
+         disposition_counts, rule_versions, started_at, analysis]
+      properties:
+        run_id: {type: string}
+        state: {enum: [registered, profiling, silver_processing, general_gold_processing, fine_nlp_processing, validating, published, failed, superseded]}
+        data_release_id: {type: string}
+        code_revision: {type: string}
+        spark_application_id: {type: [string, 'null']}
+        input_counts: {type: object, additionalProperties: {type: integer}}
+        disposition_counts: {type: object, additionalProperties: {type: integer}}
+        rule_versions: {type: object, additionalProperties: {type: string}}
+        started_at: {type: string, format: date-time}
+        completed_at: {type: [string, 'null'], format: date-time}
+        failure: {type: [object, 'null'], additionalProperties: true}
+        analysis: {$ref: '#/components/schemas/AnalysisContext'}
+    ModelEvaluation:
+      type: object
+      required: [evaluation_id, task, model_version, baseline, metrics, test_size, limits]
+      properties:
+        evaluation_id: {type: string}
+        task: {enum: [aspect_sentiment, explicit_demand, implicit_demand]}
+        model_version: {type: string}
+        baseline: {type: boolean}
+        metrics: {type: object, additionalProperties: {type: number}}
+        test_size: {type: integer, minimum: 1}
+        split_rule: {type: string}
+        throughput_sentences_per_second: {type: number, minimum: 0}
+        inference_backend: {type: string}
+        limits:
+          type: array
+          items: {type: string}
+    Problem:
+      type: object
+      required: [type, title, status]
+      properties:
+        type: {type: string, format: uri-reference}
+        title: {type: string}
+        status: {type: integer, minimum: 400, maximum: 599}
+        detail: {type: string}
+        trace_id: {type: string}

@@ -1,0 +1,26 @@
+{
+  "dataset": "Amazon Reviews 2023",
+  "category": "Appliances",
+  "publisher": "McAuley Lab, UCSD",
+  "retrieved_at": "2026-09-02",
+  "files": [
+    {
+      "role": "reviews",
+      "path": "Appliances.jsonl.gz",
+      "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Appliances.jsonl.gz",
+      "bytes": 270209794,
+      "records": 2128605,
+      "sha256": "150F209BEFCEAA6F837ABC997065B2D251034BBBDA19BEBC4AD56DAC779730C2",
+      "gzip_read_to_eof": true
+    },
+    {
+      "role": "product_metadata",
+      "path": "meta_Appliances.jsonl.gz",
+      "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/meta_categories/meta_Appliances.jsonl.gz",
+      "bytes": 66406659,
+      "records": 94327,
+      "sha256": "5A94CFFB9EC3BE23E42B99643FCAB5F48160B3C7A53835451C4457AADCDF9365",
+      "gzip_read_to_eof": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# Downloaded and generated data
+data/bronze/**/*.jsonl.gz
+data/silver/
+data/gold/
+
+# Local processing artifacts
+tmp/
+*.log
+
+# Local environments and private configuration
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+
+# Downloaded model weights and local runtime data
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Course handouts: keep local until redistribution permission is confirmed
+/教师要求/
