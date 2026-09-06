@@ -1,7 +1,10 @@
 # Matching mounts on all Spark nodes; existing resources and images stay unchanged.
 x-silver-volumes: &silver-volumes
   - ../pipelines:/pipelines:ro
+  - ../ml:/ml:ro
+  - ../data/models:/models
   - ../data/silver:/data/silver
+  - ../data/gold:/data/gold
 
 services:
   spark-master:

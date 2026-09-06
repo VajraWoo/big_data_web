@@ -1,5 +1,6 @@
 # Downloaded and generated data
 data/bronze/**/*.jsonl.gz
+data/models/
 data/silver/
 data/gold/
 

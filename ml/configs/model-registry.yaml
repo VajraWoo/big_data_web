@@ -1,0 +1,31 @@
+schema_version: "2.0"
+policy:
+  train_or_finetune: false
+  compare_candidates: false
+
+methods:
+  language:
+    name: "fastText lid.176"
+    source: "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
+    revision: "lid.176.bin"
+    license: "cc-by-sa-3.0"
+    sha256: "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e"
+
+  sentiment:
+    name: "vaderSentiment"
+    version: "3.3.2"
+    license: "MIT"
+
+  explicit_demand:
+    repo_id: "MoritzLaurer/deberta-v3-base-zeroshot-v2.0"
+    revision: "8e7e5af5983a0ddb1a5b45a38b129ab69e2258e8"
+    license: "mit"
+
+  semantic_merge:
+    repo_id: "sentence-transformers/all-MiniLM-L6-v2"
+    revision: "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    license: "apache-2.0"
+
+  themes:
+    name: "TF-IDF unigram/bigram"
+    implementation: "Spark ML"

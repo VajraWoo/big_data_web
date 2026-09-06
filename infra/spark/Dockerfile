@@ -7,8 +7,15 @@ ENV UV_PYTHON_INSTALL_DIR=/opt/python
 RUN uv python install 3.12.12 --no-progress \
     && ln -s /opt/python/cpython-3.12.12-linux-x86_64-gnu/bin/python3.12 /usr/local/bin/python3 \
     && /usr/local/bin/python3 --version
-ENV PYSPARK_PYTHON=/usr/local/bin/python3
-ENV PYSPARK_DRIVER_PYTHON=/usr/local/bin/python3
+RUN uv venv --python /usr/local/bin/python3 /opt/text-profile \
+    && uv pip install --python /opt/text-profile/bin/python --index-url https://download.pytorch.org/whl/cpu torch==2.7.1 \
+    && uv pip install --python /opt/text-profile/bin/python fasttext==0.9.3 numpy==1.26.4 tokenizers==0.22.0 pyyaml==6.0.3 vaderSentiment==3.3.2 transformers==4.57.1 sentence-transformers==5.1.2 \
+    && /opt/text-profile/bin/python -c "import fasttext, tokenizers, yaml, vaderSentiment, torch, transformers, sentence_transformers; print(torch.__version__)"
+ENV VIRTUAL_ENV=/opt/text-profile
+ENV PATH="/opt/text-profile/bin:${PATH}"
+ENV PYSPARK_PYTHON=/opt/text-profile/bin/python
+ENV PYSPARK_DRIVER_PYTHON=/opt/text-profile/bin/python
+ENV HF_HOME=/models/huggingface
 ADD --checksum=sha256:35f189464f3895855a93c2b71529cca120d94bee98bc337f34ab2ffd998d3d80 https://repo.maven.apache.org/maven2/org/mongodb/spark/mongo-spark-connector_2.13/11.1.0/mongo-spark-connector_2.13-11.1.0.jar /opt/spark/jars/mongo-spark-connector_2.13-11.1.0.jar
 ADD --checksum=sha256:341880078296edd762756440e9d6b1d6d2bf4d6b91975c2638e3da611f28b1c2 https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-sync/5.1.4/mongodb-driver-sync-5.1.4.jar /opt/spark/jars/mongodb-driver-sync-5.1.4.jar
 ADD --checksum=sha256:ae3dbfd439d5afe9e0d6abbd61ef27d858ca2d38083bb7361f69e243aff31dec https://repo.maven.apache.org/maven2/org/mongodb/mongodb-driver-core/5.1.4/mongodb-driver-core-5.1.4.jar /opt/spark/jars/mongodb-driver-core-5.1.4.jar

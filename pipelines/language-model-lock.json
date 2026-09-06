@@ -1,0 +1,10 @@
+{
+  "fasttext_lid_176": {
+    "filename": "fasttext/lid.176.bin",
+    "url": "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin",
+    "bytes": 131266198,
+    "sha256": "7e69ec5451bc261cc7844e49e4792a85d7f09c06789ec800fc4a44aec362764e",
+    "languages": 176,
+    "model_license": "CC-BY-SA-3.0"
+  }
+}

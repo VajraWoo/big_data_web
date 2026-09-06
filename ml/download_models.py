@@ -1,25 +1,12 @@
-"""Fetch only explicitly allowlisted files from pinned model commits."""
-import hashlib
-import json
-from pathlib import Path
-
 from huggingface_hub import snapshot_download
 
 
-if __name__ == "__main__":
-    specs = json.loads(Path("/app/model-lock.json").read_text())
-    manifest = {}
-    for name, spec in specs.items():
-        destination = Path("/models") / name
-        snapshot_download(repo_id=spec["repo_id"], revision=spec["revision"],
-                          allow_patterns=spec["files"], local_dir=destination, max_workers=2)
-        files = {}
-        for filename in spec["files"]:
-            path = destination / filename
-            with path.open("rb") as stream:
-                digest = hashlib.file_digest(stream, "sha256").hexdigest()
-            files[filename] = {"sha256": digest, "bytes": path.stat().st_size}
-        manifest[name] = {"repo_id": spec["repo_id"], "revision": spec["revision"],
-                          "license": spec["license"], "files": files}
-        print(f"Downloaded and hashed {name}: {sum(f['bytes'] for f in files.values())} bytes", flush=True)
-    Path("/models/download-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+MODELS = (
+    ("MoritzLaurer/deberta-v3-base-zeroshot-v2.0", "8e7e5af5983a0ddb1a5b45a38b129ab69e2258e8"),
+    ("sentence-transformers/all-MiniLM-L6-v2", "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"),
+)
+
+
+for model_id, revision in MODELS:
+    path = snapshot_download(repo_id=model_id, revision=revision)
+    print(f"MODEL_READY={model_id}|{revision}|{path}", flush=True)

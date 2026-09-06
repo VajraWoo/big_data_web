@@ -1,15 +1,13 @@
 <!--
 Sync Impact Report
-- Version change: template (unversioned) -> 1.0.0
+- Version change: 1.0.0 -> 1.1.0
 - Modified principles:
   - Template placeholders -> I. 规约先于编码
   - Template placeholders -> II. 四层端到端闭环
   - Template placeholders -> III. 数据真实、合规、可复现
-  - Template placeholders -> IV. 挖掘有效且可解释
+  - IV. 挖掘有效且可解释 -> IV. 挖掘有效、可解释且工程可验收
   - Template placeholders -> V. 验证、追踪与 AI 使用可问责
-- Added sections:
-  - 课程与技术约束
-  - 开发流程与质量门禁
+- Added sections: none
 - Removed sections: none
 - Follow-up TODOs: none
 -->
@@ -38,12 +36,15 @@ MUST 说明四层架构中的职责、数据流、技术选型及取舍。需求
 数据不变，并输出清洗前后数量、缺失、重复、异常和过滤统计。任何抽样或缩减 MUST 有
 可说明的规则，不得只保留有利于展示的结果。
 
-### IV. 挖掘有效且可解释（NON-NEGOTIABLE）
+### IV. 挖掘有效、可解释且工程可验收（NON-NEGOTIABLE）
 项目 MUST 包含解决真实业务问题的数据分析或挖掘能力，并在所选大数据处理引擎上完成
-具有实质计算量的核心步骤。每项挖掘功能 MUST 定义输入、输出、算法或模型、基线、评价
-指标和验收阈值；随机过程 MUST 固定种子，依赖及参数 MUST 版本化。调用现成库可以作为
-实现手段，但成员 MUST 能解释特征、算法、参数、复杂度、结果局限及关键实现路径；不得
-用无法解释的模型输出或仅调用第三方接口替代核心设计。
+具有实质计算量的核心步骤。每项挖掘功能 MUST 定义输入、输出、算法或模型、业务判定
+参数和验收方式。在需求已明确采用现成模型、不自行训练且不进行模型竞赛时，不得为了
+形式完整强制增加候选模型基线、人工标注集或效果竞赛；此类功能 MUST 使用工程验收：
+验证本地设备兼容、输出结构、输入输出对账、结果可追溯、失败信息和运行时间。业务判定
+参数 MUST 版本化，随机过程 MUST 固定种子。调用现成库可以作为实现手段，但成员 MUST
+能解释特征、算法、参数、复杂度、结果局限及关键实现路径；不得用无法解释的模型输出或
+仅调用第三方接口替代核心设计。
 
 ### V. 验证、追踪与 AI 使用可问责
 每个用户故事 MUST 在实现前定义验收测试或可执行检查；数据管道、跨层接口和核心挖掘
@@ -98,4 +99,4 @@ MUST 在实施前修订 Constitution，或提供书面例外说明、影响分�
 和最终交付审查 MUST 核对规约追踪、测试证据、数据证据和 AI 提示词留档。复杂度、额外
 基础设施及标准技术栈偏离 MUST 在设计规约中给出可验证理由。
 
-**Version**: 1.0.0 | **Ratified**: 2026-09-02 | **Last Amended**: 2026-09-02
+**Version**: 1.1.0 | **Ratified**: 2026-09-02 | **Last Amended**: 2026-09-06

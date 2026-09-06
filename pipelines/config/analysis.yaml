@@ -1,0 +1,48 @@
+schema_version: "2.0"
+analysis_version: "product-review-insights-basic-v1"
+data_release_id: "amazon-reviews-2023-appliances-v1"
+
+inputs:
+  silver_root: "/data/silver/silver-full-20260903T154909-6c310067"
+  text_features_root: "/data/silver/text-profile-full-20260905T150853/text_features"
+
+scope:
+  product_filter: "all_products"
+  minimum_eligible_reviews: 50
+  demo_products: ["water-filters", "ice-makers"]
+  demo_products_are_processing_filter: false
+
+sentiment:
+  method: "vaderSentiment"
+  version: "3.3.2"
+  positive_threshold: 0.05
+  negative_threshold: -0.05
+
+themes:
+  method: "tfidf_ngram"
+  ngram_range: [1, 2]
+  maximum_per_product_sentiment: 20
+  minimum_document_frequency: 2
+
+demands:
+  candidate_markers: ["wish", "need", "should", "could", "would like", "if only", "hope"]
+  zero_shot_model: "MoritzLaurer/deberta-v3-base-zeroshot-v2.0"
+  labels: ["功能建议", "质量抱怨", "表扬", "其他"]
+  accepted_label: "功能建议"
+  semantic_merge_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+alerts:
+  recent_months: 3
+  baseline_months: 12
+  minimum_rate_increase: 0.10
+  minimum_window_reviews: 30
+  missing_month_policy: "no_observation_not_zero"
+
+execution:
+  train_or_finetune: false
+  compare_candidate_models: false
+  run_real_data_sample: false
+  formal_stage_runs: 1
+  log_policy: "file_and_final_status_only"
+  output_root: "/data/gold"
+

@@ -9,8 +9,8 @@ x-spark: &spark
   environment:
     SPARK_NO_DAEMONIZE: "true"
     SPARK_DAEMON_MEMORY: 256m
-    PYSPARK_PYTHON: /usr/local/bin/python3
-    PYSPARK_DRIVER_PYTHON: /usr/local/bin/python3
+    PYSPARK_PYTHON: /opt/text-profile/bin/python
+    PYSPARK_DRIVER_PYTHON: /opt/text-profile/bin/python
   volumes:
     - ../data/bronze:/data/bronze:ro
     - ./tests:/checks:ro

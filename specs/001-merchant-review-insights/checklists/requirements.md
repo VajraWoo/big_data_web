@@ -1,36 +1,14 @@
-# Specification Quality Checklist: Amazon 商品需求洞察与质量问题预警
+# Specification Quality Checklist：家电整机评论洞察
 
-**Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-09-02
-**Feature**: [spec.md](../spec.md)
+**Updated**: 2026-09-06
 
-## Content Quality
-
-- [x] No implementation details (languages, frameworks, APIs)
-- [x] Focused on user value and business needs
-- [x] Written for non-technical stakeholders
-- [x] All mandatory sections completed
-
-## Requirement Completeness
-
-- [x] No [NEEDS CLARIFICATION] markers remain
-- [x] Requirements are testable and unambiguous
-- [x] Success criteria are measurable
-- [x] Success criteria are technology-agnostic (no implementation details)
-- [x] All acceptance scenarios are defined
-- [x] Edge cases are identified
-- [x] Scope is clearly bounded
-- [x] Dependencies and assumptions identified
-
-## Feature Readiness
-
-- [x] All functional requirements have clear acceptance criteria
-- [x] User scenarios cover primary flows
-- [x] Feature meets measurable outcomes defined in Success Criteria
-- [x] No implementation details leak into specification
-
-## Notes
-
-- Validation iteration 1 passed on 2026-09-02.
-- Data profiling may calibrate numerical thresholds documented in Assumptions; any material scope
-  change must update the specification before planning.
+- [x] 业务链仅包含商品选择、正负主题、数量与趋势、原文下钻、改进需求。
+- [x] 前端集合、完整NLP集合和Gold集合均固定为139个商品、116,728条评论。
+- [x] 整机与零件/配件边界明确。
+- [x] VADER、ABSA、明确建议、聚类和自动命名的责任没有混淆。
+- [x] 全部句子直接进入NLI，关键词和MiniLM相似度不得成为前置过滤条件。
+- [x] Transformer与Spark运行边界明确。
+- [x] 已验证、仅选型、尚未实现三种状态分别记录。
+- [x] 旧TF-IDF和旧zero-shot产物明确禁止发布为新版Gold。
+- [x] 没有预警、推荐、竞品分析、模型训练等未经批准的功能。
+- [x] 验收标准可以通过计数、映射和端到端流程验证。
