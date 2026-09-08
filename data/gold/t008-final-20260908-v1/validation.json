@@ -1,0 +1,9 @@
+{
+  "status": "ready",
+  "category_count": 13,
+  "expected_category_count": 13,
+  "taxonomy_theme_count": 887,
+  "expected_first_level_cluster_count": 4992,
+  "mapped_first_level_cluster_count": 4992,
+  "errors": []
+}

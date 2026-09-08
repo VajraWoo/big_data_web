@@ -1,0 +1,135 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-002",
+  "local_themes": [
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "cf7d739cce722ec3f2082a1d",
+        "11fc33b9b39b47bab76bbea5",
+        "dbfc86fc325498384f1f0ced",
+        "a8b1b36327196f985a50737d",
+        "757b9a4e93c97a3a1fdde41e",
+        "2a7d6f49457cf361c3b36887",
+        "a1d9f6194d77378b638a995e",
+        "0d62e27e10fd514dab172742",
+        "d2912d9f77ddfe4f2868d55e",
+        "84dcc91ade085f2e194f5800",
+        "adfc69235634c6120c5cf566",
+        "cd4243473c9226b23845a13f",
+        "2e12560aac03f3f6f3e46f5d",
+        "7f321f097113f0843f850bb4",
+        "22c0161c9597f3407b1e98bc",
+        "465ecac12ead02b529e79c15",
+        "f7b57436efb4fce7d8639bb2",
+        "2f640e55b557751013e05d1b",
+        "9afddc67f0c9c29ae2d193d6",
+        "1dfd1c587dcc3c6f6d318bd5",
+        "994f2dfe9a9139f2b2fb75f4",
+        "4f38f52f2279571dfa53fc56",
+        "0da12dcd2ca5439ec10480a8",
+        "287556c9f85cbc96f42af130",
+        "6b5a8ef4baace04cbfcdc93a",
+        "0ff80525e45e21d038f0299c",
+        "98502ccecbe90e722f518d08",
+        "697bd4e4a3a667a2eafa0237"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Efficiency",
+      "member_cluster_ids": [
+        "9e37f2eebfe5902fdc933d80",
+        "0de0d1be1749a9d2b3df24c4",
+        "515c869d962aecce6f21d1fc",
+        "1d52959406137ea7a6094cb8",
+        "b9c181bbaccce32c4a40164d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Efficiency'."
+    },
+    {
+      "local_theme_name": "Cooling performance",
+      "member_cluster_ids": [
+        "8c6135eb51f6a1afc92a5bf5",
+        "e8fae19e851e38e395e0d748",
+        "26181e1a0cb54ba254c2f90c",
+        "ff3af7d42881dfa0a9c19a23",
+        "2e25b8af4e3872561f7ce90e",
+        "dde0e4477574e734b1e369be"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cooling performance'."
+    },
+    {
+      "local_theme_name": "Machine Performance",
+      "member_cluster_ids": [
+        "129ea475225df2584c5db8d7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Machine Performance'."
+    },
+    {
+      "local_theme_name": "Energy Consumption",
+      "member_cluster_ids": [
+        "98c195de8364991503a7d652",
+        "f56e1fca66e853e0e338788b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Energy Consumption'."
+    },
+    {
+      "local_theme_name": "Performance Speed",
+      "member_cluster_ids": [
+        "063be2cca837c7b0fdfff4c1",
+        "6dc4d1031fa3663e1f6dd7b9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Performance Speed'."
+    },
+    {
+      "local_theme_name": "Startup Time",
+      "member_cluster_ids": [
+        "d32a3f18d58a81ad19bbfdc8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Startup Time'."
+    },
+    {
+      "local_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "3ec09a6d92a224710e2dd108"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature control'."
+    },
+    {
+      "local_theme_name": "Time Saving",
+      "member_cluster_ids": [
+        "d8c1ac8b1ec17d056dcf4538"
+      ],
+      "definition": "Clusters describing the analytical concept 'Time Saving'."
+    },
+    {
+      "local_theme_name": "Productivity",
+      "member_cluster_ids": [
+        "f0cff5f808a8f742010e778d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Productivity'."
+    },
+    {
+      "local_theme_name": "Versatility",
+      "member_cluster_ids": [
+        "a9e81b8b3f56315b1c510bf8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Versatility'."
+    },
+    {
+      "local_theme_name": "Product Performance",
+      "member_cluster_ids": [
+        "248b017235912d894fc318de"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Performance'."
+    },
+    {
+      "local_theme_name": "Replacement Performance",
+      "member_cluster_ids": [
+        "5fdead0c05f097bdf7a5c58e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Performance'."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Whole Appliance Review Insights API
-  version: 2.0.0
+  version: 2.1.0
 servers:
   - url: http://localhost:8000/api/v1
 paths:
@@ -47,12 +47,25 @@ paths:
         - {name: sentiment, in: query, schema: {enum: [positive, negative]}}
       responses:
         '200':
-          description: Positive and negative product themes
+          description: Positive and negative evaluation themes derived only from ABSA
           content:
             application/json:
               schema:
                 type: array
                 items: {$ref: '#/components/schemas/Theme'}
+  /products/{parentAsin}/analysis-status:
+    get:
+      operationId: getProductAnalysisStatus
+      parameters:
+        - {$ref: '#/components/parameters/ParentAsin'}
+      responses:
+        '200':
+          description: Completion and empty-result status for all three analysis facets
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {$ref: '#/components/schemas/ProductAnalysisFacet'}
   /themes/{themeId}/reviews:
     get:
       operationId: listThemeReviews
@@ -115,20 +128,38 @@ components:
         analysis_status: {enum: [pending, processing, ready, failed]}
     Theme:
       type: object
-      required: [theme_id, name, sentiment, sources, review_count, share, trend]
+      required: [theme_id, theme_type, name, sentiment, sources, review_count, share, trend]
       properties:
         theme_id: {type: string}
+        theme_type: {enum: [evaluation, improvement]}
         name: {type: string}
-        sentiment: {enum: [positive, negative]}
+        sentiment:
+          type: [string, 'null']
+          enum: [positive, negative, null]
+          description: Required for evaluation themes and null for improvement themes
         sources:
           type: array
-          items: {enum: [praise, explicit_suggestion, implicit_problem]}
+          items: {enum: [absa_positive, absa_negative, explicit_suggestion, implicit_problem]}
         review_count: {type: integer}
         share: {type: number}
         naming_method: {enum: [template, center_phrase]}
         trend:
           type: array
           items: {$ref: '#/components/schemas/TrendPoint'}
+    ProductAnalysisFacet:
+      type: object
+      required: [parent_asin, theme_type, sentiment, status, theme_count, reason]
+      properties:
+        parent_asin: {type: string}
+        theme_type: {enum: [evaluation, improvement]}
+        sentiment:
+          type: [string, 'null']
+          enum: [positive, negative, null]
+        status: {enum: [pending, processing, ready, failed]}
+        theme_count: {type: integer, minimum: 0}
+        reason:
+          type: [string, 'null']
+          enum: [no_qualified_theme, null]
     ReviewEvidence:
       type: object
       required: [review_id, text, rating, review_month]

@@ -1,0 +1,854 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-004",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice retention",
+      "member_cluster_ids": [
+        "b20fc29dcfcfda4eead3c5b1",
+        "8c8862deb79ec308605b1762",
+        "2983526335040acb28a96b03",
+        "225f3f0624e9f3ac16da1c12",
+        "6f5184e206105aa006f1020d",
+        "f24a598a22f51528cc57c2ac",
+        "ff9c8c9de984bbd5509afb06",
+        "16e099ad1cc1eab3ff4d2133",
+        "11b812f3a6106636394f89ad",
+        "9f3536693dce98fd9b970221",
+        "a79306cfc1336e07b4e5cf1c",
+        "5c82980d60c222f56568fbf4",
+        "7d4f3c0f724dceb71fe5732f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice retention'."
+    },
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "4dd0a11475af192e64677436",
+        "4763f4dbed8c3a58d23c563b",
+        "6f2f8b47e0a17f2d72dd3a19",
+        "20f8b089948a61c9bd4adec4",
+        "7a9bf985abd4b71ee90b7e7c",
+        "097ffb753693bbab635b2b28",
+        "fa11db1a38525b85d5255107",
+        "e281f3e6ba55a4b5611510c5",
+        "6358aea3b7807fed5c509de7",
+        "c678fbc6a0ada29c1a6a0a8b",
+        "61dc773de828b3f1d45cba44",
+        "dbc553f6dd81399fc6bb8343",
+        "8eac7e3f8dd5f244bd2e93ca",
+        "c7e01e01167a56664eb22205",
+        "3bcca53402050fc21c20d194",
+        "d2ebb9494b4194e102f15f40",
+        "59193a0b140b3d35de5246b8",
+        "1db710fd843e63b7ac5d2b84",
+        "bedee67deed10b962e314b6f",
+        "4d4db9c170d0db41708e022c",
+        "bdf6d4eb1c4a7aa08ed12292"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Ice storage capacity",
+      "member_cluster_ids": [
+        "059f54f808ef3a25e38bb92b",
+        "d65fb354807d0aab27e2c73c",
+        "42475ea4ec7dcd15d5d4a039",
+        "ec5d2722bb331c5142df70fc",
+        "3cba676a09532f12ae27b258",
+        "8ffd5c69068f49c66a61a185",
+        "867bf8fe5a4ecb2f35f3dcff",
+        "b763def0c695a98eaa631089",
+        "0cf8a1a7c4de13620229cd96",
+        "66bf6f0e75849d6fd1250889"
+      ],
+      "definition": "Amount of produced ice the storage bin or basket can hold."
+    },
+    {
+      "local_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "55c6cb105fddeb6cf5962338",
+        "d5bdcaa768383a829557d28e",
+        "2bdc4a0841f482a2c4632a92",
+        "70b1398a235ca7a6c9754f60",
+        "99351dfe6f49fb52e13fb307"
+      ],
+      "definition": "Clusters describing the analytical concept 'Capacity'."
+    },
+    {
+      "local_theme_name": "Ice Detection Accuracy",
+      "member_cluster_ids": [
+        "09ab6f2243b9f33d46f55b77"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Detection Accuracy'."
+    },
+    {
+      "local_theme_name": "Ice Temperature Retention",
+      "member_cluster_ids": [
+        "e5681f156f28fa40609c3465"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Temperature Retention'."
+    },
+    {
+      "local_theme_name": "Display accuracy",
+      "member_cluster_ids": [
+        "63c109b20b607575a1619ee5",
+        "3ee8d9cb7bd943b58f077276",
+        "de87c7175b948333a89bd560"
+      ],
+      "definition": "Clusters describing the analytical concept 'Display accuracy'."
+    },
+    {
+      "local_theme_name": "Water recycling",
+      "member_cluster_ids": [
+        "73926fa310d2078007246ea6",
+        "ade0e29ba0ced8e4c032cd6f",
+        "08325229a4cfd7c45adf02d0",
+        "2487de504ef982a9b2a766ad"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water recycling'."
+    },
+    {
+      "local_theme_name": "Ice production capacity",
+      "member_cluster_ids": [
+        "63ad79b56d325dedcbc76eaa",
+        "716686babe0e4cdc094108dd",
+        "7eb19785bc26bddd09d837b4",
+        "235229231e5fc652153d8b2e",
+        "1a788148f5d2b485d699041d"
+      ],
+      "definition": "Amount of ice the machine can produce or hold over a period."
+    },
+    {
+      "local_theme_name": "Ice availability",
+      "member_cluster_ids": [
+        "f3b7fc85c4e5d2217adfc741",
+        "e8f30c53bdc71629ce89fa54",
+        "ab7519fbee6fde44712692e1"
+      ],
+      "definition": "Whether ice is readily available when needed."
+    },
+    {
+      "local_theme_name": "Ice Full Sensor",
+      "member_cluster_ids": [
+        "cbeb546537d9c8ca431c8a2b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Full Sensor'."
+    },
+    {
+      "local_theme_name": "Ice melting",
+      "member_cluster_ids": [
+        "c3340b40da9a7f5d7bac4c4a",
+        "25715d1f8a3fa6d0ec91dea1",
+        "2f0903dcf193572f6ec41929"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice melting'."
+    },
+    {
+      "local_theme_name": "Availability",
+      "member_cluster_ids": [
+        "88ac20bf4f765fbe19833977"
+      ],
+      "definition": "Clusters describing the analytical concept 'Availability'."
+    },
+    {
+      "local_theme_name": "Leakage",
+      "member_cluster_ids": [
+        "cc5a818d3ac8a43e6979e552",
+        "2d5c12e460a1a77518d1272f",
+        "22aa8bfcd048e4d61e9602f3"
+      ],
+      "definition": "Water leaking from the machine or connections."
+    },
+    {
+      "local_theme_name": "Ice Ejection",
+      "member_cluster_ids": [
+        "939e1b12651ae3d7d4eb45ed",
+        "33e4710dfa7415878e3c1cc8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Ejection'."
+    },
+    {
+      "local_theme_name": "Space Efficiency",
+      "member_cluster_ids": [
+        "da6370df29b71460dde9239f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Space Efficiency'."
+    },
+    {
+      "local_theme_name": "Ice Detection",
+      "member_cluster_ids": [
+        "3d91def506c536216cc1f7ca",
+        "bde1fd5842f4f54b150f43dd",
+        "9ffd556e1923acf50dd68ba6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Detection'."
+    },
+    {
+      "local_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "184306a3e29d87da7c33a4fb",
+        "48e2b5436186803b9771cf7d",
+        "3151fa47ea0a7a7d6737eb33"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature control'."
+    },
+    {
+      "local_theme_name": "Freezing performance",
+      "member_cluster_ids": [
+        "24d953a8fc101403b067124d",
+        "d6a9d916b5c9e9fe83e775ad",
+        "6d7fccda706494e6ec0cbb64"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing performance'."
+    },
+    {
+      "local_theme_name": "Jamming",
+      "member_cluster_ids": [
+        "87f9ac7918b1d4369e176ae6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Jamming'."
+    },
+    {
+      "local_theme_name": "Ice Maker Functionality",
+      "member_cluster_ids": [
+        "87f9b5b9b93eb66355535cc8",
+        "45cd6c91688493257ead6495"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Maker Functionality'."
+    },
+    {
+      "local_theme_name": "Melting Behavior",
+      "member_cluster_ids": [
+        "f6a70e1a745c5165b15af6f6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Melting Behavior'."
+    },
+    {
+      "local_theme_name": "Storage Capability",
+      "member_cluster_ids": [
+        "615273f55bcaf6d4ec2d02c1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage Capability'."
+    },
+    {
+      "local_theme_name": "Defrosting Behavior",
+      "member_cluster_ids": [
+        "e0c4f641ad2e88f1e2f1c62b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Defrosting Behavior'."
+    },
+    {
+      "local_theme_name": "Ice Separation",
+      "member_cluster_ids": [
+        "c59184525b4e1144014fa561",
+        "9cea3c2e6fcc395f7311a64b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Separation'."
+    },
+    {
+      "local_theme_name": "Ice cube shape",
+      "member_cluster_ids": [
+        "617c0e0224eb72c2fc81ed60",
+        "550832ef7a86d9f081c90c51",
+        "bf28b0113b9d11f076298e04"
+      ],
+      "definition": "Shape or form of produced ice."
+    },
+    {
+      "local_theme_name": "Ease of use",
+      "member_cluster_ids": [
+        "a69c449029669b8a6ff0b097"
+      ],
+      "definition": "Ease of everyday operation."
+    },
+    {
+      "local_theme_name": "Ice Breaking",
+      "member_cluster_ids": [
+        "97c67f17279ea31ef1179984",
+        "b7272b4c4d506dab2cc3cc86"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Breaking'."
+    },
+    {
+      "local_theme_name": "Ice Tray Necessity",
+      "member_cluster_ids": [
+        "0d6c7350e845ea0e5669d28e",
+        "80fd8a0fda9953f67fb2ade0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Tray Necessity'."
+    },
+    {
+      "local_theme_name": "Ice Dropping",
+      "member_cluster_ids": [
+        "1909959b5fd9374b77fe3742",
+        "8a1d4804ff018515e7e3dd52"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Dropping'."
+    },
+    {
+      "local_theme_name": "Overflowing",
+      "member_cluster_ids": [
+        "1562b6a9df8e59e38ff64644"
+      ],
+      "definition": "Clusters describing the analytical concept 'Overflowing'."
+    },
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "9a043f76e74ac1ff4d88785c",
+        "9b5d023d5e60d16e067dcee7"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Bin Capacity",
+      "member_cluster_ids": [
+        "fe03c77b56bdaf2617534fb3",
+        "f7b05fbf8fe96d8a0999e910"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bin Capacity'."
+    },
+    {
+      "local_theme_name": "Ice Duration",
+      "member_cluster_ids": [
+        "a3ff2b34f17b0db6df44ed13"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Duration'."
+    },
+    {
+      "local_theme_name": "Freezing Behavior",
+      "member_cluster_ids": [
+        "bab361866eba2c8855a555d6",
+        "49e72aff6031b782ac0a53e3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Behavior'."
+    },
+    {
+      "local_theme_name": "Refrigeration",
+      "member_cluster_ids": [
+        "fe352b95bad8d2ae167d5549",
+        "cb4408c1367649c8d6f3999d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refrigeration'."
+    },
+    {
+      "local_theme_name": "Freezer Space Efficiency",
+      "member_cluster_ids": [
+        "0b76fd5deafea37ef654a690"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezer Space Efficiency'."
+    },
+    {
+      "local_theme_name": "Ice Storage Duration",
+      "member_cluster_ids": [
+        "3b19f12b9d66b7f8528d9e3e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Storage Duration'."
+    },
+    {
+      "local_theme_name": "Scooping",
+      "member_cluster_ids": [
+        "0bbfe52485edaf43a8d44e5a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Scooping'."
+    },
+    {
+      "local_theme_name": "Ice Full Indicator",
+      "member_cluster_ids": [
+        "24462893031890ed72355dde"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Full Indicator'."
+    },
+    {
+      "local_theme_name": "Storage",
+      "member_cluster_ids": [
+        "9b63c95386d219197263b28e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage'."
+    },
+    {
+      "local_theme_name": "Cube Separation",
+      "member_cluster_ids": [
+        "0e0fbfcc16e6faf1a702e96e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Separation'."
+    },
+    {
+      "local_theme_name": "Fit",
+      "member_cluster_ids": [
+        "811b2dcbe65421377e4499a4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fit'."
+    },
+    {
+      "local_theme_name": "Freezing Capability",
+      "member_cluster_ids": [
+        "dffd54c0487530705569dd0d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Capability'."
+    },
+    {
+      "local_theme_name": "Accessories",
+      "member_cluster_ids": [
+        "91acd1b69e6d3cfd874d55cc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessories'."
+    },
+    {
+      "local_theme_name": "Light Indicator",
+      "member_cluster_ids": [
+        "1b34603193d8c73392230a19"
+      ],
+      "definition": "Clusters describing the analytical concept 'Light Indicator'."
+    },
+    {
+      "local_theme_name": "Design",
+      "member_cluster_ids": [
+        "cda42208d0b3f4a76858fb86"
+      ],
+      "definition": "Design features or layout of the appliance."
+    },
+    {
+      "local_theme_name": "Ice Getting Stuck",
+      "member_cluster_ids": [
+        "f772b9b74d852ae46638fbf1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Getting Stuck'."
+    },
+    {
+      "local_theme_name": "Ice Keeping",
+      "member_cluster_ids": [
+        "5568c4723d1e7537cc53286c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Keeping'."
+    },
+    {
+      "local_theme_name": "Ice Maker Cost",
+      "member_cluster_ids": [
+        "8518e9f18b957b5e9d3062f3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Maker Cost'."
+    },
+    {
+      "local_theme_name": "Refrigeration Capability",
+      "member_cluster_ids": [
+        "0bca91b3865f3e21f01c4f06"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refrigeration Capability'."
+    },
+    {
+      "local_theme_name": "Refrigeration Function",
+      "member_cluster_ids": [
+        "4e5619e15065ae11efcba934"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refrigeration Function'."
+    },
+    {
+      "local_theme_name": "Convenience / utility",
+      "member_cluster_ids": [
+        "789430d79b92336803f560a9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Convenience / utility'."
+    },
+    {
+      "local_theme_name": "Filling Behavior",
+      "member_cluster_ids": [
+        "b7222dc1131ff3e829bd5c0f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Behavior'."
+    },
+    {
+      "local_theme_name": "Freezer Storage",
+      "member_cluster_ids": [
+        "063a9c6306d9d9bfa1e3b682"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezer Storage'."
+    },
+    {
+      "local_theme_name": "Ice Recycling",
+      "member_cluster_ids": [
+        "06ac7cda998ee504fcae597e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Recycling'."
+    },
+    {
+      "local_theme_name": "Ice Release",
+      "member_cluster_ids": [
+        "058a73ee0c6d1e9730cae6d7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Release'."
+    },
+    {
+      "local_theme_name": "Refill Functionality",
+      "member_cluster_ids": [
+        "2b7bb1404730b05837fcaee2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Functionality'."
+    },
+    {
+      "local_theme_name": "Tray Mechanism",
+      "member_cluster_ids": [
+        "ccbc91a4f28b406b4d727337"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Mechanism'."
+    },
+    {
+      "local_theme_name": "Cube Retention",
+      "member_cluster_ids": [
+        "bca852987848fc54de797569"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Retention'."
+    },
+    {
+      "local_theme_name": "Frost Buildup",
+      "member_cluster_ids": [
+        "4434c47a78774e9983136ad8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Frost Buildup'."
+    },
+    {
+      "local_theme_name": "Full Detection",
+      "member_cluster_ids": [
+        "525571725d11ebc6dd9786c7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Full Detection'."
+    },
+    {
+      "local_theme_name": "Ice Cube Handling",
+      "member_cluster_ids": [
+        "ca2758aaba901549a2e87cb3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Handling'."
+    },
+    {
+      "local_theme_name": "Ice Removal",
+      "member_cluster_ids": [
+        "ea705294b5d97f6ccb165e0b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Removal'."
+    },
+    {
+      "local_theme_name": "Ice Tray",
+      "member_cluster_ids": [
+        "ff9627b4b46c56f10e71487e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Tray'."
+    },
+    {
+      "local_theme_name": "Ice production speed",
+      "member_cluster_ids": [
+        "4b95104f32c5cab2476b1fd9"
+      ],
+      "definition": "How quickly the machine produces or replenishes ice."
+    },
+    {
+      "local_theme_name": "Shut-Off Function",
+      "member_cluster_ids": [
+        "51e1e0f96b889c7abfe15761"
+      ],
+      "definition": "Clusters describing the analytical concept 'Shut-Off Function'."
+    },
+    {
+      "local_theme_name": "Basket Full Indicator",
+      "member_cluster_ids": [
+        "2ba231d284fba3da71c785c4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Full Indicator'."
+    },
+    {
+      "local_theme_name": "Basket Temperature",
+      "member_cluster_ids": [
+        "29bfc1525414be6d7958e059"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Temperature'."
+    },
+    {
+      "local_theme_name": "Ice Storage Space",
+      "member_cluster_ids": [
+        "72515a7ef8807fecb5ad8860"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Storage Space'."
+    },
+    {
+      "local_theme_name": "Tray Size",
+      "member_cluster_ids": [
+        "bd835e3c2467f2330feefa30"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Size'."
+    },
+    {
+      "local_theme_name": "Water Pump Function",
+      "member_cluster_ids": [
+        "127f9ed96d8c9d729ac7af86"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Pump Function'."
+    },
+    {
+      "local_theme_name": "Automatic Restart",
+      "member_cluster_ids": [
+        "62b145a628467865b3112150"
+      ],
+      "definition": "Clusters describing the analytical concept 'Automatic Restart'."
+    },
+    {
+      "local_theme_name": "Basket Size",
+      "member_cluster_ids": [
+        "3815dda7c730e7d7d833fc8c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Size'."
+    },
+    {
+      "local_theme_name": "Chamber Temperature",
+      "member_cluster_ids": [
+        "98a87d43f16c2f9a3d2040df"
+      ],
+      "definition": "Clusters describing the analytical concept 'Chamber Temperature'."
+    },
+    {
+      "local_theme_name": "Compactness",
+      "member_cluster_ids": [
+        "157d10c068883e4e9b2d32fc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compactness'."
+    },
+    {
+      "local_theme_name": "Dispensing",
+      "member_cluster_ids": [
+        "a3a447799674335598a37b90"
+      ],
+      "definition": "Clusters describing the analytical concept 'Dispensing'."
+    },
+    {
+      "local_theme_name": "Freezing",
+      "member_cluster_ids": [
+        "9e87f42c3d101f6f47d88e8f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing'."
+    },
+    {
+      "local_theme_name": "Freezing Duration",
+      "member_cluster_ids": [
+        "9d9cff24d9f0b4fbcce7a8ea"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Duration'."
+    },
+    {
+      "local_theme_name": "Ice Bin Filling",
+      "member_cluster_ids": [
+        "67eadb83f47bbe3e406c3f4e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bin Filling'."
+    },
+    {
+      "local_theme_name": "Self-cleaning feature",
+      "member_cluster_ids": [
+        "eb5632bd437e6452141cc339"
+      ],
+      "definition": "Clusters describing the analytical concept 'Self-cleaning feature'."
+    },
+    {
+      "local_theme_name": "Transfer Ease",
+      "member_cluster_ids": [
+        "c5611136f967b5f378d3eb66"
+      ],
+      "definition": "Clusters describing the analytical concept 'Transfer Ease'."
+    },
+    {
+      "local_theme_name": "Basket Durability",
+      "member_cluster_ids": [
+        "9b27d5435626de8280289bb9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Durability'."
+    },
+    {
+      "local_theme_name": "Bin Temperature Control",
+      "member_cluster_ids": [
+        "b4b7ec7f505b8c7944e501ff"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bin Temperature Control'."
+    },
+    {
+      "local_theme_name": "Cube Freezing Behavior",
+      "member_cluster_ids": [
+        "75e6e548079fd9eec14489fd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Freezing Behavior'."
+    },
+    {
+      "local_theme_name": "Freezing Function",
+      "member_cluster_ids": [
+        "1ad9ee77e3bcf78de7dd8c40"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Function'."
+    },
+    {
+      "local_theme_name": "Ice Bucket Capacity",
+      "member_cluster_ids": [
+        "21390d9a609b7810c5db2227"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bucket Capacity'."
+    },
+    {
+      "local_theme_name": "Ice Dispensing",
+      "member_cluster_ids": [
+        "faf1675ee77d7899af1b2997"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Dispensing'."
+    },
+    {
+      "local_theme_name": "Ice Dumping",
+      "member_cluster_ids": [
+        "62ea16f6df279244466225ed"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Dumping'."
+    },
+    {
+      "local_theme_name": "Ice Handling",
+      "member_cluster_ids": [
+        "604f3dad71df77583a3b10e9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Handling'."
+    },
+    {
+      "local_theme_name": "Ice melting speed",
+      "member_cluster_ids": [
+        "f482269e88f2d1cc92e70298"
+      ],
+      "definition": "How quickly produced ice melts."
+    },
+    {
+      "local_theme_name": "Replacement Fit",
+      "member_cluster_ids": [
+        "aa9796377e3451f47fa9722d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Fit'."
+    },
+    {
+      "local_theme_name": "Reservoir Capacity",
+      "member_cluster_ids": [
+        "e3eb0351482eb8fa59efee0c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reservoir Capacity'."
+    },
+    {
+      "local_theme_name": "Shut-Off Reliability",
+      "member_cluster_ids": [
+        "cf2d3775244c7c8d6bf46755"
+      ],
+      "definition": "Clusters describing the analytical concept 'Shut-Off Reliability'."
+    },
+    {
+      "local_theme_name": "Sticking",
+      "member_cluster_ids": [
+        "86f3d8ff01b1f5542079be21"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sticking'."
+    },
+    {
+      "local_theme_name": "Storage Duration",
+      "member_cluster_ids": [
+        "42c007226d35e1665b4807bb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage Duration'."
+    },
+    {
+      "local_theme_name": "Ice Bin Management",
+      "member_cluster_ids": [
+        "cd56039c01192e45054d6055"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bin Management'."
+    },
+    {
+      "local_theme_name": "Ice Bin Size",
+      "member_cluster_ids": [
+        "c8b1cf090d46d390c17acb93"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bin Size'."
+    },
+    {
+      "local_theme_name": "Ice Insulation",
+      "member_cluster_ids": [
+        "f953e71faee3435c494420f5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Insulation'."
+    },
+    {
+      "local_theme_name": "Ice Storage Capacity",
+      "member_cluster_ids": [
+        "46c49fd2d2e71ad607bb486a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Storage Capacity'."
+    },
+    {
+      "local_theme_name": "Ice Temperature",
+      "member_cluster_ids": [
+        "0e7d013144b2d217cae52b3f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Temperature'."
+    },
+    {
+      "local_theme_name": "Ice Type",
+      "member_cluster_ids": [
+        "2e840350279031af1f3419c0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Type'."
+    },
+    {
+      "local_theme_name": "Ice_Clumping",
+      "member_cluster_ids": [
+        "4e300563deb1fa93e463b650"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice_Clumping'."
+    },
+    {
+      "local_theme_name": "Insulation",
+      "member_cluster_ids": [
+        "eb6f71b2df4a538def65957e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Insulation'."
+    },
+    {
+      "local_theme_name": "Sensor Blocking",
+      "member_cluster_ids": [
+        "77d6279b784ae6bfeac54c69"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sensor Blocking'."
+    },
+    {
+      "local_theme_name": "Storage Requirement",
+      "member_cluster_ids": [
+        "9cc329a025560ccdafdcac9c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage Requirement'."
+    },
+    {
+      "local_theme_name": "Storage Temperature",
+      "member_cluster_ids": [
+        "aa3e4604a4e6f40c8b2dadef"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage Temperature'."
+    },
+    {
+      "local_theme_name": "Tray Cooling",
+      "member_cluster_ids": [
+        "f0c5a912e3197e95d53e4bdc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Cooling'."
+    },
+    {
+      "local_theme_name": "Tray Freezing",
+      "member_cluster_ids": [
+        "ec194db00116f53e17bcf8b6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Freezing'."
+    },
+    {
+      "local_theme_name": "Water Reservoir Capacity",
+      "member_cluster_ids": [
+        "92152644369c20e4f7ff1159"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Reservoir Capacity'."
+    }
+  ]
+}

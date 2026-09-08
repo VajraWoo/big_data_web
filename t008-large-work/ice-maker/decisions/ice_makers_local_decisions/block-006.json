@@ -1,0 +1,86 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-006",
+  "local_themes": [
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "3383b55d1b105420e9029ae1",
+        "a73c736d03537035c5423c27",
+        "8b872abd4e886e1ff3cbab3e",
+        "92fe8914747ede0c4e20a616",
+        "9250227a18e09bd06d31ea30",
+        "e151fa6e6b60b43b506afd3e",
+        "0de639816583409c5f9d24e6",
+        "220633e198c87913a1385e05",
+        "82786f19e929c0291d74bb22",
+        "deaffcd54eecdda155d83eb8",
+        "48ff31e72ef8d76d67f496bc",
+        "de6d28a344ea98345a10b61a",
+        "4f95955387526e92168294e0",
+        "e06ccac229c147752fb899c5",
+        "509824cab80835f1958515f8"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Motor Durability",
+      "member_cluster_ids": [
+        "55c55eead0943bb67a1831a1",
+        "c5f9782908b0fa1b78106c5c",
+        "832ff52a1763f46632043579"
+      ],
+      "definition": "Clusters describing the analytical concept 'Motor Durability'."
+    },
+    {
+      "local_theme_name": "Lid Durability",
+      "member_cluster_ids": [
+        "2639da789d99979a3729574b",
+        "5359c511660aa2c5ce4bc995"
+      ],
+      "definition": "Clusters describing the analytical concept 'Lid Durability'."
+    },
+    {
+      "local_theme_name": "Plastic Durability",
+      "member_cluster_ids": [
+        "24e66ff4bcdec486db76f4dd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Plastic Durability'."
+    },
+    {
+      "local_theme_name": "Product condition",
+      "member_cluster_ids": [
+        "3e9165f655600efaf1a6d3b0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product condition'."
+    },
+    {
+      "local_theme_name": "Coating Durability",
+      "member_cluster_ids": [
+        "3664554e18b6b000fc36e784"
+      ],
+      "definition": "Clusters describing the analytical concept 'Coating Durability'."
+    },
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "9a9511abbae4e99e63e430ca"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Rust",
+      "member_cluster_ids": [
+        "1b29fbf979e11a97849acc29"
+      ],
+      "definition": "Clusters describing the analytical concept 'Rust'."
+    },
+    {
+      "local_theme_name": "Teflon Coating Durability",
+      "member_cluster_ids": [
+        "d19d911bbcb0d217d94882da"
+      ],
+      "definition": "Clusters describing the analytical concept 'Teflon Coating Durability'."
+    }
+  ]
+}

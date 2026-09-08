@@ -1,0 +1,385 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-003",
+  "local_themes": [
+    {
+      "local_theme_name": "Leakage",
+      "member_cluster_ids": [
+        "ba700692cebd3f5c7ca68ee0",
+        "23ecef2593cda5b95b1b5624",
+        "c2b0e212958d0b9f78fe9c22",
+        "f634d482fcac7d34dfa16eb6",
+        "6879d82502a2677a6162ae46",
+        "6f5da34478eabe6afbb0fc6d",
+        "fcb83a220bc83c2d0e36f40b",
+        "6ab6010a9f5eb20e8d0be172",
+        "3aa0bbed90b0215273564402",
+        "a8ee4249e9630954b458b816",
+        "57839234e9e7ec5a63796380",
+        "f3ae138496a3e15804fa7608",
+        "2183f5fa12be17dbc0a23a7d",
+        "3f3b2d6793f7d9ea59fc439b",
+        "5a610bdc173015a959833014",
+        "7ad5f12bc54edf224a631b3a"
+      ],
+      "definition": "Water leaking from the machine or connections."
+    },
+    {
+      "local_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "6e98f444e9c0cd60e474420d",
+        "c42a3b9b6a95cd010805d83d",
+        "6943c672bed033cc29736a43",
+        "6ef1018abf81e64c8a1053a6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Capacity'."
+    },
+    {
+      "local_theme_name": "Ice production speed",
+      "member_cluster_ids": [
+        "898a1d3c4edcec5b94dcd3ce",
+        "1bc32507c70679e5025da1b5",
+        "875f89c4e29672d1ac4dae1e"
+      ],
+      "definition": "How quickly the machine produces or replenishes ice."
+    },
+    {
+      "local_theme_name": "Water Pump Reliability",
+      "member_cluster_ids": [
+        "1649bf70808411e646dfc9d0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Pump Reliability'."
+    },
+    {
+      "local_theme_name": "Drainage",
+      "member_cluster_ids": [
+        "04d609cd3af4acce47ef36f9",
+        "d97793818567f1cc517ae37c",
+        "279c1d4c5dcf5953270c326b",
+        "1eedc803b7942e87255e7114"
+      ],
+      "definition": "Clusters describing the analytical concept 'Drainage'."
+    },
+    {
+      "local_theme_name": "Mold Growth",
+      "member_cluster_ids": [
+        "73d3e2eada12fe1201753fd3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mold Growth'."
+    },
+    {
+      "local_theme_name": "Water Consumption",
+      "member_cluster_ids": [
+        "934ecbb9756e59e483d50a92",
+        "c141c60fac6c63a7b576c795",
+        "f340f6ffc8a9ee83e9fd3c58"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Consumption'."
+    },
+    {
+      "local_theme_name": "Refilling Frequency",
+      "member_cluster_ids": [
+        "229b2f107cfa2ae2ca675c5e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refilling Frequency'."
+    },
+    {
+      "local_theme_name": "Refilling Ease",
+      "member_cluster_ids": [
+        "eec0d8eb609e913985d91194"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refilling Ease'."
+    },
+    {
+      "local_theme_name": "Installation",
+      "member_cluster_ids": [
+        "199349aa4a272d6be3770206"
+      ],
+      "definition": "Ease or difficulty of installing or connecting the machine."
+    },
+    {
+      "local_theme_name": "Side Tank",
+      "member_cluster_ids": [
+        "6b35122f2a09eecf0e35f1e1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Side Tank'."
+    },
+    {
+      "local_theme_name": "Water Quality",
+      "member_cluster_ids": [
+        "502e9011f36e95937c7e9fe3",
+        "9cff607f9a017ebedb1b019b",
+        "57f46003c1fafcf352eb3d57"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Quality'."
+    },
+    {
+      "local_theme_name": "Accessories",
+      "member_cluster_ids": [
+        "417de0833b202d5511962ca4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessories'."
+    },
+    {
+      "local_theme_name": "Water Reservoir Size",
+      "member_cluster_ids": [
+        "01e1d2e5f55f712aea7ea151"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Reservoir Size'."
+    },
+    {
+      "local_theme_name": "Reservoir Size",
+      "member_cluster_ids": [
+        "967b168bb4b8987a40517ed4",
+        "c0f6dabc2a99134f3db4ef50"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reservoir Size'."
+    },
+    {
+      "local_theme_name": "Filling Time",
+      "member_cluster_ids": [
+        "9f8549a46ea83a4abdff9861"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Time'."
+    },
+    {
+      "local_theme_name": "Refill Frequency",
+      "member_cluster_ids": [
+        "9091557dcb6761d9605a529b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Frequency'."
+    },
+    {
+      "local_theme_name": "Water Dripping",
+      "member_cluster_ids": [
+        "a6e4bda4e5ab06c9b0be064b",
+        "a32c08b086cbf2de1ca17961"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Dripping'."
+    },
+    {
+      "local_theme_name": "Water Intake",
+      "member_cluster_ids": [
+        "7e410775b03642c6c4547351"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Intake'."
+    },
+    {
+      "local_theme_name": "Water Line Connection",
+      "member_cluster_ids": [
+        "d1e9c77413b3320106958640"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Line Connection'."
+    },
+    {
+      "local_theme_name": "Refilling Requirement",
+      "member_cluster_ids": [
+        "e72f5ee94d3aba32a964a1e8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refilling Requirement'."
+    },
+    {
+      "local_theme_name": "Clogging",
+      "member_cluster_ids": [
+        "69e3274c7e2ec2643e755f4c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Clogging'."
+    },
+    {
+      "local_theme_name": "Water Requirement",
+      "member_cluster_ids": [
+        "b29cf479e397bd799889da77"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Requirement'."
+    },
+    {
+      "local_theme_name": "Water Quality Requirement",
+      "member_cluster_ids": [
+        "d74b59a2484dbc55e76901c7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Quality Requirement'."
+    },
+    {
+      "local_theme_name": "Water Pumping",
+      "member_cluster_ids": [
+        "22debf44282a1489ad0328f4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Pumping'."
+    },
+    {
+      "local_theme_name": "Water filling",
+      "member_cluster_ids": [
+        "694c13c4f1c781a3ba526f59"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water filling'."
+    },
+    {
+      "local_theme_name": "Machine size",
+      "member_cluster_ids": [
+        "ab84f828f489c5690966a4a3"
+      ],
+      "definition": "Physical dimensions or compactness of the appliance."
+    },
+    {
+      "local_theme_name": "Refill Speed",
+      "member_cluster_ids": [
+        "83bc649bc2a742af8f8bb21d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Speed'."
+    },
+    {
+      "local_theme_name": "Filling Tray",
+      "member_cluster_ids": [
+        "fb7cf9e040e57fc98cdde135"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Tray'."
+    },
+    {
+      "local_theme_name": "Water Retention",
+      "member_cluster_ids": [
+        "eb43ed8db7a8c4556fb1d011"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Retention'."
+    },
+    {
+      "local_theme_name": "Filling Ease",
+      "member_cluster_ids": [
+        "8f0c2967fbcf2ae741cdc3f0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Ease'."
+    },
+    {
+      "local_theme_name": "Water Refilling Convenience",
+      "member_cluster_ids": [
+        "a580a829c6389cb4111dcfe2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Refilling Convenience'."
+    },
+    {
+      "local_theme_name": "Filling",
+      "member_cluster_ids": [
+        "f9acf1b14dd8e22742845824"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling'."
+    },
+    {
+      "local_theme_name": "Water Capacity",
+      "member_cluster_ids": [
+        "629d4e3f2e104c6386609cc5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Capacity'."
+    },
+    {
+      "local_theme_name": "Water Tank Capacity",
+      "member_cluster_ids": [
+        "e167ca9e2a3e5a5f4882b055"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Tank Capacity'."
+    },
+    {
+      "local_theme_name": "Clumping",
+      "member_cluster_ids": [
+        "d426e7ea714887533d97527e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Clumping'."
+    },
+    {
+      "local_theme_name": "Design",
+      "member_cluster_ids": [
+        "f606ec962e1e00d5fc6e8afd"
+      ],
+      "definition": "Design features or layout of the appliance."
+    },
+    {
+      "local_theme_name": "Overflowing",
+      "member_cluster_ids": [
+        "48b854181f075c6bb66ac6c8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Overflowing'."
+    },
+    {
+      "local_theme_name": "Water Filling Ease",
+      "member_cluster_ids": [
+        "dc856d58161602214bd30700"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Filling Ease'."
+    },
+    {
+      "local_theme_name": "Water Flow",
+      "member_cluster_ids": [
+        "94de7ed944a82406395e6909"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Flow'."
+    },
+    {
+      "local_theme_name": "Coolant Leak",
+      "member_cluster_ids": [
+        "f22d19f2c06aac1c044a7552"
+      ],
+      "definition": "Clusters describing the analytical concept 'Coolant Leak'."
+    },
+    {
+      "local_theme_name": "Emptying Frequency",
+      "member_cluster_ids": [
+        "a0af12030cf10e5fb108fb60"
+      ],
+      "definition": "Clusters describing the analytical concept 'Emptying Frequency'."
+    },
+    {
+      "local_theme_name": "Filling Process",
+      "member_cluster_ids": [
+        "3db2e86f05ba9f9e0543b411"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Process'."
+    },
+    {
+      "local_theme_name": "Ice production capacity",
+      "member_cluster_ids": [
+        "80a0685592b6dc159cda6757"
+      ],
+      "definition": "Amount of ice the machine can produce or hold over a period."
+    },
+    {
+      "local_theme_name": "Refill Effort",
+      "member_cluster_ids": [
+        "cd9f2a9eae4d3c89695e11b7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Effort'."
+    },
+    {
+      "local_theme_name": "Reservoir Cleanliness",
+      "member_cluster_ids": [
+        "8dd1023d7ca39184c6b0c424"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reservoir Cleanliness'."
+    },
+    {
+      "local_theme_name": "Reservoir Design",
+      "member_cluster_ids": [
+        "6c00fffb8fb3a386f2509af4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reservoir Design'."
+    },
+    {
+      "local_theme_name": "Water Efficiency",
+      "member_cluster_ids": [
+        "039bf71525b45baf1a3c768e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Efficiency'."
+    },
+    {
+      "local_theme_name": "Water Tank Size",
+      "member_cluster_ids": [
+        "e417204f4242d07c3e104153"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Tank Size'."
+    },
+    {
+      "local_theme_name": "Water_Recycling",
+      "member_cluster_ids": [
+        "1d4857f4e90f9ef82f3511c1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water_Recycling'."
+    }
+  ]
+}

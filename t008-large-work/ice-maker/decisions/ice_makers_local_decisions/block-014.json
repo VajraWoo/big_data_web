@@ -1,0 +1,175 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-014",
+  "local_themes": [
+    {
+      "local_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "5db944e0b0a3bed0d1c2a35b",
+        "7490101da6d4e3dd4ccaec96",
+        "586e2f83076a975748768c57",
+        "dfa1b415cbf57a75993923a3",
+        "6590aac9da85fa1932e5d59a",
+        "e1cc41be15ea773b8aebb006",
+        "0c6f075c0a94ec9686ff2bdd",
+        "c89f25aadc4f34a6dd4878aa",
+        "5b5b6eb48c69b7762500c3ea",
+        "0e5c458b532e682d2ffa3f34",
+        "b533e54d6b96b01bcd3dc700",
+        "d69b9d6743764663fd74b694",
+        "b52954c1d5c42646741bc026",
+        "b78aa5ffe38fa7abbe6244b6",
+        "52933498964aee145a9deace",
+        "8d8cd89407451c2b5f191e93",
+        "ba148041033b9e09d9331aae",
+        "e127277634b0d96b424547bd",
+        "d30862bfb0942464176e1ac0",
+        "c36e8dc555dc66e56e842982",
+        "04c58959f4f141fc4b17af47",
+        "275e69d1270ce48b81236fe6",
+        "d2aadf4b733cb0bff6d068b4",
+        "f68a82c17718a8e34316ea81",
+        "315c22baf5a68e4ef96d97e7",
+        "fc9c04fc7bd46941199b78f2",
+        "1c1d28fe82142816503ca11c",
+        "d7a599b24236a5b617a6dad8",
+        "527acf8bfd111847b7aa97d5",
+        "1b97d06eabdb5d120f8f34b7",
+        "b01d1321ca8464aa48a60ef1",
+        "a5030331dd1b4e5ecfe62032",
+        "30e8a71d0562462b76c9b79e",
+        "de25a68c2db6625fa429b721",
+        "491d1f8af85239b7cff1523b",
+        "a76c98a7a229ddacb542758e",
+        "35476c9e6bdf350fe3b4fbb7",
+        "2e07b607fde67d4399303568",
+        "12fd4008894cc8b80f877573",
+        "367c185d1397d28b6419340b",
+        "d3c254cf8742cb4f0c231fdf",
+        "df5face3e44f2d5b1e49bb4b",
+        "3a46576fdd2df15a598cf89b",
+        "02eeaadad93f99aee9e368b1",
+        "41ac0ef859dfa654daa6fcbf",
+        "ae2148de64faf8b509158b34",
+        "5f4f9d54d74b05bbf5c961de",
+        "5f077f7c9621d4cf9706f531",
+        "3196175f645165b725a3a247",
+        "126dee6ae07d6b0f254ee222",
+        "04da52fbaab354d59efebcc5",
+        "61f646b77330c45c6f7b2f40",
+        "b645a94c1ce883559902bf6b",
+        "d0bfd9fc8e6798e51eeb5d04",
+        "eb4993c0f3f8e3a87ef448f1",
+        "48c16c2bb539bc9aeb642115",
+        "f2dcab6bf4bfe312739298f8",
+        "3d4759d81729ab36a3baabfd",
+        "c17e55dbf5a5e05460d2d03e",
+        "0e656f687cf72d28f47d9b41",
+        "bf01feab1fd49449b7486b47",
+        "6214988a9317e5c640c7a407",
+        "2b8ee845a5f3fe162647c1dd",
+        "a6413aa263b26240206c9063",
+        "4a6eea5b2f2dd4a03da24a83",
+        "dacd476f9be69290cad04e77",
+        "b34a0d403604e1a6bcb89b9e",
+        "5266d68643fcae7a7a257022",
+        "765ca30b680dd437c7ddf26b",
+        "e4903662e86873447c2582c7",
+        "e955e02533dd513ac8d273b5",
+        "3aeaa4dad55c43f72c700030",
+        "1940dbcc615dfbf4d18e2da6",
+        "1371c170cc3e287bd0861b10",
+        "54ecd3c31905f0771e2fea8d",
+        "f20f6c3fbedf049137c493ae",
+        "9d41d84a16c3d061a41bf95f",
+        "9c27208a771eb7937519b2e6",
+        "340ba83baab89baf011e2339",
+        "ea21405eb73305aea9670268",
+        "55a3151e6b2cc295c542270c",
+        "49d51d488880ad55cc3406ff",
+        "00007a2009accd290e1c5cb6",
+        "b199b624166265973d380370",
+        "dedfafd185de9f983104aa74",
+        "3856759cca620f9f7923cddd",
+        "129290bea194d0ab2194bbfb",
+        "018622347121c9750eb06f13",
+        "4ac2c486435637cb5e064478",
+        "7fb8422ef6d9bc88490f8d3f",
+        "2e8122bfa3fb3548cdc6b1d0",
+        "51da7a1de769aa5e90c3988b",
+        "1b00aac05f83d29205d0adbe",
+        "51165e22036b804805d0d8d8",
+        "27cbcd778fe924b883d530fa"
+      ],
+      "definition": "Perceived value relative to price or alternative options."
+    },
+    {
+      "local_theme_name": "Price",
+      "member_cluster_ids": [
+        "9f67a3ea1e95ee86b93ce798",
+        "ab205d8d908372448a94558c",
+        "50a5f830238b66e2cfbe670f",
+        "1e4624e55b2d13e424331bbe",
+        "43cf5aa177d4574ea56084d1",
+        "ab9977960e308031c75057d4",
+        "7e2a7d0d623ab6ff7addec7b",
+        "c7a268a8282e22ced3bf2ad2",
+        "cd4c0d9926ee70e4fa77ef8f",
+        "7e9cc9fb9ad80c82d626dde9",
+        "3a84ba4716140131e3585daa",
+        "d4dfb9f589c9027fc781c350",
+        "a775845b39c81c3bfefe8ed4",
+        "d44a121a298dc4e1afc9d1d6",
+        "2f71ac07cb0d63b33f4732b9",
+        "d9a50e3037276a43fa374d0e",
+        "c925b1e689d1f9d862d91d2b",
+        "cc49b0c36bbc88bb2be5ccc9",
+        "3044ca0770f1c06f55210323"
+      ],
+      "definition": "Purchase price or affordability of the ice maker."
+    },
+    {
+      "local_theme_name": "Gift Value",
+      "member_cluster_ids": [
+        "68a71de7bca6444f54564480"
+      ],
+      "definition": "Clusters describing the analytical concept 'Gift Value'."
+    },
+    {
+      "local_theme_name": "Product Value",
+      "member_cluster_ids": [
+        "012bed80ab4d4fcb38ac9208",
+        "c12aed68bd8cb6fba574ba53"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Value'."
+    },
+    {
+      "local_theme_name": "Entertainment Value",
+      "member_cluster_ids": [
+        "a529567893dfdb40be8eb948"
+      ],
+      "definition": "Clusters describing the analytical concept 'Entertainment Value'."
+    },
+    {
+      "local_theme_name": "Solution Value",
+      "member_cluster_ids": [
+        "144ee89dd509742881bbf3fc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Solution Value'."
+    },
+    {
+      "local_theme_name": "Worthiness",
+      "member_cluster_ids": [
+        "612066b0a889be0a422d2a20"
+      ],
+      "definition": "Clusters describing the analytical concept 'Worthiness'."
+    },
+    {
+      "local_theme_name": "Replacement Value",
+      "member_cluster_ids": [
+        "957bdeeafda165bc955c6c5b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Value'."
+    }
+  ]
+}

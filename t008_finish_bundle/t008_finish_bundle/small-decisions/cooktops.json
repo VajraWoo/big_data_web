@@ -1,0 +1,104 @@
+{
+  "product_category": "Cooktops",
+  "themes": [
+    {
+      "canonical_theme_name": "Overall cooking performance",
+      "member_cluster_ids": [
+        "9e6d4d5e00e760cdbb4df994",
+        "2e9d8c6846c4732ac5d2d167",
+        "4bc9acdf391b4295fb507dad",
+        "7962e2a450303a9be88bbe05"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Overall cooking performance'."
+    },
+    {
+      "canonical_theme_name": "Heating / cooking speed",
+      "member_cluster_ids": [
+        "70eb16c309aa1317471ceaae",
+        "a09948ec1b2bd95457d76e62",
+        "3d8d676622e15692492144a9",
+        "5cb5f1f45a7f198fcb48a63d"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Heating / cooking speed'."
+    },
+    {
+      "canonical_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "a26f63a06ca63f9f1b3f158d",
+        "ce57baeaab7590a01d1b42fe"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Temperature control'."
+    },
+    {
+      "canonical_theme_name": "Cleanability",
+      "member_cluster_ids": [
+        "80c5f9277e76fd4bae2f02e1"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Cleanability'."
+    },
+    {
+      "canonical_theme_name": "Noise level",
+      "member_cluster_ids": [
+        "d8858d9b2fc7d6f3233ff30f",
+        "839ba5f437649db9e73f1cd6"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Noise level'."
+    },
+    {
+      "canonical_theme_name": "Product quality",
+      "member_cluster_ids": [
+        "c7dd1ad5a908fc4aeb1885e2"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Product quality'."
+    },
+    {
+      "canonical_theme_name": "Ease of use",
+      "member_cluster_ids": [
+        "72022027644bf8d9f10020ac"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Ease of use'."
+    },
+    {
+      "canonical_theme_name": "Appearance",
+      "member_cluster_ids": [
+        "eddeea3f31e5bc52d4979e9e"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Appearance'."
+    },
+    {
+      "canonical_theme_name": "Durability",
+      "member_cluster_ids": [
+        "5cc9535fdc4f939fe9f27143"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Durability'."
+    },
+    {
+      "canonical_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "5326f879f60bed580a7f301e"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Reliability'."
+    },
+    {
+      "canonical_theme_name": "Build quality",
+      "member_cluster_ids": [
+        "b45cffa1a5927ca8dbdb6904"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Build quality'."
+    },
+    {
+      "canonical_theme_name": "Energy efficiency",
+      "member_cluster_ids": [
+        "e74198e57cd479f1765daf07"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Energy efficiency'."
+    },
+    {
+      "canonical_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "25fad8d050af63b8274f8736"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Value for money'."
+    }
+  ]
+}

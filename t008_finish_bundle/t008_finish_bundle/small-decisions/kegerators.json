@@ -1,0 +1,62 @@
+{
+  "product_category": "Kegerators",
+  "themes": [
+    {
+      "canonical_theme_name": "Assembly",
+      "member_cluster_ids": [
+        "03daef600cdaa5fcf5205174"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Assembly'."
+    },
+    {
+      "canonical_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "5f21f5010fc47a5be6c48ece"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Overall performance'."
+    },
+    {
+      "canonical_theme_name": "Cooling performance",
+      "member_cluster_ids": [
+        "ddf657a3c1e5c22286aa0292"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Cooling performance'."
+    },
+    {
+      "canonical_theme_name": "Product quality",
+      "member_cluster_ids": [
+        "fc942a64292324d2b40d927f",
+        "fb4a421a71a1c5a4dcd36ffe"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Product quality'."
+    },
+    {
+      "canonical_theme_name": "Setup",
+      "member_cluster_ids": [
+        "6a96f2a77b8c2dfb770bc4a5"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Setup'."
+    },
+    {
+      "canonical_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "a6147a882a359f0013422116"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Value for money'."
+    },
+    {
+      "canonical_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "ada615c2cc01a11bf4377c09"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Functionality'."
+    },
+    {
+      "canonical_theme_name": "Overall satisfaction",
+      "member_cluster_ids": [
+        "ebefe51478edfe210b87c629"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Overall satisfaction'."
+    }
+  ]
+}

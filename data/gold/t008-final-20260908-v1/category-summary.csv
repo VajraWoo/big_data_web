@@ -1,0 +1,14 @@
+﻿product_category,first_level_cluster_count,final_theme_count,mapping_count,coverage_exact_once
+Beverage Refrigerators,143,52,143,True
+Chest Freezers,78,32,78,True
+Cooktops,21,13,21,True
+Countertop Dishwashers,256,68,256,True
+Dryers,56,28,56,True
+Ice Makers,2342,258,2342,True
+Kegerators,9,8,9,True
+Portable Dryers,102,41,102,True
+Portable Washers,1260,199,1260,True
+Range Hoods,495,95,495,True
+Refrigerators,55,25,55,True
+Upright Freezers,143,50,143,True
+Washers,32,18,32,True

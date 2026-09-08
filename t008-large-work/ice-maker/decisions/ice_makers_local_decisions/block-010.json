@@ -1,0 +1,182 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-010",
+  "local_themes": [
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "65ca0d821b37138717107999",
+        "93e59b86fb0ebe5cdca61f6b",
+        "90195b5446476b7bb4c4b232",
+        "59d404b8c841bf71b72e3a96",
+        "21378838b975bcc40b942f76",
+        "3cb3b72972846513716f7df3",
+        "0c82e39808dfb0ad4b44acae",
+        "57cc0147b00203d325304c89",
+        "81abd715376f70fa40256d3a",
+        "de5ebf584726139411e88c06",
+        "6cea314bc105840750915fc2",
+        "d6d22900f26a59fa648faf21",
+        "e39e8f44674936b4bd06bf9e",
+        "7675afc7ab605d9aa517da19",
+        "f0d28c52dbeba35211735608",
+        "d6f87e7ad264ca0aca293e1a",
+        "38e697dd7ec2c963d95c9d5c",
+        "d8e0ebe509114470079281f5",
+        "1144ae8ba99386c27ac0d50c",
+        "c527d51d8e560b5ec5087fc0",
+        "46760579e2ccaaa6de5aef31",
+        "f7960f49f84b1ed38e2a36c7",
+        "3649180c7c4eb4421c4e1c29",
+        "d0c5fa74ff7f29557c5791ed",
+        "7b1f7943d6d79867f295eccc",
+        "818e8772d638ea80a729b104",
+        "c17b3eea3bfe9828b9d61908",
+        "8c233b5ea884d7ba46fbd106",
+        "a343819716d718251ef76ddc",
+        "e666e9802d2dac43457b4531",
+        "cda149f9051091702a95f51e",
+        "7136d8c4cf308a39767f6c8d",
+        "2d6c12574ac9b78d0d5cfc97",
+        "e078c83bbb3725e3011eb4aa",
+        "27be5d487bafd9efb4c39d37",
+        "30d925864b47514de20a1e15",
+        "e8631e779667cc484e3d233d",
+        "21158963b47d602dcc9a6ec0",
+        "819d300ef93934c4c3e35a00",
+        "b8f339319a475d65379a3abd",
+        "494f2554fed9cbd845a34c69",
+        "f02d5ea96085ef2d77674b53",
+        "57b5f201256dde784f9000aa"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Compatibility",
+      "member_cluster_ids": [
+        "fc7e9d725d5f9d58357e563b",
+        "3a0c41e41bb7f7aa4cd543c7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compatibility'."
+    },
+    {
+      "local_theme_name": "Troubleshooting Effectiveness",
+      "member_cluster_ids": [
+        "52cecf6521adea0e1c81a134"
+      ],
+      "definition": "Clusters describing the analytical concept 'Troubleshooting Effectiveness'."
+    },
+    {
+      "local_theme_name": "Power_On",
+      "member_cluster_ids": [
+        "fde90cd3a478fcc028c3b11e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Power_On'."
+    },
+    {
+      "local_theme_name": "Problems",
+      "member_cluster_ids": [
+        "3b425594ca86496aaa9f0cdc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Problems'."
+    },
+    {
+      "local_theme_name": "Usage",
+      "member_cluster_ids": [
+        "a2b8d2647b1a508f43079161"
+      ],
+      "definition": "Clusters describing the analytical concept 'Usage'."
+    },
+    {
+      "local_theme_name": "Reset Functionality",
+      "member_cluster_ids": [
+        "5cc7d16fee3cc1e6f755b5ac"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reset Functionality'."
+    },
+    {
+      "local_theme_name": "Reset Procedure",
+      "member_cluster_ids": [
+        "a9ecdb4b40a9f4423de4d246"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reset Procedure'."
+    },
+    {
+      "local_theme_name": "Button Functionality",
+      "member_cluster_ids": [
+        "4a7860c4e79c6996efb22b85"
+      ],
+      "definition": "Clusters describing the analytical concept 'Button Functionality'."
+    },
+    {
+      "local_theme_name": "Problem Resolution",
+      "member_cluster_ids": [
+        "f139bb9316d1e401da6ce724"
+      ],
+      "definition": "Clusters describing the analytical concept 'Problem Resolution'."
+    },
+    {
+      "local_theme_name": "Product Functionality",
+      "member_cluster_ids": [
+        "8cf57b93982ade11df41fb9a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Functionality'."
+    },
+    {
+      "local_theme_name": "Restart Functionality",
+      "member_cluster_ids": [
+        "77a7f7cbf68bb44fcd267a62"
+      ],
+      "definition": "Clusters describing the analytical concept 'Restart Functionality'."
+    },
+    {
+      "local_theme_name": "Use",
+      "member_cluster_ids": [
+        "69f4e87e642350cc08fa013d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Use'."
+    },
+    {
+      "local_theme_name": "Accessibility",
+      "member_cluster_ids": [
+        "c0807bbd0147ab06860a5bf9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessibility'."
+    },
+    {
+      "local_theme_name": "Compressor Operation",
+      "member_cluster_ids": [
+        "cb0551ab11f2d5c9d202a6a0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compressor Operation'."
+    },
+    {
+      "local_theme_name": "Lights Functionality",
+      "member_cluster_ids": [
+        "853027289c44353151ab011b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Lights Functionality'."
+    },
+    {
+      "local_theme_name": "Malfunction",
+      "member_cluster_ids": [
+        "417634c1d99858b5a786ea37"
+      ],
+      "definition": "Clusters describing the analytical concept 'Malfunction'."
+    },
+    {
+      "local_theme_name": "Motor Function",
+      "member_cluster_ids": [
+        "a8fce8203441e95dbb0f1264"
+      ],
+      "definition": "Clusters describing the analytical concept 'Motor Function'."
+    },
+    {
+      "local_theme_name": "Power On",
+      "member_cluster_ids": [
+        "040fad3ff962d0bf50341235"
+      ],
+      "definition": "Clusters describing the analytical concept 'Power On'."
+    }
+  ]
+}

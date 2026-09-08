@@ -1,0 +1,177 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-001",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice taste",
+      "member_cluster_ids": [
+        "871da38d3a962c24ea7e497c",
+        "e788a4cd61fc9844114a596d",
+        "d87c07bafecf90471f028f87",
+        "fc9695b4aaee712d8432381e",
+        "821725b92c7fb95967b9a730",
+        "4ebd910174ceb08c7df715ee",
+        "4d99d176f806cce6a916f1f6",
+        "79b736ef5c98142cbd5b5d38",
+        "32da3007d26e7fb13ec00980",
+        "e13ebf9f18a16ee46c7d072c",
+        "b584135836aff75782ae5e84",
+        "a86a35e0dd00a46a89423194",
+        "a5cf58591a55a15b883cb9a7",
+        "4cddc62f4456ab9b018c5386",
+        "ccf4d199d977a5ff32986117",
+        "5abff3f12564ccb9540885f5",
+        "c3b00fbf5f21cc0da0c968e1",
+        "428ee7a22b55e6f9b0519574",
+        "1de075e6871b08ba4f5f2846",
+        "36ca673d7c6095dd77329fb9",
+        "1f9d5904030689cac9f482ba",
+        "b11a98159cd1831367d7e319",
+        "684ebc4227849c6eda6d62c9",
+        "f65b584d60af1a042689945a",
+        "cf5f8933e02edb49bf084c5e",
+        "32007b20a205f179d2967168",
+        "b908211cf476aa948a8baa10",
+        "0a2321dd36d065c9eab2aa65",
+        "814179e43547810fa32fda0d",
+        "5978d6411a513fe7d54d9138",
+        "adef4a78709ae9e6a49761a5",
+        "c2b4b2dd29069bab1a92b566",
+        "ea40ceb1de4505da9aaf442e",
+        "723d7f61d437f8372cd902d9",
+        "a110da0b9daefc9eafe0139e",
+        "e975adb26b882baa16d8b090",
+        "490e783fdbdce20016fe287e",
+        "f35786125747c6c1b510503a",
+        "ca42a4497af120643177c649",
+        "9916cab08837b848aaf95cb8",
+        "07b3282248362ccfb085fe11",
+        "2818b31dc199e75ade0f81a2",
+        "a21118d7e12e8598b190f318",
+        "ef3660f83f46677114ee8085",
+        "914336533c4e879748ee4ad2",
+        "3b8df4e284d04ab8222a2201",
+        "0e271ae0d6bc483df173a610"
+      ],
+      "definition": "Taste or flavor of produced ice."
+    },
+    {
+      "local_theme_name": "Ice texture / chewability",
+      "member_cluster_ids": [
+        "7d0843fa016f4d8dc25677fd",
+        "71b5b5361e033d4b6a1c2165",
+        "dd820a54f3442c96d6129678",
+        "58d18ef67b0bbaf661eb726e",
+        "82eb8e410eb426b73c7b5fb9",
+        "8ea0dbfbdf0439a584e47ac8",
+        "937874c5e7ef0b1254d14cad",
+        "e9e12560afb9b072c2e10511",
+        "38ba91c169662babc26bed0c",
+        "be978b31625fcfa34ffa91a6",
+        "75de2fc7baf9e4b0894ecb4c",
+        "c467a4a7af9a9963072152c2",
+        "6a878c0b401cdd909e8c1a1e",
+        "bd4e9dfa2812359f465d735b",
+        "dbb73c8c71fce1b2d103d17c",
+        "276f22010fef8ae0b8c9d22e",
+        "0a7b7b9cadeff142d59c7992",
+        "9b7657f940e2570dde5a9628",
+        "1be2438bab4c44fa58b252aa",
+        "2d9431a6f8bd185d32aaba77",
+        "204ab70066fbca283f27c329",
+        "d1178445de69532f009bb302",
+        "4432c2f3670f5992ea147dc6",
+        "90b2b5015685ef9e3fb9e847",
+        "ce58d113d9fe84c525d49965"
+      ],
+      "definition": "Texture, softness, hardness, or chewability of the ice."
+    },
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "000a51985e969d21c93e695f",
+        "be950c625b9f3b6459c3d033",
+        "cde0b035cb5b464a1697e805",
+        "ad28df507402301561bdbf2d",
+        "03ac46c29a2c6966b12859b3",
+        "6ddeecb90b3fe2b946a60a38",
+        "b3d77c78b92a1b769797ea0e"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Flavor",
+      "member_cluster_ids": [
+        "811626b4def0ff299ee121e3",
+        "71bcff3b8be31f3888678b10",
+        "5d823d14b725a60822561f2e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Flavor'."
+    },
+    {
+      "local_theme_name": "Ice Cube Quality",
+      "member_cluster_ids": [
+        "2561fce2e947d26878b8f74c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Quality'."
+    },
+    {
+      "local_theme_name": "Ice clarity",
+      "member_cluster_ids": [
+        "f86599328f5f4d918b85522c",
+        "b0aebafb226ae9b47f7fd91e"
+      ],
+      "definition": "Visual clarity or cloudiness of produced ice."
+    },
+    {
+      "local_theme_name": "Water Taste",
+      "member_cluster_ids": [
+        "19709216f9ce7f7b612034bf",
+        "e1d2e20aa571d28a40d4b1d5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Taste'."
+    },
+    {
+      "local_theme_name": "Appearance",
+      "member_cluster_ids": [
+        "6143e39c942a79d352a79f4c"
+      ],
+      "definition": "Visual appearance of the appliance."
+    },
+    {
+      "local_theme_name": "Odor",
+      "member_cluster_ids": [
+        "4b08957f182161fee0e07fdf"
+      ],
+      "definition": "Clusters describing the analytical concept 'Odor'."
+    },
+    {
+      "local_theme_name": "Crunchability",
+      "member_cluster_ids": [
+        "f5734e568a38b0c0a8d1e701"
+      ],
+      "definition": "Clusters describing the analytical concept 'Crunchability'."
+    },
+    {
+      "local_theme_name": "Bite-Size Ice Texture",
+      "member_cluster_ids": [
+        "5029b2ceaec73d2bdfb4b663"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bite-Size Ice Texture'."
+    },
+    {
+      "local_theme_name": "Crunchiness",
+      "member_cluster_ids": [
+        "01b648190487620b67e77e30"
+      ],
+      "definition": "Clusters describing the analytical concept 'Crunchiness'."
+    },
+    {
+      "local_theme_name": "Taste Improvement",
+      "member_cluster_ids": [
+        "37e9278c89de23344d47a7a2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Taste Improvement'."
+    }
+  ]
+}

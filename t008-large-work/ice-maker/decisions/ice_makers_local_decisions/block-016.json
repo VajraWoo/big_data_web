@@ -1,0 +1,486 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-016",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "d10dd93c673a0585d9a17abc",
+        "9aa285c3f2d7e56a061654e1",
+        "3be36ddcf7e205048a9eb0bd",
+        "a77a5c38cbcb1fa69ca2d82a",
+        "ee6d4ba82e56bab4837182fa",
+        "8aeabafb8865fc90b3e2e46d",
+        "cf6675981aeda165ced840e0",
+        "695a2c2ec95ebc293703eb43",
+        "b7698aa8e4f7677506834c50",
+        "1a006c0ef4d3209ac83cd431",
+        "b55d05d5350503c38e0e9d0a",
+        "0164a06ee48dc3a699b40d36",
+        "ede11d3ca111a75628204dfb",
+        "6d54013228cb9ee924875434",
+        "e8507f4b726046be44fc7136",
+        "94b524f4ded0e6c0155911d1",
+        "bf2db8de33fda4f03e3cadc0",
+        "9b5286a6c576528276e3199e",
+        "3a6ae30428e36e5275945a1e",
+        "1893f7657224a87df7007100",
+        "3fa0e1c9a63f7df25b57679b",
+        "71bdc3555b6af982e1197574",
+        "45a0dd298279e80e205b50db",
+        "d097297dd2fff1f5be6bda7c",
+        "0476108e2775ed7a395c9f91",
+        "bed5b683246cc64ac41b2ea5",
+        "7efbef8727b0802e21880492",
+        "87de558dc8dd0e909aeabb55",
+        "b4305c5b92d83323af4154ea",
+        "026c93ce0b0cf6a3212fbb1d",
+        "7218b534dd910bfd77a40428",
+        "6d78860245a5277e37be116a",
+        "63c31407d562e470a523de4a",
+        "9631c70f396ae1d848977754",
+        "28e7141f9cc61466d2d7e14a",
+        "a640d47d43cea7b7b374de27",
+        "848a0f89f8ca58ada07dd147",
+        "1bb47c7a59eae2965e7abb64",
+        "f6aaf5df8ecbae07baa1a31b",
+        "c717b16eb58fb9637d57fc3d",
+        "686b2e0f399f72a5d186909e",
+        "ba70acbb9e979e1d58105cdc",
+        "2cf719379bec56a0029fb0c8",
+        "e9b04f5cef112c4137c693ce",
+        "4cc820d2b8f84c3e9639aff7",
+        "c73d3f99156adab1ade877ac",
+        "56a5663ca59a4bc5e152142d"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Ice cube size",
+      "member_cluster_ids": [
+        "e0cd02d1255712529b20ddaa",
+        "8c1f16769620cc8bca09b47f",
+        "c403472858b6065a69998f84",
+        "0c77a4b1787f117836dc8001",
+        "c80a97573216c25b94659ef5",
+        "29ca6e5398bbe328db928362",
+        "f96aecd61f801e0bb44ae3bc",
+        "35eb50cdf965b4c6a17b40a0",
+        "a2ec3e3e7f6be0e603e468d6",
+        "f7fc2aa39de8008e91311a5b",
+        "2e81e847ad7bd6a65c99d778",
+        "16f7c5ab90a35ff4fb61367d",
+        "423af686fa8f5e5e2bf0e787",
+        "94645abe819236eb35995ead",
+        "6469d10b4a95c0c3a8f4d464",
+        "383f7d73df25847cc2d09ac7",
+        "f4ac481efa5e3f2ce1cafe86",
+        "00f9e76a0a3f4835997cdb7e",
+        "34db7e0d724b0a0d90e06f1e"
+      ],
+      "definition": "Physical size of produced ice cubes or nuggets."
+    },
+    {
+      "local_theme_name": "Ice texture / chewability",
+      "member_cluster_ids": [
+        "3232856e033ecb0e448b2ec8",
+        "39f0d744f365ac3ef9dba6cc",
+        "93a2bd54ae3dffebf3061f49",
+        "4daa67aa32263822c6c58282",
+        "16c8bd11eedea4df2550c731",
+        "da25fc50aafc52463c4e7b97",
+        "9a0ffbbd21d6c08a83bf594a",
+        "53cf06f720ffc48ac8026ef6",
+        "b34ae1c552f3a93bbf65067e",
+        "51742852aa00b0f0967654d3",
+        "e9a3898dea01e66ff0c828b6",
+        "82490f33c4b54ae621141b56",
+        "c48cbf003dbd1f4de97bb498",
+        "e5a9ed48ef692ed43387e264"
+      ],
+      "definition": "Texture, softness, hardness, or chewability of the ice."
+    },
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "a4057f21f42727223ba58617",
+        "03a4b55756e2e3d183f624ea",
+        "23f9390bd307daa681152976",
+        "94db019754659025d26a0388",
+        "5c12cb088d68f047b3400d5a"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Ice clarity",
+      "member_cluster_ids": [
+        "2379ef0f0014e6d5e0d16ffc",
+        "10eea3449fa7814bb737479f",
+        "945e8e277eadc80a9d526015",
+        "1d7458040f1d117d3d406400",
+        "af724027bc361bb956e96022",
+        "5cace1b09c3eb30e38e4f496",
+        "eaa6d453720aeb4636452e31",
+        "134b07d2aaf326cc9ba13bdd",
+        "7171a67276c254aa6dcb92ae"
+      ],
+      "definition": "Visual clarity or cloudiness of produced ice."
+    },
+    {
+      "local_theme_name": "Ice melting speed",
+      "member_cluster_ids": [
+        "c1ad2d1591cb4d8bf525da45",
+        "edac40048d0815e9795ef227",
+        "05e254ef77ff78d3cd796b88",
+        "573ac4965685eda4c0b707b6",
+        "b53654996c5f8003bee15405"
+      ],
+      "definition": "How quickly produced ice melts."
+    },
+    {
+      "local_theme_name": "Nugget Ice Quality",
+      "member_cluster_ids": [
+        "d20ee505cb4a2b9932966677"
+      ],
+      "definition": "Clusters describing the analytical concept 'Nugget Ice Quality'."
+    },
+    {
+      "local_theme_name": "Ice cube shape",
+      "member_cluster_ids": [
+        "9f92fab07e402fece133f5a4",
+        "b6e2d65184f872b70eb8e756",
+        "be0157a1f581942908e4122e",
+        "4f4d061c109a5f0746f34aa4",
+        "7277d098c1c7e81d592d5f32"
+      ],
+      "definition": "Shape or form of produced ice."
+    },
+    {
+      "local_theme_name": "Noise level",
+      "member_cluster_ids": [
+        "5be5ea20fc9c4e3f7c6ca7df"
+      ],
+      "definition": "Operating sound or fan/compressor noise."
+    },
+    {
+      "local_theme_name": "Ice Hardness",
+      "member_cluster_ids": [
+        "0ee3b0f668903772b785a255",
+        "3c1df63f8ce1143a81ff5b7f",
+        "4e006d69b2ad8847c6e7d42e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Hardness'."
+    },
+    {
+      "local_theme_name": "Ice Freshness",
+      "member_cluster_ids": [
+        "58e390a5f80d46976140579d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Freshness'."
+    },
+    {
+      "local_theme_name": "Ice Sticking",
+      "member_cluster_ids": [
+        "9753a2066837de625f3458af",
+        "f18b529d3b7fd3e8bed44987"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Sticking'."
+    },
+    {
+      "local_theme_name": "Ice cube durability",
+      "member_cluster_ids": [
+        "4be81990a8c5cd56ebf2a927",
+        "e6b226ec951e1d593d0b588a",
+        "adaf99f086377dbceaf6cb22",
+        "7998ce1626da6f27e4ef9f8b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice cube durability'."
+    },
+    {
+      "local_theme_name": "Ice Consistency",
+      "member_cluster_ids": [
+        "a84bfb265a7fc594d83248d9",
+        "185e143bb3a0c7b4de1a16c4",
+        "23c5b0b2e9ea7bc4af7e89bb",
+        "358f94869353369529a6b0be"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Consistency'."
+    },
+    {
+      "local_theme_name": "Ice Cube Durability",
+      "member_cluster_ids": [
+        "e1fe532432bb48bb4666d6c6",
+        "d0628b759f0f6cfe6a4031d5",
+        "f1e5b2d4fb543767ff3294e5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Durability'."
+    },
+    {
+      "local_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "c745ac40e469a4247d912851"
+      ],
+      "definition": "Perceived value relative to price or alternative options."
+    },
+    {
+      "local_theme_name": "Ice Thickness",
+      "member_cluster_ids": [
+        "40259f85ee104fa73569c1f2",
+        "5001d464d17532603358e794",
+        "0e200000536a91e23de74479"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Thickness'."
+    },
+    {
+      "local_theme_name": "Cube Quality",
+      "member_cluster_ids": [
+        "b2ffa065b7f5bb4b5e118d2a",
+        "e66bb7d80d9ce40b4acc29b6",
+        "a6442d9f8de047429726d79c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Quality'."
+    },
+    {
+      "local_theme_name": "Defects",
+      "member_cluster_ids": [
+        "e2796cf1a26b18c5f891d2e9",
+        "6c006d07f51fa3e949d2ad5c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Defects'."
+    },
+    {
+      "local_theme_name": "Cube Texture",
+      "member_cluster_ids": [
+        "34404722f00ec02770f918ce",
+        "e0019b534be16a0f6be35ef3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Texture'."
+    },
+    {
+      "local_theme_name": "Ice cube size options",
+      "member_cluster_ids": [
+        "53098723474ab570bdadd63d"
+      ],
+      "definition": "Availability or usefulness of selectable ice-size settings."
+    },
+    {
+      "local_theme_name": "Tray Durability",
+      "member_cluster_ids": [
+        "1fbd3c7f7209ad38591345c3",
+        "262d44a6812de239cd57d985"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Durability'."
+    },
+    {
+      "local_theme_name": "Consistency",
+      "member_cluster_ids": [
+        "f13b9a0f83d8c24d775d4c80",
+        "5c098818f79f6451c7cf88be"
+      ],
+      "definition": "Clusters describing the analytical concept 'Consistency'."
+    },
+    {
+      "local_theme_name": "Cubing",
+      "member_cluster_ids": [
+        "8d8b9217636902de06f9554c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cubing'."
+    },
+    {
+      "local_theme_name": "Sticking Together",
+      "member_cluster_ids": [
+        "509dfd6abe77931dfe2ddbfe"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sticking Together'."
+    },
+    {
+      "local_theme_name": "Ice availability",
+      "member_cluster_ids": [
+        "3a6c75b5386c897c7cf94e42"
+      ],
+      "definition": "Whether ice is readily available when needed."
+    },
+    {
+      "local_theme_name": "Ice retention",
+      "member_cluster_ids": [
+        "a213d78d6b46c41e2bdff578"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice retention'."
+    },
+    {
+      "local_theme_name": "Ice Cube Texture",
+      "member_cluster_ids": [
+        "d554477bd7a64d5b148af9aa"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Texture'."
+    },
+    {
+      "local_theme_name": "Freshness",
+      "member_cluster_ids": [
+        "df0cb3d5b1972952a8438a91"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freshness'."
+    },
+    {
+      "local_theme_name": "Ice Size Consistency",
+      "member_cluster_ids": [
+        "2bf8bd917d5b5cd142088eb7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Size Consistency'."
+    },
+    {
+      "local_theme_name": "Ice Melt Rate",
+      "member_cluster_ids": [
+        "2b68071124b717ff00e085c9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Melt Rate'."
+    },
+    {
+      "local_theme_name": "Mold Growth",
+      "member_cluster_ids": [
+        "4b15a6e740506030bfafe5a6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mold Growth'."
+    },
+    {
+      "local_theme_name": "Ice Freezing Behavior",
+      "member_cluster_ids": [
+        "d082c6526c5a3b6af40c5afe"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Freezing Behavior'."
+    },
+    {
+      "local_theme_name": "Cube Moisture",
+      "member_cluster_ids": [
+        "bdbec4f2db9f8e796d9c3389"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Moisture'."
+    },
+    {
+      "local_theme_name": "Ice Formation",
+      "member_cluster_ids": [
+        "e62e59918fb93caff8c99a81"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Formation'."
+    },
+    {
+      "local_theme_name": "Ice_Temperature",
+      "member_cluster_ids": [
+        "a8213f5c0c7e5c7607817f7f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice_Temperature'."
+    },
+    {
+      "local_theme_name": "Rust Quality",
+      "member_cluster_ids": [
+        "eac7a4f1cc53f9c02b89fd31"
+      ],
+      "definition": "Clusters describing the analytical concept 'Rust Quality'."
+    },
+    {
+      "local_theme_name": "Cube Clarity",
+      "member_cluster_ids": [
+        "af413b0b0e57aef50ea66e8d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Clarity'."
+    },
+    {
+      "local_theme_name": "Freezing Quality",
+      "member_cluster_ids": [
+        "973fb3ef517d6b6158f01a51"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Quality'."
+    },
+    {
+      "local_theme_name": "Ice Appearance",
+      "member_cluster_ids": [
+        "eaca611dbd8b2bd972150f82"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Appearance'."
+    },
+    {
+      "local_theme_name": "Ice Cube Clarity",
+      "member_cluster_ids": [
+        "4df5709bbdde561588f6f71f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Clarity'."
+    },
+    {
+      "local_theme_name": "Ice Cube Quality",
+      "member_cluster_ids": [
+        "621c577d6286716906b2c420"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Quality'."
+    },
+    {
+      "local_theme_name": "Ice Density",
+      "member_cluster_ids": [
+        "a22d2ee4b8721298781f1656"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Density'."
+    },
+    {
+      "local_theme_name": "Ice Longevity",
+      "member_cluster_ids": [
+        "3ffacf7f2b00366f3eaa8726"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Longevity'."
+    },
+    {
+      "local_theme_name": "Cleanability",
+      "member_cluster_ids": [
+        "f30caefcecc85f0d9df2f547"
+      ],
+      "definition": "Ease or effectiveness of cleaning the machine."
+    },
+    {
+      "local_theme_name": "Hollow Ice",
+      "member_cluster_ids": [
+        "8a5edd5c129f7d9815c521d6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Hollow Ice'."
+    },
+    {
+      "local_theme_name": "Ice Cube Hardness",
+      "member_cluster_ids": [
+        "e39cc79a41b560e71f1827b6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Hardness'."
+    },
+    {
+      "local_theme_name": "Ice Temperature",
+      "member_cluster_ids": [
+        "431ea237102fea593a8d0219"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Temperature'."
+    },
+    {
+      "local_theme_name": "Ice storage capacity",
+      "member_cluster_ids": [
+        "aa2cef68a10391363982d054"
+      ],
+      "definition": "Amount of produced ice the storage bin or basket can hold."
+    },
+    {
+      "local_theme_name": "Insulation",
+      "member_cluster_ids": [
+        "7208371261752780174b9948"
+      ],
+      "definition": "Clusters describing the analytical concept 'Insulation'."
+    },
+    {
+      "local_theme_name": "Metal Debris",
+      "member_cluster_ids": [
+        "73565c41474825eadff224e6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Metal Debris'."
+    },
+    {
+      "local_theme_name": "Metal Flakes",
+      "member_cluster_ids": [
+        "298317824f3dd2288e093206"
+      ],
+      "definition": "Clusters describing the analytical concept 'Metal Flakes'."
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-005",
+  "local_themes": [
+    {
+      "local_theme_name": "Noise level",
+      "member_cluster_ids": [
+        "7ff0b7239636b474ffd7aed7",
+        "9180fc5fe411bcdf630481ad",
+        "76691d35641dd49209129eaa",
+        "83606b8d364254da2790cc6d",
+        "bef9c28aad5c0522ad183102",
+        "8cd368d48698d6a6ca0eb90d",
+        "787613bf09efb91df9107c19",
+        "7f8bd4bdb42292ca0b0c7166",
+        "8d25b7dede14e8f219a7d652",
+        "1acc9cebd7a778e5da91483b",
+        "a70f6f395b7d43826367f520",
+        "ccd44d439986c8c5a60453c0",
+        "6a2c9a42964273a66ac69cd4",
+        "f0a392f902db7504adcde60e",
+        "678349c0037bd03cc87bb60d",
+        "05a717be611445360d75183e",
+        "4ca9513fe3a092b08b101328",
+        "884c5ab71d2efed4c5d111ee",
+        "6e4810c401b88aa0a6d5bece",
+        "58ced9fc0fb6ed5d01eab1d7",
+        "9f8fc5b965f58c96f63a8d5f",
+        "67e509aa1da984953272eb40",
+        "db98c9307ff85afea1efe8ec",
+        "824d45b6a8f318bbfa2a4da5",
+        "d6838789854417fb7eb1c725",
+        "b5b53d87ce4e68d4b8b79f8a",
+        "e267ceea956834c8257abb56",
+        "df8ad45a4e5ba354fdc946fa",
+        "b6cca609b31099986d6e952d",
+        "334deaac463264651fa2f7de",
+        "97767a6d79936483e9f4251c",
+        "98ffba26530445b0dffdd797",
+        "67e859ba2e6684a477cdd8a8",
+        "2a3b86cfb65c5e2bbf7c509c",
+        "2d9c7b9012e7d02437b17447",
+        "511edb42328fe23642600449",
+        "44404e9abfb7a4ad2f785344",
+        "78e54b45a7cb94f84ef45e6b",
+        "2980cc522e0e91ce789890bd",
+        "e10e6e1b59977b3db1068fc7",
+        "2f8e4c2bec8939cd4b53cc2e",
+        "cba833e6c4fe591247af1df1",
+        "932858064e8bb2af2e445849",
+        "24d9a488b95685ca72d73865",
+        "b6ca64205e9b03fae65825bf",
+        "8cfa9d575a646ab40cecb74c",
+        "9ef433dccc6bbf6bdde84825",
+        "e37404b3feae9c558e01f09e",
+        "8c0cdccd15c3e7efcaf2da69",
+        "4b87f4ea5597f0edf9beca9a",
+        "d6b3ef1e047eb02188cfb254",
+        "63f5a4935d8d6afc3b7b7ea2",
+        "bd632bcf713328b11559108a",
+        "61e7afc45bda659db5792670",
+        "f63bfe90b883f5c1d810ff97",
+        "f9ca1e1a76001426565b0654",
+        "bcd68ff8156c387a35ead1cb",
+        "6d2ba73ad70aa9eabe1d5b47",
+        "9c6f5ee8851334de4fb1eb3a",
+        "2a627935b223524d5b318bdb",
+        "b69fb4dbab6e476a5edc05a8",
+        "babb6de14efe49b5dfc61ee4",
+        "a94cfab6ca3cf6b5c3f50a6a",
+        "6b0fe43d58e9df7cca2f94e1",
+        "43efe5993e5f61234248845a",
+        "18f96f66acda9d848bc22652",
+        "07cfaaa77b478e3185a3149a",
+        "a6817b39b91c638945528e0b",
+        "34f88fd50160acabf7e1ef02",
+        "91a80818c4c5f838c6731858",
+        "6146da9a25bbd76a02282984",
+        "faff6185225db501e4c64d5a",
+        "7883596caf0cdfa6dc494075",
+        "fb6ba7c4f38d643aaa125efd",
+        "62e6ec8001f44bbd86799163",
+        "e98f2b8ae0c0ac6e8efdf686",
+        "68f6bb0a3007039412c32bfb",
+        "321bd640e2a5b71453736d9a",
+        "80fae876cf539c89b2fcd4ed",
+        "502c39fe15bd938087867fbf",
+        "7533756c217dbda1500625e3",
+        "8e62405d0cf505d35306e7f7",
+        "46fcc89bed03fb2b95207bfe",
+        "32dbeff24a217e51c0157480",
+        "34a852913d20b0cd9d0f6344",
+        "e6c0d73de1d382d342479a00",
+        "16d4cb8d50c9050fca65ec06",
+        "529c89db0050c64b6c2385b4",
+        "9deb072a3adca86f4f78bf90",
+        "0e1fb3663dc904a4a5faccdd",
+        "46f6cf085c693a3de0d5348c",
+        "7beba587cec812e4f98101fc",
+        "02860439cdf8fc24c16d4be6",
+        "93a8e7d2b5b76081e94332d8",
+        "2db92bca6e9095cb29beb1af",
+        "a2ffa9d48c1a919b20c19557",
+        "511472e900ea4e167a746799",
+        "79468460afb6cf53db3aa131",
+        "06e4770caa571bb68c3ca01b",
+        "d7d3658bbf2a15badc6158f4",
+        "b4904ea97fe196ff9d3f2670",
+        "8da15ac8448ce473f9a4f921",
+        "7b4407737c09ca01f8d8c346",
+        "435b9c202b6a53d974b13d80",
+        "7b1271c11b8a84486a5b3d11",
+        "2d0f8a450eb098d9d8875efc",
+        "f59b35199fb2bd31f8932ede",
+        "674d1a62e23333f0cb263ae0",
+        "5d6f509ec85787e47892c7b3",
+        "88f84f175b0eb15fa6e16c3b",
+        "837effa7c2da65c2e6935598",
+        "7db0040e83c03c583d6b6467",
+        "a10d3bb7352485b46bd96c5f",
+        "ed3fd50031b3cc1179793c45",
+        "5ff8a847abd7c07a3f95a264",
+        "543193b46c1450b7917a5473",
+        "0de3756f7f7620cd4f55b0fd",
+        "c4cfebe05db4b39b3a7d11d1",
+        "1c0af5a72b0ee218c07ce0d3",
+        "f37f62f3059c74264ee89dbb",
+        "061972d89b0854a2091bba9d",
+        "d5ef157a98bafb22d7591d1a",
+        "d2cf30e767696f3f010d90c1",
+        "e0dcafe51ce58f4c10cd0433",
+        "40062b0b60e00ff1d24ef112"
+      ],
+      "definition": "Operating sound or fan/compressor noise."
+    },
+    {
+      "local_theme_name": "Quietness",
+      "member_cluster_ids": [
+        "ae266ac31e958999bcc37a61",
+        "b53b9ad3de295413945382a6",
+        "fa196f4537d42c47d531133a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Quietness'."
+    },
+    {
+      "local_theme_name": "Loudness",
+      "member_cluster_ids": [
+        "aa180789a38f4cf944b5cfce"
+      ],
+      "definition": "Clusters describing the analytical concept 'Loudness'."
+    },
+    {
+      "local_theme_name": "Compressor Noise",
+      "member_cluster_ids": [
+        "e235154a981094595a102fa5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compressor Noise'."
+    },
+    {
+      "local_theme_name": "Motor Noise",
+      "member_cluster_ids": [
+        "c7bcf501e2d252dcb3a89d83"
+      ],
+      "definition": "Clusters describing the analytical concept 'Motor Noise'."
+    },
+    {
+      "local_theme_name": "Sound",
+      "member_cluster_ids": [
+        "6cf5d2434cf67788b1f27803",
+        "3b74df60e873bdf842e73867"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sound'."
+    },
+    {
+      "local_theme_name": "Noise Annoyance",
+      "member_cluster_ids": [
+        "0cece5633b1f1c7ddcbc1491"
+      ],
+      "definition": "Clusters describing the analytical concept 'Noise Annoyance'."
+    },
+    {
+      "local_theme_name": "Ice Droping Sound",
+      "member_cluster_ids": [
+        "bd70ad7759eff42db6740d9c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Droping Sound'."
+    },
+    {
+      "local_theme_name": "Ice Dumping Noise",
+      "member_cluster_ids": [
+        "893591c5e72fb027bcdf7dee"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Dumping Noise'."
+    },
+    {
+      "local_theme_name": "Squealing Sound",
+      "member_cluster_ids": [
+        "c8a65d8c4e802e45c81a1102"
+      ],
+      "definition": "Clusters describing the analytical concept 'Squealing Sound'."
+    }
+  ]
+}

@@ -1,91 +1,129 @@
-# big_data_web - Amazon 家电评论需求洞察与质量问题预警
+# Amazon 家电评论洞察分析系统
 
-使用 Amazon Reviews 2023 Appliances 历史评论，分析家电商品的质量问题、用户需求和时间变化，为商品改进提供评论证据。
+## 项目简介
 
-## 当前进展（2026-09-03）
+本项目使用 Amazon Reviews 2023 Appliances 数据集，对家电商品评论进行细粒度观点抽取、主题归纳和趋势统计，并通过 FastAPI 与 Vue 页面提供查询和可视化。
 
-| 内容 | 状态 |
-|---|---|
-| 选题与业务需求 | 已形成初稿，等待教师确认 |
-| SDD 文档 | 已完成需求规约、技术设计、任务拆分和 API 契约 |
-| 原始数据 | 已下载 Appliances 评论及商品元数据，并保存来源、文件大小和 SHA-256 |
-| 开发环境 | Spark、MongoDB、FastAPI、Vue/ECharts 和 NLP 环境已配置 |
-| Spark—MongoDB 连接器 | 已完成 256 条合成数据读写、BSON 类型和按 `_id` 重放测试 |
-| 小样本清洗 | 已完成固定种子随机 10,000 条评论的清洗和结果对账 |
-| 全量清洗 | 已处理 2,128,605 条评论及 94,327 条商品元数据 |
-| 下一阶段 | 选择演示商品，开展问题、需求和时间趋势分析 |
+正式处理链如下：
 
-## 运行环境
-
-启动 Spark 和 MongoDB：
-
-```powershell
-docker compose -f infra/compose.yaml build spark-master
-docker compose -f infra/compose.yaml up -d --wait --wait-timeout 180
-docker compose -f infra/compose.yaml --profile tools run --rm spark-driver
+```text
+Amazon 评论
+→ 细粒度 insight 提取
+→ 类别级 taxonomy
+→ insight-taxonomy mapping
+→ 商品级聚合
+→ FastAPI API
+→ Vue Web 可视化
 ```
 
-Spark 管理页面：http://localhost:8080
+## 当前正式数据规模
 
-启动 Web 环境：
+- 139 个商品
+- 116,728 条正式评论
+- 13 个商品类别
 
-```powershell
-docker compose -f infra/compose.yaml -f infra/compose.web.yaml --profile web up -d --build --wait --wait-timeout 120 backend frontend
+## Pipeline
+
+### T007：评论洞察提取
+
+T007 从完整评论中抽取 `topic_raw`、观点、证据、极性和目标范围，共得到 350,656 条有效 insight。下游只使用 `target_scope = current_product` 的结果。T007 已完成并冻结。
+
+### T008：类别级 taxonomy
+
+T008 使用 `all-MiniLM-L6-v2`、归一化向量和 Fast Community Detection 形成高置信度语义社区，再按商品类别进行语义与业务合并。
+
+- 315,400 条 current-product candidate insight
+- 4,992 个一级 cluster
+- 887 个最终 category-level taxonomy theme
+- 4,992 / 4,992 一级 cluster exact-once 映射
+
+### T009：insight-taxonomy 映射
+
+T009 通过确定性 join 连接 candidate、一级 cluster 和最终 taxonomy。
+
+- 230,278 条 `mapped_by_cluster`
+- 85,122 条 `unmapped_no_cluster`
+
+未进入 community 的 insight 保留在 T009 结果中，不执行 nearest-theme 或强制分类。
+
+### T010：商品级聚合
+
+正式 T010 使用 DuckDB 完成确定性聚合。聚合按唯一 `review_id + taxonomy_id` 去重，并保留正面、负面、中性和 mixed 口径。
+
+- 139 个商品
+- 15,852 条 `product × taxonomy × sentiment` 主题业务记录
+- 116,328 条主题月度趋势记录
+- 222,069 条主题—评论证据记录
+
+15,852 是商品、taxonomy 与情感组合后的业务记录数，不是 taxonomy 数量；正式 taxonomy 数量仍为 887。
+
+Spark 和 Docker 保留用于全量清洗及早期环境实验，正式 T010 不依赖 Spark。
+
+## 当前功能
+
+- 商品选择和类别筛选
+- 正面、负面主题切换
+- 主题排行
+- 月度趋势
+- 动态主题词云
+- 主题到原始评论证据下钻
+
+当前正式数据链没有生成“产品改进需求”Gold，因此前端不展示该功能。旧接口中的兼容 route 或 pending 字段不代表该能力已经完成。
+
+## 技术栈
+
+- Python、DuckDB、Parquet
+- Qwen3.5-4B
+- Sentence-Transformers、all-MiniLM-L6-v2
+- FastAPI
+- Vue 3、TypeScript、Vite、ECharts
+- Spark、Docker（全量清洗和历史环境）
+
+## 项目结构
+
+```text
+pipelines/                              数据清洗、T009 映射与 T010 聚合脚本
+data/gold/                              本地 Gold 产物；Git 仅保留小型验证摘要
+backend_generated/backend/              正式 FastAPI 后端和 Gold repository
+frontend_story_dashboard/frontend/      正式 Vue 前端
+specs/001-merchant-review-insights/      需求、设计、任务和数据模型
+infra/                                  Docker、Spark 和 MongoDB 环境配置
+ml/                                     本地 NLP 与 XPU 处理脚本
+docs/                                   环境说明和运行记录
 ```
 
-访问：http://localhost:5173
+## 启动方式
 
-运行 NLP 环境检查：
+以下命令均从项目根目录开始执行。
 
-```powershell
-docker compose -f infra/compose.nlp.yaml --profile ml run --rm nlp-check
-```
-
-环境的构建、停止和故障处理方法见 [infra/README.md](infra/README.md) 和 [ml/README.md](ml/README.md)。
-
-## 数据清洗
-
-数据集包含 2,128,605 条评论和 94,327 条商品元数据。原始文件的下载地址、大小和 SHA-256 记录在 [manifest.json](data/bronze/amazon_reviews_2023/appliances/manifest.json)。
-
-执行全量清洗：
+后端：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File pipelines/run_silver.ps1 -Mode full
+Set-Location backend_generated
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --reload
 ```
 
-本次输出目录：`data/silver/silver-full-20260903T154909-6c310067/`
+后端默认读取：
 
-清洗过程统一字段类型和 UTC 时间，使用 `parent_asin` 关联评论与商品元数据，并为缺失正文和重复记录添加标记。全量结果中有 2,065 条空正文、22,656 条精确重复的额外记录，以及 285,655 条正文重复的额外记录；所有记录均保留在 Silver 数据中。
+```text
+data/gold/t010-aggregation-20260908-v1-duckdb
+```
 
-## 技术架构
+前端：
 
-| 层级 | 技术 | 用途 |
-|---|---|---|
-| 数据处理 | Spark、Parquet | 全量清洗和批量计算 |
-| 数据存储 | Bronze、Silver、Gold、MongoDB | 保存原始数据、清洗明细和分析结果 |
-| 后端 | FastAPI | 提供商品、分析结果和评论查询接口 |
-| 前端 | Vue、ECharts | 展示问题、需求、趋势和评论证据 |
-| 文本分析 | PyTorch、Transformers、sentence-transformers | 评论分类、语义表示和需求识别 |
+```powershell
+Set-Location frontend_story_dashboard\frontend
+npm.cmd run dev
+```
 
-当前 Spark 环境在一台计算机上运行一个 Master 和两个 Worker。
+## 验证摘要
+
+- [T008 validation](data/gold/t008-final-20260908-v1/validation.json)
+- [T009 validation](data/gold/t009-insight-taxonomy-20260908-v1/validation.json)
+- [T010 validation](data/gold/t010-aggregation-20260908-v1-duckdb/validation.json)
 
 ## 后续工作
 
-第二周计划选择真实商品案例，完成语言与文本适用性评估、问题和需求挖掘、时间趋势计算、Gold 数据设计、业务接口和第一版可视化页面。
-
-## 文档
-
-- [环境配置说明](docs/environment-setup.md)
-- [全量 Silver 清洗报告](docs/runs/silver-cleaning-2026-09-03.md)
-- [Silver 清洗规约](specs/001-merchant-review-insights/silver-cleaning.md)
-- [需求规约](specs/001-merchant-review-insights/spec.md)
-- [当前技术选型](specs/001-merchant-review-insights/technical-selection.md)
-- [技术设计](specs/001-merchant-review-insights/plan.md)
-- [环境实施规约](specs/001-merchant-review-insights/environment.md)
-- [技术与算法调研](specs/001-merchant-review-insights/research.md)
-- [数据模型](specs/001-merchant-review-insights/data-model.md)
-- [API 契约](specs/001-merchant-review-insights/contracts/openapi.yaml)
-- [初始数据画像](docs/research/initial-data-profile.md)
-- [环境验收记录](docs/runs/environment-2026-09-03.md)
-- [Web 环境记录](docs/runs/web-environment-2026-09-03.md)
-- [NLP 环境记录](docs/runs/nlp-environment-2026-09-03.md)
+- 将当前 Gold repository 与部署环境整理为可复现的发布配置。
+- 在前端趋势图中将缺失月份补为 0；该显示问题不需要重跑 T010。
+- 产品改进需求如需恢复，必须先建立对应的正式 Gold 数据链。

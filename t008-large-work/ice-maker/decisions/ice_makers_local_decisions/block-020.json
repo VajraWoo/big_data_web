@@ -1,0 +1,154 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-020",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice production speed",
+      "member_cluster_ids": [
+        "cdd444a0cf8753127109e1bd",
+        "451ad844a63f9ef452d0c944",
+        "5b7098baeabe5c33b5a1880f",
+        "6ee4a26f71123fe62fd4fc3c",
+        "ae2db191080ff991e28724c1",
+        "fe5bade40a7b21a1df3d7fad",
+        "f220021c0dad4275bc49f9bf",
+        "d3873eac0bf5f1bf70fe2b1c",
+        "2c7d5aef7a34f52492ab9622",
+        "c1507fa50e9700a873db461a",
+        "29288e0928a7fc23144a7139",
+        "8e500a64f542c41a0dc47339",
+        "70233671fd280f1b188a84aa",
+        "4f9ff85bfb856e36ecaacbaf",
+        "40d86379d5d213441df80fac",
+        "349d4bc257ddb4818e04c105",
+        "654ff120bbb4ecff7dfd928c",
+        "d74e22defdc4ecc867c3117e",
+        "8b8f83927b1369dcbeadb434",
+        "56d0687afb10abe9abda1bd6",
+        "b6d4df6d5de3422fcec48992",
+        "7472f7c619d78b0cc1ae846a",
+        "2257956ea704d411cfce2c79",
+        "7d494fe1fa7b0c4c1f14b7e9",
+        "7dd45576af809a67dfc74e69",
+        "5f5e59cf44cd8c11551f2e01",
+        "a7bbbc9f9366d02c912c1e2a",
+        "6e90e29aba987fc32ba04f88",
+        "23e0520c08a3e0e913bd9d6a",
+        "0dfe9ba0c3c610857633fa76",
+        "0f581b3a6967bd20cdbc652a",
+        "255b8f5df7b00c0b55e49234",
+        "b6c1d967ed8003b631e13fa1",
+        "ef09d1391753739a7b4ce472",
+        "3bf5d6cac69866b6ac973799",
+        "3ea17aea4d63bc23c41df17d",
+        "95ad175c24eb04a1b53e0ac5",
+        "01918bdecddf584355663cf8",
+        "a285ca53c7dc968a3ce8c759",
+        "28836afea436eae6fdaf4bc1"
+      ],
+      "definition": "How quickly the machine produces or replenishes ice."
+    },
+    {
+      "local_theme_name": "Ice production capacity",
+      "member_cluster_ids": [
+        "f71bcd129c90143922f5e15e",
+        "4465246c8cd759d2c164219a",
+        "73db08c0b0c52faf1350d1f0",
+        "647d6f90b414b992c3a88a7f",
+        "d040479b95f7f2c089cb356b",
+        "ded7b90bb1819dc42d83bf37",
+        "d7d2016399ec398342ed7e72"
+      ],
+      "definition": "Amount of ice the machine can produce or hold over a period."
+    },
+    {
+      "local_theme_name": "Speed",
+      "member_cluster_ids": [
+        "296e9ca81bb81dcb1f4ef535",
+        "c83063ac1ed4dd98d18f5ade"
+      ],
+      "definition": "Clusters describing the analytical concept 'Speed'."
+    },
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "51b614c4d47c417b9e0ff3fd",
+        "9e56b6985aaa55aa4761fd88"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Fill Time",
+      "member_cluster_ids": [
+        "6426c3adddc0e091cca8d810",
+        "66c1fdd75eb86efc9f2a7336"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fill Time'."
+    },
+    {
+      "local_theme_name": "Quantity",
+      "member_cluster_ids": [
+        "480f3ec063efcbeaceb4fda6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Quantity'."
+    },
+    {
+      "local_theme_name": "Production Volume",
+      "member_cluster_ids": [
+        "d362bd1f69105494cd2ea240",
+        "a02a83a0b3d7fe79f27d1059"
+      ],
+      "definition": "Clusters describing the analytical concept 'Production Volume'."
+    },
+    {
+      "local_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "8cf2c83b6d1f1800e453a714",
+        "1ee951a0180c1f997feb4acf"
+      ],
+      "definition": "Clusters describing the analytical concept 'Capacity'."
+    },
+    {
+      "local_theme_name": "Filling Time",
+      "member_cluster_ids": [
+        "459cf6f7220539f5eef8c06e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Filling Time'."
+    },
+    {
+      "local_theme_name": "Continuous Production",
+      "member_cluster_ids": [
+        "b0239dcd57cca5f594cf02d6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Continuous Production'."
+    },
+    {
+      "local_theme_name": "Cube Production Capacity",
+      "member_cluster_ids": [
+        "9a086ff66f29cc6df162a7b5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Production Capacity'."
+    },
+    {
+      "local_theme_name": "Cycle Time",
+      "member_cluster_ids": [
+        "4e92a96bc4d87f9e0f093256"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cycle Time'."
+    },
+    {
+      "local_theme_name": "Heat Generation",
+      "member_cluster_ids": [
+        "59841b33f4751f184f8663a5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Heat Generation'."
+    },
+    {
+      "local_theme_name": "Cube Production Speed",
+      "member_cluster_ids": [
+        "3b207a496929662abdf656d5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Production Speed'."
+    }
+  ]
+}

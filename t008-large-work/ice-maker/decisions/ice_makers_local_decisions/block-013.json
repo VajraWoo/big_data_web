@@ -1,0 +1,98 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-013",
+  "local_themes": [
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "971d2ee2d2792fb64d7453e1",
+        "c19fc3c196b00e31aac936b0",
+        "e699de4988664ded8cb1346d",
+        "b93058d24235980b1eb1fa8e",
+        "e88c275216766340eccbade6",
+        "68476ae6a386ffa453101c12",
+        "71a190412445ab64c8f2a66c",
+        "2d608ad518f074c0f5116dad",
+        "f483b550fe735a1409eace6d",
+        "822cf17113544ac6293bd583",
+        "f753ffbbf2042c5b9f8bca30",
+        "e0e1feb39574a066f34ee937",
+        "7c4f7d1a6c440442ed5ca9a3",
+        "e96c27d469195a3ea8ad72c3",
+        "dede22663b148d56d91e5372",
+        "aed1eec799963dc99fe05b0b",
+        "c4a46b6845698b09a6dcba0d",
+        "dab0332c696417a7d5fb9515",
+        "6dbeaf0ee7a146bc9487b0f8",
+        "6d943f1c6a01425541fb26d7",
+        "52ed179d79e8f53f0bfa7482",
+        "a97609b6091cb6e89e8fc225",
+        "8e48a7847da872f25d957ed0",
+        "567b5997b0924f16acd0afd8",
+        "58fdb03826a2fdb3f7168cae",
+        "f736a43b31b453f189f3f4d1",
+        "c36ea59a4909cbe23995023b",
+        "6b94c662ca13316d5f6833b7",
+        "8c56041b2047d9a08acddddc",
+        "32593cf2a8bac6b242336101",
+        "099632c9515fe8b81569d4c0",
+        "4d81733947ec2334b4d34a59",
+        "a1154b6b6ab44bb9a5320c24",
+        "e58836e508bc1bf55aa52e9a",
+        "438ffdcdeafddde2d5c80374",
+        "73f41fcc8fb913464d5137a9",
+        "15fb79bd22ffa8b2d60fbfd3",
+        "3dd7ca9c680fe884369eec87",
+        "aac7c23f59b5d0a67eb63326",
+        "693aa955cdddd4ef4e1736dc",
+        "c2835309f12ca1455befda7a",
+        "5356b1423a5c10fe8e7d377c",
+        "41d7126ed89d2844af0dc8f7",
+        "5a437736477e5f418b797052",
+        "53a7c1825f168a6432238886",
+        "ed1f5e3eef24f89bad8d36b9",
+        "4ddbade8834f7737f757f897",
+        "d8116614ba8a5d9b66e2909d",
+        "0845ee49e4fdc08b69cdbd6e",
+        "5baee8091d23f9327009e0be",
+        "c60f16a81331845eea01a228",
+        "bd54f4eedbe29475d7e2fff8",
+        "451d53c6fbc248847a8f27c5",
+        "30af87fb13a3db92d0ab6633",
+        "192491cb5d3631b4d96f5cbf",
+        "a6e291bfa5ca27cf85c6369a",
+        "86a35547544b2b7e30a41ede",
+        "86de416d9861e7dd01c664ee",
+        "5659ad909bd89acfab26e01f",
+        "1ad9bcd926f45de9b16d9f41",
+        "e892b63db2dd51a6ed2ccc57",
+        "442acc9ba53f918b8fe8d0d0",
+        "02644fff303acbbc09deebcc",
+        "3ba2a9de267d0eb0fc8d895c",
+        "223187de05f8f0a03772b6ff"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Machine Reliability",
+      "member_cluster_ids": [
+        "cc7d27a505567181157a950d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Machine Reliability'."
+    },
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "613452f408835eb78a30082e"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Dependability",
+      "member_cluster_ids": [
+        "3fd1c8a1f13fd977323a4685"
+      ],
+      "definition": "Clusters describing the analytical concept 'Dependability'."
+    }
+  ]
+}

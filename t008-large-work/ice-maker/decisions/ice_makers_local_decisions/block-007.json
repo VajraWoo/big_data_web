@@ -1,0 +1,207 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-007",
+  "local_themes": [
+    {
+      "local_theme_name": "Overall satisfaction",
+      "member_cluster_ids": [
+        "239f592f70f87750bce3e96e",
+        "543705c8d1517d768b560070",
+        "0e8ec9ff4f87fc282b7f26c5",
+        "6d150a88a50f83c04b36aed4",
+        "4f85ed2c37f0ee7ed12350e1",
+        "7174a13f7682e613448bb0be",
+        "c6fb2dd45be7889e7abb32b1",
+        "cce151b69d8fc04307d743fa",
+        "59ac51ad81bfb93774182173",
+        "8dd264766f5c5a81e79030d9",
+        "d6b04e809d9dd6682075ba6f",
+        "a46ac28fa0864a4c782ca98b",
+        "708db572b4e16ccfa97f13b8",
+        "5a60e7b3d3248947ed65320f",
+        "33ef421a947c32f5b5c64e04",
+        "3bc5da857389e694770f8c9a",
+        "5764a775db5d63b387e523fe",
+        "6ed549bb5357d8c4296eb977",
+        "5c0ca3868cdc0ce094315cd5",
+        "270747aef72e495d699ef43d",
+        "a98297a08c60a99e89aecb57",
+        "e5dfea50adff45ecee646871",
+        "654113f4be5e69b0c8f8437f",
+        "d13155c18a2d8b2e7b02cf02",
+        "05fae2eb4cc9fd6038d52b27",
+        "1f075a220cb33bd5b6aac798",
+        "c4ea32c8d89651baf2a186b4",
+        "ff2d35801740d6713faaf45d",
+        "448007905eac06155b01cb61",
+        "1c1e03998aea170165a43d19"
+      ],
+      "definition": "General satisfaction with the product."
+    },
+    {
+      "local_theme_name": "Recommendation",
+      "member_cluster_ids": [
+        "249cecd42daec86430b1d577",
+        "bc73e673442a7d6bd0dd82e8",
+        "534c7161174a9bd288aaae83",
+        "e98ac879b87b248ec42a12bf",
+        "acdb871e3e3cbbf1b68a1a8a",
+        "3a89925054a94650d11de276",
+        "5ecf436d84e3c748e214eaa0",
+        "5a148ca035231d750d776836",
+        "079d4e0dfbda8c0d23239771",
+        "1be259183244e4c6b4d012c9"
+      ],
+      "definition": "Whether reviewers recommend the product."
+    },
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "19e33bb2e8cbcf1433a6b2a9",
+        "cab81593706f86e5b395d831",
+        "e701ee07124e9560faf4c261",
+        "2b631511ace294dcd490c8a8",
+        "65c2c17625d636ae033ff5e1",
+        "6037790ee88582f4f85bd80d",
+        "4e8055360ac6bdf88c30c558"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "52ec8ae44a93913e5d8eb7d9",
+        "075ce86735c8d8c8b5a602b0",
+        "43ed8e1b0f327ec65e647a4f",
+        "98ba09c05b3bac5fa0bb222a",
+        "8e6681b144a52bce2c69e453",
+        "f9bd2af737291714ba9763c0",
+        "06dea1f4f4a38163db759568",
+        "3cceb474a048d07a96810c7f",
+        "d91e4567b5b2f02eebccbe63",
+        "e533d9fe5c81142b5cfd8fd1",
+        "f541fe6720f8125beed9e2d7",
+        "d3d0e4ce424034454102281b",
+        "ffedf7304da2cda84dec0d41",
+        "4e7082a93aeafd3236114358",
+        "0605246ddf6b73c29ff525f9",
+        "afe47a3c2a8333790d616317",
+        "d4fd701fa22d06337f2d9643"
+      ],
+      "definition": "Perceived value relative to price or alternative options."
+    },
+    {
+      "local_theme_name": "Family Satisfaction",
+      "member_cluster_ids": [
+        "271f01e760f483d882b2ec16",
+        "c954a37f183700b8fddcf704",
+        "0239a60edfdd2356fdbaea8e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Family Satisfaction'."
+    },
+    {
+      "local_theme_name": "Suitability",
+      "member_cluster_ids": [
+        "9d617a5dc40b0e22f71b9d62"
+      ],
+      "definition": "Clusters describing the analytical concept 'Suitability'."
+    },
+    {
+      "local_theme_name": "Enjoyment",
+      "member_cluster_ids": [
+        "e7770d616e130d52af6a7523",
+        "342e7256375d784e80278e41",
+        "7ea9babf5364287591e33f64",
+        "e69ec740f3c8a3e1d1612d41"
+      ],
+      "definition": "Clusters describing the analytical concept 'Enjoyment'."
+    },
+    {
+      "local_theme_name": "Love",
+      "member_cluster_ids": [
+        "3933adc6106b6f32962fb1dd",
+        "4610353fe658dcb2c99000c6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Love'."
+    },
+    {
+      "local_theme_name": "Purchase Satisfaction",
+      "member_cluster_ids": [
+        "922251f47c2ebf1c1a063ea5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Purchase Satisfaction'."
+    },
+    {
+      "local_theme_name": "Family Appeal",
+      "member_cluster_ids": [
+        "9c74f8b26676eee422da14d9",
+        "562387e1ba860f633664d7c5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Family Appeal'."
+    },
+    {
+      "local_theme_name": "Overall Appeal",
+      "member_cluster_ids": [
+        "ecc4e64958befa8cb1e4d59b",
+        "26fc7d9a98aee9ae927ff799"
+      ],
+      "definition": "Clusters describing the analytical concept 'Overall Appeal'."
+    },
+    {
+      "local_theme_name": "Product Satisfaction",
+      "member_cluster_ids": [
+        "f7d4510424fc0573fc9aa3a6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Satisfaction'."
+    },
+    {
+      "local_theme_name": "Customer Satisfaction",
+      "member_cluster_ids": [
+        "431460766be050083c87197a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Customer Satisfaction'."
+    },
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "03d899d7e8744dcc545cf817"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Machine",
+      "member_cluster_ids": [
+        "2d4dee0aba8003160b16eb65"
+      ],
+      "definition": "Clusters describing the analytical concept 'Machine'."
+    },
+    {
+      "local_theme_name": "Excitement",
+      "member_cluster_ids": [
+        "bdf9861e193fc8d3abfab86c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Excitement'."
+    },
+    {
+      "local_theme_name": "Kitchen Suitability",
+      "member_cluster_ids": [
+        "05c10216a192e5a9c9a1b71a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Kitchen Suitability'."
+    },
+    {
+      "local_theme_name": "Product Appeal",
+      "member_cluster_ids": [
+        "6ec842e461ba23c02ae641c9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Appeal'."
+    },
+    {
+      "local_theme_name": "Excitement Level",
+      "member_cluster_ids": [
+        "52968795dfa60cce705c6c08"
+      ],
+      "definition": "Clusters describing the analytical concept 'Excitement Level'."
+    }
+  ]
+}

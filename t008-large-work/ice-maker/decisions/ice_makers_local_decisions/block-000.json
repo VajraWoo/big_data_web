@@ -1,0 +1,89 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-000",
+  "local_themes": [
+    {
+      "local_theme_name": "Recommendation",
+      "member_cluster_ids": [
+        "199bb2ed9b0290e26cf35022",
+        "1be14fc730f1c8eceaf6f236"
+      ],
+      "definition": "Whether reviewers recommend the product."
+    },
+    {
+      "local_theme_name": "Price",
+      "member_cluster_ids": [
+        "e981921ce68804be77644992",
+        "b31a12185ef28357f1daa0e4",
+        "e824a0bd68b01bcbd755a38a",
+        "e071e61d970368fee91236ae",
+        "93fb09776c870d1a5114efd2",
+        "1db4144bb6db0ba27c12512c",
+        "ef259f2fca7398d7f54ba08e",
+        "9b5fef64343513457d4c394a",
+        "726ae733a1df5e8a08b190b0",
+        "c932e6b94f0dfba50e31713f",
+        "b498dcdfb37ce46de6375912",
+        "0b2cb687dc776cf66a95d2b8",
+        "296b112840c04108b17002a1"
+      ],
+      "definition": "Purchase price or affordability of the ice maker."
+    },
+    {
+      "local_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "1f24abd3c0c74c5cac19fd23",
+        "5189e4e10a7f6c3f87e18aff",
+        "8a35902de8d2d0fe734fdd13",
+        "6c8e09513c07b30af9989d06",
+        "bed0d9afaf73dd8710a9c089",
+        "7e297adbaee199f3a5551804"
+      ],
+      "definition": "Perceived value relative to price or alternative options."
+    },
+    {
+      "local_theme_name": "Convenience / utility",
+      "member_cluster_ids": [
+        "c169d103d58209a4a8b7f7d7",
+        "7dd6a5e1186daba54d12796b",
+        "c5c55fa6ab6321535bfa3daa",
+        "6296e7785a75bc553d6160dd",
+        "1da4b8b8b62d5f8a703f4f4b",
+        "a32a30d21d9eab24adff1c56"
+      ],
+      "definition": "Clusters describing the analytical concept 'Convenience / utility'."
+    },
+    {
+      "local_theme_name": "Purchase Intent",
+      "member_cluster_ids": [
+        "67e55ea5915efa1eb401d3d3",
+        "c52ee26b9686a43dbdb9c94a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Purchase Intent'."
+    },
+    {
+      "local_theme_name": "Cost savings",
+      "member_cluster_ids": [
+        "4ae67dcf638f40580ddb9368",
+        "1199578df9b6052be6c81d23",
+        "27e328b508877d7cd669a1b4"
+      ],
+      "definition": "Money saved compared with alternatives such as buying bagged ice, repair, or replacement."
+    },
+    {
+      "local_theme_name": "Purchase Decision",
+      "member_cluster_ids": [
+        "c453a7e05af6c24bd9c89dc6",
+        "42b6588c03523d599a587ec4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Purchase Decision'."
+    },
+    {
+      "local_theme_name": "Daily Utility",
+      "member_cluster_ids": [
+        "e196ab88215fab350fec822c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Daily Utility'."
+    }
+  ]
+}

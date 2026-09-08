@@ -1,0 +1,268 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-023",
+  "local_themes": [
+    {
+      "local_theme_name": "Machine size",
+      "member_cluster_ids": [
+        "d7f2de79197811dd0829c4a8",
+        "69397b330819b96ab6ebccb3",
+        "429c69730e54d6f32d045bbe",
+        "105fc6fc1d358b6812734da1",
+        "e3dac897ad1e86cfca3c9d31",
+        "8ec0dd2dc60b0be04050671e",
+        "0692e0a00e200afed79b5c14",
+        "a38a7fe0fe828983b1a12371",
+        "f5963f5469ecf59eb2f9aa2f",
+        "b5b0943a9aef445e47577a5c",
+        "72ec8ddc966fee28030af577",
+        "720779b01f19e568562cd306",
+        "795b53382e18b47ae52e3948",
+        "c3f3f49fb0434497ba038f97",
+        "3edee1d0ca3f315214dea8e6",
+        "607df6fde83dc14c605aee8b",
+        "3e60175ccfa0df2a9cd090d1",
+        "229665b7d9d48a1ebb3c7d4f",
+        "972be8e691f2b70dff6e389c",
+        "19b1bbefba6fa70b2eb92973",
+        "c6132d07a99ca8a234220230",
+        "b94ade9e724778bf0f5047aa",
+        "a9bed3569f4324c4c0e99197",
+        "963d70a5d2bdc39fdddd75da",
+        "8ccb901473a697ad4e0eb2a7",
+        "b437d1fb1c3a96391b7afa82",
+        "f325d0b77db41a545d1599d7",
+        "326460a7f59316df45833466",
+        "2434e519274eaa92c2f5cbef",
+        "f799d685c5bb784e2b86f596",
+        "525caf24c3609d3a8e58593c",
+        "ab73008cfb748fd922a6cc62",
+        "4fcb973947c5f6cc86ce046c"
+      ],
+      "definition": "Physical dimensions or compactness of the appliance."
+    },
+    {
+      "local_theme_name": "Counter Space",
+      "member_cluster_ids": [
+        "f53748aadc6a42a6130fd58c",
+        "d56057ada5b452d81716d2bf"
+      ],
+      "definition": "Clusters describing the analytical concept 'Counter Space'."
+    },
+    {
+      "local_theme_name": "Fit",
+      "member_cluster_ids": [
+        "2171812632054ec10a88ca52",
+        "d7974a19bcca363420e977c2",
+        "b8bf77e0769428dba6768c70",
+        "033ef51e358b396aecd05d42",
+        "7aef899ce1eeb9215b847896",
+        "10294962cf71cd6c39a6fa0b",
+        "938af53c51993fc7e6133046"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fit'."
+    },
+    {
+      "local_theme_name": "Weight",
+      "member_cluster_ids": [
+        "c9c4fb1c3982ab57b0417c6c",
+        "7aee377a017dbb6bbc34aab2",
+        "d39de9622441201f0374696d",
+        "b2908ea98bf4c92ec2658df5",
+        "520bee96a75e350da3a84fc2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Weight'."
+    },
+    {
+      "local_theme_name": "Space Efficiency",
+      "member_cluster_ids": [
+        "841e88d6a318d52d6bba4cf1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Space Efficiency'."
+    },
+    {
+      "local_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "2a5ac1e6594f9654c67de1b4",
+        "44f23d1101465356b1f488f1",
+        "be48a54c43cdf73b02a81d3b",
+        "c73394dbc2f4701879b7a1b1",
+        "95bb6151e05aece449eb9876"
+      ],
+      "definition": "Clusters describing the analytical concept 'Capacity'."
+    },
+    {
+      "local_theme_name": "Space Footprint",
+      "member_cluster_ids": [
+        "bd6e1c43e195f192f51a9c57",
+        "de4cfda16083db5e4e0176ff",
+        "b99695bd3bce7bd3a8da7f89",
+        "122ecd541b578a338f32a2eb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Space Footprint'."
+    },
+    {
+      "local_theme_name": "Footprint",
+      "member_cluster_ids": [
+        "1aa70c7459a68d592eaed4ed",
+        "99fa7e42b91a44570279d897",
+        "c16f8f1edc6f2c2eb3b14e9d",
+        "b325ec92b05d8995cbdee71d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Footprint'."
+    },
+    {
+      "local_theme_name": "Ice production capacity",
+      "member_cluster_ids": [
+        "395673e5c475328f003c9aff",
+        "ab90d038330a240d4a4d8983",
+        "c680c095f078c8cd9322ba5e"
+      ],
+      "definition": "Amount of ice the machine can produce or hold over a period."
+    },
+    {
+      "local_theme_name": "Ice cube size options",
+      "member_cluster_ids": [
+        "ea497eb963c51a2871516ae9"
+      ],
+      "definition": "Availability or usefulness of selectable ice-size settings."
+    },
+    {
+      "local_theme_name": "Machine Size",
+      "member_cluster_ids": [
+        "d3420d8e0020d262eed49dc7",
+        "49cce888be17d2f04f087545"
+      ],
+      "definition": "Clusters describing the analytical concept 'Machine Size'."
+    },
+    {
+      "local_theme_name": "Fitting",
+      "member_cluster_ids": [
+        "f23c7cb5d5b5c369442cc7de",
+        "c3e0735e1d903abbb3193fa4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fitting'."
+    },
+    {
+      "local_theme_name": "Product Fit",
+      "member_cluster_ids": [
+        "5d052744f0652a931d039b5a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Fit'."
+    },
+    {
+      "local_theme_name": "Bin Capacity",
+      "member_cluster_ids": [
+        "c53e3a8062b446f3b9c5a0c7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bin Capacity'."
+    },
+    {
+      "local_theme_name": "Size Suitability",
+      "member_cluster_ids": [
+        "a66f444875b8b9a66d82cd80",
+        "795a5fc60c17019902106760"
+      ],
+      "definition": "Clusters describing the analytical concept 'Size Suitability'."
+    },
+    {
+      "local_theme_name": "Basket Size",
+      "member_cluster_ids": [
+        "dead7d8e50fdeaaf151c046b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Size'."
+    },
+    {
+      "local_theme_name": "Scoop Storage",
+      "member_cluster_ids": [
+        "66c49718347d278140cb014f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Scoop Storage'."
+    },
+    {
+      "local_theme_name": "Height/Fitment",
+      "member_cluster_ids": [
+        "003babd528442d78c3e55211"
+      ],
+      "definition": "Clusters describing the analytical concept 'Height/Fitment'."
+    },
+    {
+      "local_theme_name": "Ice cube shape",
+      "member_cluster_ids": [
+        "fea46b796ae4438a14148820",
+        "65ba023faeec03016b277f6c"
+      ],
+      "definition": "Shape or form of produced ice."
+    },
+    {
+      "local_theme_name": "Ice storage capacity",
+      "member_cluster_ids": [
+        "57f2d019a71842c0c9f801ed"
+      ],
+      "definition": "Amount of produced ice the storage bin or basket can hold."
+    },
+    {
+      "local_theme_name": "Space Requirement",
+      "member_cluster_ids": [
+        "8357b14619a9410f7053baee"
+      ],
+      "definition": "Clusters describing the analytical concept 'Space Requirement'."
+    },
+    {
+      "local_theme_name": "Bin Capacity Maintenance",
+      "member_cluster_ids": [
+        "3d397294bac4bb50ea9cdb81"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bin Capacity Maintenance'."
+    },
+    {
+      "local_theme_name": "Accessory",
+      "member_cluster_ids": [
+        "5849657491296bd125dcbf96"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessory'."
+    },
+    {
+      "local_theme_name": "Design",
+      "member_cluster_ids": [
+        "2fdefdea9a4f1f0aafccc917"
+      ],
+      "definition": "Design features or layout of the appliance."
+    },
+    {
+      "local_theme_name": "Height",
+      "member_cluster_ids": [
+        "e2cd75f6cc4e914713d2d422"
+      ],
+      "definition": "Clusters describing the analytical concept 'Height'."
+    },
+    {
+      "local_theme_name": "Size Selection",
+      "member_cluster_ids": [
+        "14844b389e6a4fe8ac19e658"
+      ],
+      "definition": "Clusters describing the analytical concept 'Size Selection'."
+    },
+    {
+      "local_theme_name": "Compactness",
+      "member_cluster_ids": [
+        "dfb4328c2f9732472e67c008"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compactness'."
+    },
+    {
+      "local_theme_name": "Counter Height Clearance",
+      "member_cluster_ids": [
+        "2298be403cc7d3d2272af26f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Counter Height Clearance'."
+    },
+    {
+      "local_theme_name": "Portability Size",
+      "member_cluster_ids": [
+        "f19ec0d279236b244b7921c0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Portability Size'."
+    }
+  ]
+}

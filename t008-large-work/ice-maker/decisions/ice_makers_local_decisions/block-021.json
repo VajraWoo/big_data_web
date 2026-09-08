@@ -1,0 +1,108 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-021",
+  "local_themes": [
+    {
+      "local_theme_name": "Speed",
+      "member_cluster_ids": [
+        "57d3d932c605e8910a293717",
+        "8e78d4bf7576f639cfea09af",
+        "cd5bf7cae57a6cedc97d203d",
+        "bdafa80cf38c26e91d406c71",
+        "794c5bd1518997d0a123b035",
+        "2fca68c4989c4dec56bcad91",
+        "fa874b790d395196d8b627c9",
+        "a1c3ae5694349d5a03b579af",
+        "6ddd79599a784997c1213da3",
+        "4ada53c5ccfa2c2bef4a850b",
+        "b3ac086ce13fc9a9cc181504",
+        "46186c085c6fe9be54d1763f",
+        "12e6834eeb9c7a0787d82654",
+        "c8bfba5626d01f230d2cad39",
+        "8777d3f309f2e0678d04e21b",
+        "08488957e2a738811cd9669c",
+        "a9c6696c21b41bc6a1fccd1b",
+        "e909f97f7b93a889864bee5b",
+        "ed2154d91de03fc3b95d3e5b",
+        "1b932a5c03d6f638db0676e1",
+        "f071c3d7de5509f0a91015d8",
+        "6c07891efe5a2f39ef135d07",
+        "30a55e5ab034f64743b899cf",
+        "36588a5c72c424a52ace4fa5",
+        "3912f14096c10937bf8243d0",
+        "d805dc0ce3bcef9384bbff40",
+        "e3feff5ac4f17096b7bc8ce9",
+        "7b75413079220011f2642b4c",
+        "368bdfeb31edee5240bbac94"
+      ],
+      "definition": "Clusters describing the analytical concept 'Speed'."
+    },
+    {
+      "local_theme_name": "Freezing speed",
+      "member_cluster_ids": [
+        "f3fbd2ba00b7146cc29079ed",
+        "17be49d253484a893a20cba8",
+        "83523356db58f48fd783587c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing speed'."
+    },
+    {
+      "local_theme_name": "Ice melting speed",
+      "member_cluster_ids": [
+        "38a4c248ec84d652eb2aaf03",
+        "4cad015f144e88e7d041ddbb"
+      ],
+      "definition": "How quickly produced ice melts."
+    },
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "69042f0ed204a084b8b0ed2f",
+        "a6a7bf05646e706be0002c0d"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Coolness",
+      "member_cluster_ids": [
+        "6fa311ff8fd61b07408bf397"
+      ],
+      "definition": "Clusters describing the analytical concept 'Coolness'."
+    },
+    {
+      "local_theme_name": "Refill Speed",
+      "member_cluster_ids": [
+        "fb4c5ba36d52cdeb79a455f6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Speed'."
+    },
+    {
+      "local_theme_name": "Cycle Time",
+      "member_cluster_ids": [
+        "8cfbef1f420fb8a919564d37"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cycle Time'."
+    },
+    {
+      "local_theme_name": "Chilling Speed",
+      "member_cluster_ids": [
+        "362e50b73c2c84debc93ef8f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Chilling Speed'."
+    },
+    {
+      "local_theme_name": "Cooling Time",
+      "member_cluster_ids": [
+        "63a1222ce0fc6b8e5582c447"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cooling Time'."
+    },
+    {
+      "local_theme_name": "Operation Smoothness",
+      "member_cluster_ids": [
+        "d989bb693f7ffd921957d6b8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Operation Smoothness'."
+    }
+  ]
+}

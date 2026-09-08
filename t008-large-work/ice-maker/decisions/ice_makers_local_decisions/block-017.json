@@ -1,0 +1,295 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-017",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice cube size",
+      "member_cluster_ids": [
+        "ac5935f079122dfcb1907305",
+        "1404f5d582cc85b764ed2709",
+        "d1d2f64c6b5de45a5100c832",
+        "3a0e8e0f6152ed1b53927425",
+        "75aa8b738df57d4b2aa9448a",
+        "7e416ac26df86be7cbbd4bf5",
+        "6fab421975eb6c4ae847bd6d",
+        "bf31cff43a5fa196261833bb",
+        "73ae1bb618cf5729d37a768c",
+        "72ee6ea053e4dc6952969c5d",
+        "ee849507d888f9c1d9f675d4",
+        "da6cc82ec9dd81ce5572b97d",
+        "921b7be569b173732debcf50",
+        "b3c37b67db54c9d78900f087",
+        "d048bc9af4e20ad995bfee6b",
+        "d769d1e5714c3ac7802ed856",
+        "2a3050f0c66327789aa0fdd8",
+        "d0a4d7fbe0b583d970983a0b",
+        "63e7687a1859da74ad560a07",
+        "d2919893a865cb75282216ed",
+        "9949d2972653c48bb9ac6de1",
+        "e6c6a490f6d3fa74fd14010a",
+        "58fa7b9538814fa8aa9c4ae6",
+        "cdb22b2f38c9ce2288d71593",
+        "3e4ac1f97f3149890e4f4c4a",
+        "cdb1a1b4ca64aa59af44ff9c",
+        "f0496ff5cc476314f32400b7",
+        "3aa692bf179493351848b5f1",
+        "d4dfa4f04674cd155605a222",
+        "bab729c76e634932ad98b831",
+        "34f81d8204a5a0f217dbac71",
+        "a59d53cb049cfcb70cb8de57",
+        "f988776b242957dd22191c8e",
+        "08151550b6d56e1b37b44eb1",
+        "a0e74a145b8f7da7d4b8633d",
+        "b1f64ffcc2d530e170c56659",
+        "bfcc881fcb15f23de2d598f8",
+        "db942bf7abcfc663d1bf7a6c",
+        "c4563886d40427b3df312db1",
+        "2c0c413b2db0fa9daae4ae5f",
+        "51e2317f24f38ebd85742a38"
+      ],
+      "definition": "Physical size of produced ice cubes or nuggets."
+    },
+    {
+      "local_theme_name": "Ice cube shape",
+      "member_cluster_ids": [
+        "70bdeb2a3185e11ed292340c",
+        "24b9c2078f07c76460e9c21d",
+        "e3f5683ef0768a6ae0a7e335",
+        "78a17bab0b1a89e6ead40c26",
+        "2d16976dd10ff87e9d951f4e",
+        "0389ca1df1e84e713590e261",
+        "c874a404441894d0562cb6b1",
+        "fda0597239e656bf442c0ead",
+        "c1332bdae1472569677fe773",
+        "00bbb0e007c123d586f06617",
+        "192b59680b66591b60e30bc3",
+        "afca17f17ec48f306ef2c1ca",
+        "bb44860fa899e2ee6b563cfc",
+        "c242a7631238f00f2589a835",
+        "3fe4641a82f36848adc846c9",
+        "2179d742823aeaaa5fe6ec04",
+        "7845f36745e500870edbb72c",
+        "c0ca602b91b8c62b6d926944",
+        "0061d6990f98febde410690e",
+        "d780349e179c862287dd0f5e",
+        "fc54566400fe92495ef46c64",
+        "b73460d0539a069cddb46456",
+        "7480d8e2c90b097f106aaabd",
+        "dcf93f191b17b0297ccd0ca8",
+        "a996b00892e84f61d000abed",
+        "22df3513c36651141bdad30c",
+        "f3033c6d2443869e7a4ed0ae",
+        "fe0f8608ed6a22ac00ffd31e"
+      ],
+      "definition": "Shape or form of produced ice."
+    },
+    {
+      "local_theme_name": "Ice cube size options",
+      "member_cluster_ids": [
+        "da6b03401643eca4444932cd",
+        "be93416e463f0e4a7a1f361f",
+        "b1c9beb2646b9bb2de8c6dcb",
+        "457b5aed7ee25a2d3f58b0b8",
+        "e87b9d90648b51cbaf82485b",
+        "bfee02895e83bdfadab20a8f",
+        "1d13c9d6387062ced18f448b",
+        "59ff00cac6493e1020dbb210",
+        "9d67ec48d9413e6991245370",
+        "af4368f6dd784849c0833352",
+        "5fb8e95db7ef69d77a62c059",
+        "6989af5d2bb6bd51eedcdc4c",
+        "55f0733a34c9516f4d16a811",
+        "cb8de1546d66170174b1b96b",
+        "d66f8443e2807d73e97c41c2",
+        "aa61af62de97329fc35538ec",
+        "3f151a194cb2e3924c76effe",
+        "7487aa80f81f5977c8da86a3",
+        "f07d72d112244c97bcf3f95a",
+        "57a46a4fba1ef6296f593d5d",
+        "3a6e3f3bf80abd5601fa27af",
+        "a964cefb58d1a277be8a626f",
+        "4bc3dbed8e571ac7b7f7e128",
+        "7d0158cdfe2e254dab79a39e",
+        "addad5520de636264640de0d"
+      ],
+      "definition": "Availability or usefulness of selectable ice-size settings."
+    },
+    {
+      "local_theme_name": "Machine size",
+      "member_cluster_ids": [
+        "1de6a22d868da19c2a607bfd",
+        "7d5a73450bb2140b965ad192",
+        "7e007d10b37d3039cb5f1aad",
+        "4cc028397c4c18dd31ffa08e",
+        "a3bd773023741c212bcdc7de"
+      ],
+      "definition": "Physical dimensions or compactness of the appliance."
+    },
+    {
+      "local_theme_name": "Cube Size Consistency",
+      "member_cluster_ids": [
+        "ba2889637dbaf0f9236f584b",
+        "90248cce0c61dc0e9e6c17d5",
+        "b28ec576b090b73090169dea"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Size Consistency'."
+    },
+    {
+      "local_theme_name": "Ice Size Variety",
+      "member_cluster_ids": [
+        "cfd846c96bbb13ae603441a1",
+        "06220e8a1b71504ca2dbffe9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Size Variety'."
+    },
+    {
+      "local_theme_name": "Ice Size Selection",
+      "member_cluster_ids": [
+        "6c0355d0c0f739c6ebecb431",
+        "7480701dd979d5bc8b779893"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Size Selection'."
+    },
+    {
+      "local_theme_name": "Ice Basket Size",
+      "member_cluster_ids": [
+        "7748f332a9c74bc9a12598ea",
+        "329e64124e611f206375c0d7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Basket Size'."
+    },
+    {
+      "local_theme_name": "Ice Size Adjustment",
+      "member_cluster_ids": [
+        "8888c5540a14a2dc20a1e783"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Size Adjustment'."
+    },
+    {
+      "local_theme_name": "Ice Bullet Size",
+      "member_cluster_ids": [
+        "61f329d904cad40f29daf279"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bullet Size'."
+    },
+    {
+      "local_theme_name": "Ice Cube Appearance",
+      "member_cluster_ids": [
+        "7e0ed8ea85d35b58e30bb8c3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Appearance'."
+    },
+    {
+      "local_theme_name": "Cubing",
+      "member_cluster_ids": [
+        "1c139f9b449fe14ea80d6d00"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cubing'."
+    },
+    {
+      "local_theme_name": "Cube Size Variety",
+      "member_cluster_ids": [
+        "e2ba0478dfbe97e2867585e5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Size Variety'."
+    },
+    {
+      "local_theme_name": "Ice Cube Fit",
+      "member_cluster_ids": [
+        "42f771bb84d3a5332dbf1050"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Fit'."
+    },
+    {
+      "local_theme_name": "Cube Selection",
+      "member_cluster_ids": [
+        "cc0d8b351d3136984d53f1ec"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Selection'."
+    },
+    {
+      "local_theme_name": "Cube Breaking",
+      "member_cluster_ids": [
+        "a3c601ae6a653dd64ef437ab"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Breaking'."
+    },
+    {
+      "local_theme_name": "Ice Cube Size Variety",
+      "member_cluster_ids": [
+        "b0cc874b326d85285040646e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Size Variety'."
+    },
+    {
+      "local_theme_name": "Ice Cube Sizes",
+      "member_cluster_ids": [
+        "606b7f72dab2bece28ab6fce"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Sizes'."
+    },
+    {
+      "local_theme_name": "Ice Cube Thickness Adjustment",
+      "member_cluster_ids": [
+        "b0b41a5aa41a5834ed9290fe"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Thickness Adjustment'."
+    },
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "237f217eb19f18b519a8b535"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Cube Size Settings",
+      "member_cluster_ids": [
+        "4aaef378fea76b9622a96aa3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Size Settings'."
+    },
+    {
+      "local_theme_name": "Ice Size Consistency",
+      "member_cluster_ids": [
+        "2ae5873e515a7631bd6175e8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Size Consistency'."
+    },
+    {
+      "local_theme_name": "Tray Size",
+      "member_cluster_ids": [
+        "49a352edb02721aa7fb4f3df"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Size'."
+    },
+    {
+      "local_theme_name": "Cube Size Growth",
+      "member_cluster_ids": [
+        "f6ce527db9bea45373876a05"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Size Growth'."
+    },
+    {
+      "local_theme_name": "Customization",
+      "member_cluster_ids": [
+        "c0c946641f17f3dd8c42f14c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Customization'."
+    },
+    {
+      "local_theme_name": "Ice Cube Separation",
+      "member_cluster_ids": [
+        "a809686c2fbe8f401c2ef539"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Cube Separation'."
+    },
+    {
+      "local_theme_name": "Ice melting speed",
+      "member_cluster_ids": [
+        "ab1061969ef19fc73489a457"
+      ],
+      "definition": "How quickly produced ice melts."
+    }
+  ]
+}

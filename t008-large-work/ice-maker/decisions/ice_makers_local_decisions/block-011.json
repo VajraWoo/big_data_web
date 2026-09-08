@@ -1,0 +1,304 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-011",
+  "local_themes": [
+    {
+      "local_theme_name": "Cleanability",
+      "member_cluster_ids": [
+        "07960e1c630128ca8b404322",
+        "2f60fff5ff86e644e278a74e",
+        "5692d4243f1c1d4581b8a0f5",
+        "9debe2850e39e6cf89286216",
+        "065bc3db3c7b16ad90c9d3ad",
+        "310648150f6a28549a61f634",
+        "750bae580978f57c27bfff6b",
+        "244692c18a6292ff56e37ac7",
+        "3b23e19582a1d37a3c2b1e1d",
+        "a3ec11fbf7f28a76f3a189ca",
+        "bcdcca3e0ebe00c98cc88961",
+        "4089b02901293d3f288eeb44",
+        "7ce86a473362f5d2d79b8f9c",
+        "aad00d8aa8d6b10e4bb6f9de",
+        "4ab2a640f044ded2c496814c",
+        "e297136acff22c2818afe410",
+        "0e79da59a3efab9d9566683f"
+      ],
+      "definition": "Ease or effectiveness of cleaning the machine."
+    },
+    {
+      "local_theme_name": "Cleaning Ease",
+      "member_cluster_ids": [
+        "efd8f62d881e645404b15330",
+        "f915872cf302760104f85d9e",
+        "930c29a711ab276311c54f87"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Ease'."
+    },
+    {
+      "local_theme_name": "Maintenance",
+      "member_cluster_ids": [
+        "243198e6e063b47ed66178fc",
+        "a96082444671134aa3ddf045",
+        "71e9284264d8f3892a2e6a1a",
+        "4193e619291bdc37628009cd",
+        "83bcb53bfc2c70744e05d3e9",
+        "1804151c60584b62bc1cf924",
+        "79cc1215384d9ba2a415cd7e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance'."
+    },
+    {
+      "local_theme_name": "Self-cleaning feature",
+      "member_cluster_ids": [
+        "1de9a6c97a9d6095b998780e",
+        "8056b280c09ee3cbf1a1949d",
+        "2375246df149ad7f6bc87393",
+        "347d571de0105b55b6b26484",
+        "4d98c7c6c21b438064ac9681"
+      ],
+      "definition": "Clusters describing the analytical concept 'Self-cleaning feature'."
+    },
+    {
+      "local_theme_name": "Maintenance Frequency",
+      "member_cluster_ids": [
+        "6697e10da4db2ac459ed3ceb",
+        "b05663f5000371891ac7d690",
+        "b694f74d385f5238b52dee71"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance Frequency'."
+    },
+    {
+      "local_theme_name": "Repairability",
+      "member_cluster_ids": [
+        "f28fa63677c1264ed52c795d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Repairability'."
+    },
+    {
+      "local_theme_name": "Drainage",
+      "member_cluster_ids": [
+        "0b3fbc666577cd7e6834877e",
+        "9012e63c4468fa6cc1683718",
+        "5e8c2025dd5fabe736ff1e36",
+        "fbbf1557259745be856a3ffd",
+        "4dd05b817db6189c8c53def7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Drainage'."
+    },
+    {
+      "local_theme_name": "Self Cleaning Function",
+      "member_cluster_ids": [
+        "3e14a0201b0ca63004bc1b1c",
+        "dc0266b07d37658b4b93d3c8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Self Cleaning Function'."
+    },
+    {
+      "local_theme_name": "Hygiene",
+      "member_cluster_ids": [
+        "f1511fb65ccabf85e40a6af9",
+        "447a0b9b6fd8b0e376f21316"
+      ],
+      "definition": "Clusters describing the analytical concept 'Hygiene'."
+    },
+    {
+      "local_theme_name": "Maintenance Effort",
+      "member_cluster_ids": [
+        "145eefdc1750c5b0a094a698",
+        "acf6c175e4d13da4baebe4a7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance Effort'."
+    },
+    {
+      "local_theme_name": "Cleaning functionality",
+      "member_cluster_ids": [
+        "9012bd9f4e88e032d5e44fef",
+        "78fa043a37481ba6d289ee58",
+        "80dcec13c056d0b6ea8ce7da",
+        "1eb9bb318ff4767190725647"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning functionality'."
+    },
+    {
+      "local_theme_name": "Cleaning Frequency",
+      "member_cluster_ids": [
+        "37c6f723f3c51cd37cba8868",
+        "d9234b07b7fe6841780980a6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Frequency'."
+    },
+    {
+      "local_theme_name": "Storage",
+      "member_cluster_ids": [
+        "03906c50c50e43ac3eb509eb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage'."
+    },
+    {
+      "local_theme_name": "Cleaning Requirement",
+      "member_cluster_ids": [
+        "7766631d2e4c185b250383ae",
+        "ce528563bfa9711ae78b4f11",
+        "b4dc5907a9e37c3422530221"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Requirement'."
+    },
+    {
+      "local_theme_name": "Cleanliness",
+      "member_cluster_ids": [
+        "70897599d7fe118dd50b7dcd",
+        "0ddb47829a091d19626fc910",
+        "91ab74ffc47f97aed6d2011f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleanliness'."
+    },
+    {
+      "local_theme_name": "Convenience / utility",
+      "member_cluster_ids": [
+        "728bcbd70605632383169e52"
+      ],
+      "definition": "Clusters describing the analytical concept 'Convenience / utility'."
+    },
+    {
+      "local_theme_name": "Cleaning Cycle",
+      "member_cluster_ids": [
+        "456bec9f05c25e4cb6859274",
+        "4d3e8c0c7af6f29e6e70fd58"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Cycle'."
+    },
+    {
+      "local_theme_name": "Cleaning Effort",
+      "member_cluster_ids": [
+        "c7d3dc1568b07dac62912fde"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Effort'."
+    },
+    {
+      "local_theme_name": "Repair Ease",
+      "member_cluster_ids": [
+        "a99886db6f982ee6393d3e38"
+      ],
+      "definition": "Clusters describing the analytical concept 'Repair Ease'."
+    },
+    {
+      "local_theme_name": "Ease Of Removal",
+      "member_cluster_ids": [
+        "1c4493b967361e931507a630"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Removal'."
+    },
+    {
+      "local_theme_name": "Daily Usability",
+      "member_cluster_ids": [
+        "5344c00a7e8c3167027b9188"
+      ],
+      "definition": "Clusters describing the analytical concept 'Daily Usability'."
+    },
+    {
+      "local_theme_name": "Ease Of Cleaning",
+      "member_cluster_ids": [
+        "3d685eba7b708b95b61065bc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Cleaning'."
+    },
+    {
+      "local_theme_name": "Disassembly",
+      "member_cluster_ids": [
+        "1f5d1d5c80dea1ae4ebc7e82"
+      ],
+      "definition": "Clusters describing the analytical concept 'Disassembly'."
+    },
+    {
+      "local_theme_name": "Scoop Durability",
+      "member_cluster_ids": [
+        "42ae6cbf03468dfb9c20f533"
+      ],
+      "definition": "Clusters describing the analytical concept 'Scoop Durability'."
+    },
+    {
+      "local_theme_name": "Cleaning Mode Functionality",
+      "member_cluster_ids": [
+        "90723489d151fc3e051afa62"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Mode Functionality'."
+    },
+    {
+      "local_theme_name": "Cleaning Time",
+      "member_cluster_ids": [
+        "56024ee93c7daf2fbc96e809"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Time'."
+    },
+    {
+      "local_theme_name": "Ease of use",
+      "member_cluster_ids": [
+        "850ab8f29b5f9ec110601835"
+      ],
+      "definition": "Ease of everyday operation."
+    },
+    {
+      "local_theme_name": "Maintenance Requirement",
+      "member_cluster_ids": [
+        "686cdf5cd02a147cd3d680e8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance Requirement'."
+    },
+    {
+      "local_theme_name": "Mess Level",
+      "member_cluster_ids": [
+        "ed9e85a2cd8f80e2a96c991b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mess Level'."
+    },
+    {
+      "local_theme_name": "Scoop Convenience",
+      "member_cluster_ids": [
+        "9da9fd30c47b86472b5e3040"
+      ],
+      "definition": "Clusters describing the analytical concept 'Scoop Convenience'."
+    },
+    {
+      "local_theme_name": "Scoop Functionality",
+      "member_cluster_ids": [
+        "028087f0d6ffaf78522cc859"
+      ],
+      "definition": "Clusters describing the analytical concept 'Scoop Functionality'."
+    },
+    {
+      "local_theme_name": "Accessibility",
+      "member_cluster_ids": [
+        "65904021d9178b66e97250c0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessibility'."
+    },
+    {
+      "local_theme_name": "Basket Maintenance Requirement",
+      "member_cluster_ids": [
+        "612cff0c2e11b4507403c0ae"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Maintenance Requirement'."
+    },
+    {
+      "local_theme_name": "Cleaning Maintenance",
+      "member_cluster_ids": [
+        "4dcf39dc087ee51843184ea2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cleaning Maintenance'."
+    },
+    {
+      "local_theme_name": "Portability",
+      "member_cluster_ids": [
+        "ef006ebdb5be91602f6e1a73"
+      ],
+      "definition": "Ease of moving or transporting the appliance."
+    },
+    {
+      "local_theme_name": "Effectiveness",
+      "member_cluster_ids": [
+        "d9c8b07c7766844a95b7c4a7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Effectiveness'."
+    }
+  ]
+}

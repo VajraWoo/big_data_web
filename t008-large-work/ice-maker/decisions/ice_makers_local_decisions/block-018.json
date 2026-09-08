@@ -1,0 +1,334 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-018",
+  "local_themes": [
+    {
+      "local_theme_name": "Ease of use",
+      "member_cluster_ids": [
+        "e79e24c4b99a79aeffeb3269",
+        "8de7415f49daee398a433f1b",
+        "1b6b59f6287f09773a371c7f",
+        "611f5f1042dab8e58eaa3501",
+        "55f277223a16cdfc7ffae9a4",
+        "93eabd3c41479e966f51ddcb",
+        "bc80737a5d319b88cb5d6b32",
+        "2fe09f57a5b0ba93893d14e8",
+        "2fdf6321f8eccbe63a3812a1",
+        "ff24fa0b3d90b9953b5cf1e6",
+        "18a55b8595c6f3ea88fb3538"
+      ],
+      "definition": "Ease of everyday operation."
+    },
+    {
+      "local_theme_name": "Installation",
+      "member_cluster_ids": [
+        "23f75d02fec8d8a36ca61405",
+        "7b41a37e97b4f6b96d2c377b",
+        "d565f0f683d2e1d56594c097",
+        "7618df02d0055ed03d05c9c1",
+        "89a9ae19b8e93eebab036df0",
+        "ba6a2a4d4be0771c7bfd2ef7",
+        "c2639b3cdd6fe5888fa9f11e",
+        "404cb192b4d1b3b5980482da",
+        "06d1ce430d5f5dd715123082",
+        "bce5bf04380c98d6ebcabfd4",
+        "ed3f8be457e21633a8996513",
+        "82c07e939c0638f038cb692e",
+        "7a4f4401d907165084b1034e",
+        "0f3372145c5822d1dacf18b6",
+        "87334d848c04abe9f1ca22cb",
+        "527dbded456de43e264e60a9",
+        "ca8364ef8ffe1a93e3bc9ea3",
+        "8a2876eb80e42d6c76488bda",
+        "fb5d3eb98af87e55f45de524",
+        "50e9e1082ffd7840479fbcc5",
+        "5bf2e8d316503924e2167427"
+      ],
+      "definition": "Ease or difficulty of installing or connecting the machine."
+    },
+    {
+      "local_theme_name": "Ease Of Setup",
+      "member_cluster_ids": [
+        "386be86dbcd020afa1c16040"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Setup'."
+    },
+    {
+      "local_theme_name": "Installation Ease",
+      "member_cluster_ids": [
+        "195f859f00ccaab8ccb3ffa4",
+        "3718d7afc82b9458195d0774",
+        "3a0a459a29e19f97e761fe8b",
+        "44d1522973e1dd9c49ccb097"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation Ease'."
+    },
+    {
+      "local_theme_name": "Convenience / utility",
+      "member_cluster_ids": [
+        "49e27b4293a37bbd60837f0d",
+        "a28c885f9ea13cf520ac39a3",
+        "9637b007bfb6a3434a00d478",
+        "ba4b78686ca645f73a1de5dc",
+        "70330b0c2c61dac6c924cb1b",
+        "ed250d59682397518c0f1938",
+        "2bfcab0bc0801124c27b8d7a",
+        "9af74130ff7448ea6a01fd48",
+        "bfab135671ffd78ec25c113c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Convenience / utility'."
+    },
+    {
+      "local_theme_name": "Installation time",
+      "member_cluster_ids": [
+        "05a7bf92c244744f85b0e8cd",
+        "33161c94b5fe08ef9fdd7f1f",
+        "44e3892c66ea8125813a9a08",
+        "0135fef7156faeea2ecb9df8",
+        "58f250511af14a201d08aef7",
+        "27e7d5138935770017e1d3d0",
+        "65559dc49603e7deb518208e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation time'."
+    },
+    {
+      "local_theme_name": "Portability",
+      "member_cluster_ids": [
+        "85fa0e4579945f42c6bd7f5a",
+        "7451b702e6aa26469130ab6d",
+        "fe039704c66fb3b8154a29c9",
+        "a3c6ba144fe3443e3571a1f3",
+        "3ffa495577cc297660254064"
+      ],
+      "definition": "Ease of moving or transporting the appliance."
+    },
+    {
+      "local_theme_name": "Instructions",
+      "member_cluster_ids": [
+        "8878148637fcf4bdeb38ae15",
+        "29f9132556d8412f4b1bcdef",
+        "168da0a794e348c1aac94321",
+        "6d2ffd1d4251ff3732bb758c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Instructions'."
+    },
+    {
+      "local_theme_name": "Ease Of Filling",
+      "member_cluster_ids": [
+        "baf6eefa36012d6262f4b377"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Filling'."
+    },
+    {
+      "local_theme_name": "Ease Of Operation",
+      "member_cluster_ids": [
+        "5e0203dd94dd75a77eb7a8b3",
+        "2583419eac67408b89187f17",
+        "73fdd2348e121ae72c2780fb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Operation'."
+    },
+    {
+      "local_theme_name": "Ease Of Replacement",
+      "member_cluster_ids": [
+        "9ffc74b289c329deb5b7736c",
+        "090a62296d5f2b28c6b645a7",
+        "a58f4b7ddb0c827ade1bf1d3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Replacement'."
+    },
+    {
+      "local_theme_name": "Ease_Of_Use",
+      "member_cluster_ids": [
+        "d47c00c64982a3d66b0fc012",
+        "312b487dc8ff4716179f977d",
+        "6ec5776f871c880902cc75b4",
+        "970a57238a47af9ad9470ddb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease_Of_Use'."
+    },
+    {
+      "local_theme_name": "Setup",
+      "member_cluster_ids": [
+        "a62f441c22b211c3a7180931",
+        "0daf7dcdbd9b4a3bc8faf474"
+      ],
+      "definition": "Clusters describing the analytical concept 'Setup'."
+    },
+    {
+      "local_theme_name": "Installation Difficulty",
+      "member_cluster_ids": [
+        "fce3c8cd4b87da91e8e7c77a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation Difficulty'."
+    },
+    {
+      "local_theme_name": "Setup time",
+      "member_cluster_ids": [
+        "7fef12c03f1ee4f982800ad9",
+        "d4d37268a74d8f1c54233d37",
+        "506537fb4260275609e13ee0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Setup time'."
+    },
+    {
+      "local_theme_name": "Operation Ease",
+      "member_cluster_ids": [
+        "098f532cd2bc60518d57ff19"
+      ],
+      "definition": "Clusters describing the analytical concept 'Operation Ease'."
+    },
+    {
+      "local_theme_name": "Assembly",
+      "member_cluster_ids": [
+        "3aa0634e1924f42a9d1f23cb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Assembly'."
+    },
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "071bec69633e3aba1a26aeb0",
+        "d987dcbe7ee625d781bd1c6a",
+        "4e7da569878973de663dc75e"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Versatility",
+      "member_cluster_ids": [
+        "5c61b406120f94bd7a5ac100",
+        "a422b9efc23bd56cb19ec6c4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Versatility'."
+    },
+    {
+      "local_theme_name": "Simplicity",
+      "member_cluster_ids": [
+        "a475f0c7e890165d73c53a64",
+        "6bde6025109d0f4061c4f439"
+      ],
+      "definition": "Clusters describing the analytical concept 'Simplicity'."
+    },
+    {
+      "local_theme_name": "Setup Complexity",
+      "member_cluster_ids": [
+        "7c1a3c45b994a08e839bf632",
+        "d19449449bc2a74a0a3570d2"
+      ],
+      "definition": "Clusters describing the analytical concept 'Setup Complexity'."
+    },
+    {
+      "local_theme_name": "Operation Simplicity",
+      "member_cluster_ids": [
+        "cf6ca0ed37eacea0dc68297a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Operation Simplicity'."
+    },
+    {
+      "local_theme_name": "Fun Factor",
+      "member_cluster_ids": [
+        "9d3f44d93145d66eaae92a24"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fun Factor'."
+    },
+    {
+      "local_theme_name": "Necessity",
+      "member_cluster_ids": [
+        "9936daa9bba7e1466d5c4877"
+      ],
+      "definition": "Clusters describing the analytical concept 'Necessity'."
+    },
+    {
+      "local_theme_name": "Drainage",
+      "member_cluster_ids": [
+        "32f9d0d68cf3be6bd40205fa"
+      ],
+      "definition": "Clusters describing the analytical concept 'Drainage'."
+    },
+    {
+      "local_theme_name": "Helpfulness",
+      "member_cluster_ids": [
+        "b6f09e6b3e6c181441edc1df"
+      ],
+      "definition": "Clusters describing the analytical concept 'Helpfulness'."
+    },
+    {
+      "local_theme_name": "Controls",
+      "member_cluster_ids": [
+        "0995c339fa73b251b6af2474"
+      ],
+      "definition": "Clusters describing the analytical concept 'Controls'."
+    },
+    {
+      "local_theme_name": "Ice texture / chewability",
+      "member_cluster_ids": [
+        "a38946c3c302cf4512833425"
+      ],
+      "definition": "Texture, softness, hardness, or chewability of the ice."
+    },
+    {
+      "local_theme_name": "Mobility",
+      "member_cluster_ids": [
+        "3aabc21691870b9cbf06ca78"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mobility'."
+    },
+    {
+      "local_theme_name": "Accessibility",
+      "member_cluster_ids": [
+        "af77d0826e1ad8678f80a3f5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessibility'."
+    },
+    {
+      "local_theme_name": "Directions",
+      "member_cluster_ids": [
+        "667c68d19110f56ccde453c4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Directions'."
+    },
+    {
+      "local_theme_name": "Ease Of Assembly",
+      "member_cluster_ids": [
+        "2a5fc521500cfcf567b3f000"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease Of Assembly'."
+    },
+    {
+      "local_theme_name": "Ease_Of_Installation",
+      "member_cluster_ids": [
+        "c17e0d1114a13cbce06acc90"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ease_Of_Installation'."
+    },
+    {
+      "local_theme_name": "Instructions Clarity",
+      "member_cluster_ids": [
+        "49815354f51808dfbc563b9f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Instructions Clarity'."
+    },
+    {
+      "local_theme_name": "Setup Speed",
+      "member_cluster_ids": [
+        "7a95a0c9edccde91825fade8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Setup Speed'."
+    },
+    {
+      "local_theme_name": "Installation Speed",
+      "member_cluster_ids": [
+        "1b8cf8e1c80d08924c036efc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation Speed'."
+    },
+    {
+      "local_theme_name": "Installation_Time",
+      "member_cluster_ids": [
+        "2e864df95174d57b9605030f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation_Time'."
+    }
+  ]
+}

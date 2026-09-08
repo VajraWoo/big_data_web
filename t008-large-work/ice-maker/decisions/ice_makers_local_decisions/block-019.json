@@ -1,0 +1,186 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-019",
+  "local_themes": [
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "35488cb7e1467fa3c7649b3b",
+        "f303f542ac9c00bf009c8db0",
+        "a744852ca799486fcb48cdd3",
+        "3709922324da1b673f868d59",
+        "f1ac306abc124d91e318788c",
+        "0331c67406afc490a95fb4cc",
+        "0340605b94d273fe2fc3d930",
+        "2c4ada5e91365a21b52bf9d2",
+        "dd500d30dcec41bdaaecab48",
+        "a4c6d374c2ff3eeef59581b3",
+        "b164efd465ed26317286fed8",
+        "8534a94ea55981a03b3ad2a7",
+        "8c0514363db33e71dab5384f",
+        "2e45a84ee22deb1744547ba8",
+        "c8ce162c783386cd3bf93ff5",
+        "cbf1e4b30911716bbb9c606d",
+        "ee6cd4b9202b09c6ff2d771f",
+        "30dccabdb6315529418f5dfd",
+        "e2a77d35c526c5b38fe78413",
+        "46926c99fb4e4bd3138be3a5",
+        "d5affb5f0d0347a41fb64494",
+        "c7285a3292299358423a1d7a",
+        "9991b38ac19f86c1f4386a35",
+        "ab172d6fa07388a7cc9d31e3",
+        "12049183701b7e7e3b0a3e39",
+        "937d15b24f2b86a3cb771795",
+        "5b57ae29e4f922c610ab72a2",
+        "0dc5d655ff19cde322f1c39c",
+        "4217e9519bd06b3c1869a5de",
+        "d43981872ea5de2823347bbb",
+        "287c23b5722bf52c5d67140c",
+        "a71be24990c6c85dbf92d499",
+        "c49d29c27da89b0c11245d26",
+        "d5494cda4ebb0eecf5d8450a",
+        "7bf24b373ee298cd8e0a216f",
+        "1c0ebfb390d9c02ecaf4ee5e",
+        "19894a7bd11bee72511b47fe"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "c52246a9147131cf65441db6",
+        "10a2a9e866773b3d78eb2716",
+        "05e7a2c07eaffbe6d9ae4b3b",
+        "bb22e7223c3df2dbab08d966",
+        "6cffe7fbff50a0c76547aa6c",
+        "d0986de96752545e0abe9b59",
+        "cb50d5cf41c7bfc9cacfb4e5",
+        "7e77161806809979cff8af96",
+        "387b4b8c9db4d019f5e433b7",
+        "611e91c079bad87ae841bb78",
+        "22165172d68c61a69701063e",
+        "23f8b32e99c4283294e69e75",
+        "44790f327a19a5180139c5ea",
+        "bbc8fb37ec8d7cfc77b17f38",
+        "95e7d9fc49f6c219c38f727a",
+        "7f1fbdae872107fe5ce3c6f1",
+        "314537d135fc6875886157e9",
+        "89dbd6ecb940ae48bd3bd269",
+        "1e8300a2d055dad35ef5def9",
+        "8ed37db2e7494cee8ede2b8f",
+        "feb79316020357d614213665",
+        "9baf55e684e3d8578d592902",
+        "b514a4ea9f8f29d77bf31222",
+        "7cb40158518d7f44db051776",
+        "02f4f6ef22f4b84dc494d32c",
+        "276a7c22bf5b3fa3d4f0c0f3",
+        "1fde9ea23f166aeda0de09e2",
+        "03cde7817b143d837535b951"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Lifespan",
+      "member_cluster_ids": [
+        "46d091faada6b5fd62697e80",
+        "edbbcd1f2865919de5dd6c2e",
+        "f3f6c7ffa8616fac32721e36",
+        "f11aa4f4f3ae7f8c38732ae9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Lifespan'."
+    },
+    {
+      "local_theme_name": "Insulation",
+      "member_cluster_ids": [
+        "e7af3978ea011ad5e5afb6de"
+      ],
+      "definition": "Clusters describing the analytical concept 'Insulation'."
+    },
+    {
+      "local_theme_name": "Overheating",
+      "member_cluster_ids": [
+        "7220f820485e948d568386bd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Overheating'."
+    },
+    {
+      "local_theme_name": "Motor Reliability",
+      "member_cluster_ids": [
+        "c3fe772ff69b5b1fdadbf19d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Motor Reliability'."
+    },
+    {
+      "local_theme_name": "Replacement Quality",
+      "member_cluster_ids": [
+        "e33fb5487dde4c6e837344bc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Quality'."
+    },
+    {
+      "local_theme_name": "Suitability",
+      "member_cluster_ids": [
+        "b429804cb8fe81c2a4362d74",
+        "6ac1b46cdff169eda4f30a1e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Suitability'."
+    },
+    {
+      "local_theme_name": "Expected Lifespan",
+      "member_cluster_ids": [
+        "d7be2b3df4bc465ccfaa6d25",
+        "0e686dbe18290241df70d3fa"
+      ],
+      "definition": "Clusters describing the analytical concept 'Expected Lifespan'."
+    },
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "c6b68a3b4aa65934c2cffb37"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Ice cube durability",
+      "member_cluster_ids": [
+        "0eb445d4fde88e1584575aff"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice cube durability'."
+    },
+    {
+      "local_theme_name": "Sensor Reliability",
+      "member_cluster_ids": [
+        "bae4879dbf46ae97001c6704"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sensor Reliability'."
+    },
+    {
+      "local_theme_name": "Fan Reliability",
+      "member_cluster_ids": [
+        "e5517f717a15da85152f65cd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fan Reliability'."
+    },
+    {
+      "local_theme_name": "Product Lifespan",
+      "member_cluster_ids": [
+        "62ac5f0fe567670b30c7993f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Lifespan'."
+    },
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "61a354a91fb4f8c1097dd9a6"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Leakage",
+      "member_cluster_ids": [
+        "7bd6d17864aca67fe23fabab"
+      ],
+      "definition": "Water leaking from the machine or connections."
+    }
+  ]
+}

@@ -2,7 +2,22 @@
 data/bronze/**/*.jsonl.gz
 data/models/
 data/silver/
-data/gold/
+data/gold/**
+
+# Keep only small, reproducible run summaries in Git
+!data/gold/t008-final-20260908-v1/
+data/gold/t008-final-20260908-v1/*
+!data/gold/t008-final-20260908-v1/validation.json
+!data/gold/t008-final-20260908-v1/category-summary.csv
+!data/gold/t009-insight-taxonomy-20260908-v1/
+data/gold/t009-insight-taxonomy-20260908-v1/*
+!data/gold/t009-insight-taxonomy-20260908-v1/validation.json
+!data/gold/t009-insight-taxonomy-20260908-v1/category-summary.csv
+!data/gold/t010-aggregation-20260908-v1-duckdb/
+data/gold/t010-aggregation-20260908-v1-duckdb/*
+!data/gold/t010-aggregation-20260908-v1-duckdb/validation.json
+!data/gold/t010-aggregation-20260908-v1-duckdb/category-summary.csv
+!data/gold/t010-aggregation-20260908-v1-duckdb/batch.json
 
 # Local processing artifacts
 tmp/
@@ -24,12 +39,30 @@ test-results/
 playwright-report/
 *.inspect.ndjson
 ~$*.pptx
+*.zip
+*.tar.gz
+
+# Local handoffs, full inference output, and superseded working copies
+/cloud/
+/from_gpt/
+/frontend_completed/
+/prototypes/t007_context_insight_v2_2/
+/t008_second_level_merge/
+/contract.txt
+/inspect_contract.py
+
+# Abandoned local T010 Spark attempt; DuckDB is the frozen implementation
+/pipelines/theme_aggregation_job.py
+/pipelines/theme_aggregation_rules.py
+/tests/test_t010_aggregation_rules.py
 
 # Downloaded model weights and local runtime data
 *.safetensors
 *.pt
 *.pth
 *.onnx
+/models/
+**/.cache/huggingface/
 
 # Course handouts: keep local until redistribution permission is confirmed
 /教师要求/

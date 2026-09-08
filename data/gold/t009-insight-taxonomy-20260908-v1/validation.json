@@ -1,0 +1,49 @@
+{
+  "stage": "t009_insight_taxonomy_mapping",
+  "status": "ready",
+  "created_at": "2026-09-08T09:39:39.861187+00:00",
+  "candidate_count": 315400,
+  "mapped_count": 230278,
+  "unmapped_count": 85122,
+  "taxonomy_theme_count": 887,
+  "first_level_cluster_count": 4992,
+  "mapping_status_counts": {
+    "mapped_by_cluster": 230278,
+    "unmapped_no_cluster": 85122
+  },
+  "candidate_duplicate_count": 0,
+  "member_duplicate_count": 0,
+  "orphan_member_count": 0,
+  "identity_mismatch_count": 0,
+  "inputs": {
+    "candidate_dir": "data\\gold\\t008-candidates-20260908-v2",
+    "cluster_dir": "data\\gold\\t008-clusters-20260908-v2",
+    "taxonomy_dir": "data\\gold\\t008-final-20260908-v1"
+  },
+  "polarity_summary": [
+    {
+      "polarity": "mixed",
+      "candidate_count": 5277,
+      "mapped_by_cluster": 1519,
+      "unmapped_no_cluster": 3758
+    },
+    {
+      "polarity": "negative",
+      "candidate_count": 113166,
+      "mapped_by_cluster": 70959,
+      "unmapped_no_cluster": 42207
+    },
+    {
+      "polarity": "neutral",
+      "candidate_count": 7154,
+      "mapped_by_cluster": 2088,
+      "unmapped_no_cluster": 5066
+    },
+    {
+      "polarity": "positive",
+      "candidate_count": 189803,
+      "mapped_by_cluster": 155712,
+      "unmapped_no_cluster": 34091
+    }
+  ]
+}

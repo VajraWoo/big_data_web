@@ -1,0 +1,133 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-022",
+  "local_themes": [
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "39b18dbcc2ffd00b949e0e4d",
+        "13e6813d88e87b7bd41e3730",
+        "6d47b6fc5ee5e384480d1028",
+        "453025ba8c94f746f70bad51",
+        "761e9287e82adccfb75b6731",
+        "4400b0383de390187969155d",
+        "3c71f5df137bcbb01844dc74",
+        "1ab5dbd58c2741adca53eb2a",
+        "ded6a516972ba9caa16779c6",
+        "c3a20b1b618f0c51e1304791",
+        "3433d433ce6939d2762e651e",
+        "2425a48fb19722b603d25970",
+        "c1be7c83869e716321846315",
+        "adf935c979d6ffde39e0698e",
+        "42924a8433dcdeab26371237",
+        "03caae6255e9584b9a7e8a04",
+        "0462e67c2805a83e4149340f",
+        "d0dac91834871cc10b92693d",
+        "75733b41364ff9f57d5a1dc1",
+        "2eeb25fa25948488650b103e",
+        "e3757c2612b97428c2083e0f",
+        "05f3327260b6a8d85307c7f5",
+        "86842862124424efdbb963d9",
+        "96f5305ad88f9a25f21b15d8",
+        "c190d8d35ff4efcd69a4366c",
+        "baa55f00139c4b9793593da0",
+        "38447df1be089806e935f7ed",
+        "daf415b76927612fc02f3691",
+        "aa2004d510c20c95a29a0f1c",
+        "5d81d0f8a8f4801ccef24754",
+        "8241417c4bf60ebfbb51ac47",
+        "6e2c1bb4d9a265bf7ce2c49e",
+        "d6f4f6553ae21f0432c14d0d",
+        "7473ac56aa39b51017e35f5f",
+        "c30881204c150dc9b721af05",
+        "0d2ba3e44f8f7e73fc1f2c71",
+        "aeb10865bf9796dbf4fe6b27",
+        "95839f98f3a06a4869d3835d",
+        "96c49e2323fed26758b77afa",
+        "6b51b53f74bec4dbf4c601a8",
+        "2726ec530d3284063419a514",
+        "696dcc86934efd4b78b1ff7b",
+        "163c2ab417a80798dd5aaea1",
+        "6b7ba099698e31661bfd4895"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Effectiveness",
+      "member_cluster_ids": [
+        "ae61dca3b00c6a89d2682dfe"
+      ],
+      "definition": "Clusters describing the analytical concept 'Effectiveness'."
+    },
+    {
+      "local_theme_name": "Initial Performance",
+      "member_cluster_ids": [
+        "1329b8b35b38b52c8b19c425"
+      ],
+      "definition": "Clusters describing the analytical concept 'Initial Performance'."
+    },
+    {
+      "local_theme_name": "Consistency",
+      "member_cluster_ids": [
+        "adf7f6dbe551566d249f825b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Consistency'."
+    },
+    {
+      "local_theme_name": "Cooling performance",
+      "member_cluster_ids": [
+        "5bd5813b35170780c1343d35"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cooling performance'."
+    },
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "03920eab885f3f28911a1ac0"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Freezing performance",
+      "member_cluster_ids": [
+        "e62d0c540730534afeec4bc8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing performance'."
+    },
+    {
+      "local_theme_name": "Popularity",
+      "member_cluster_ids": [
+        "c963a18b1d2556152b49aaa0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Popularity'."
+    },
+    {
+      "local_theme_name": "Accuracy",
+      "member_cluster_ids": [
+        "a566518d5bcd593c11e29f30"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accuracy'."
+    },
+    {
+      "local_theme_name": "Demand Handling",
+      "member_cluster_ids": [
+        "85d23da418e600d1ea8a3a0e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Demand Handling'."
+    },
+    {
+      "local_theme_name": "Display accuracy",
+      "member_cluster_ids": [
+        "9bdc03843aa476d1f54a3b66"
+      ],
+      "definition": "Clusters describing the analytical concept 'Display accuracy'."
+    },
+    {
+      "local_theme_name": "Product Performance",
+      "member_cluster_ids": [
+        "090b9fcc03757161e7dca814"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Performance'."
+    }
+  ]
+}

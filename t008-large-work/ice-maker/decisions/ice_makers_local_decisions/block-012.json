@@ -1,0 +1,526 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-012",
+  "local_themes": [
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "f31560af2edf5173ffbee7be",
+        "7a80f355d5bbd5d4d2c05bef",
+        "3c112135bb47acd6b2279de2",
+        "5da4c0d0d3fd9cc8cfa68274",
+        "11ed2a071e0a46ac928241f2",
+        "1a9447dee1f0263804f04e3c",
+        "1578238d9fe836ec77f4b392",
+        "a54fe7345912e95ccd37667a",
+        "5ebf53604f90d1cb01a55324",
+        "483dfd525297860eaedb2e4f",
+        "73c4ead802e546af676d6d25",
+        "17c49e589466d17c0b41d25b",
+        "73aba74978b334ae8ebc9913",
+        "99d0ba532951818764a6afd3",
+        "9ad4b8b65a7caa95eef012fa",
+        "6b31ce30054307c7b6116367",
+        "fe73a3975138bb7a33bb40c2",
+        "116916d4237c3372cd053761",
+        "3326995446defc65bf933f47",
+        "1b749e9ed17fa7c601fa198c",
+        "6b3aa16375fd07f6c32593b6",
+        "604aec46d792b0bd2df99629",
+        "b12d710c83099ac870d34fe7",
+        "38a8e09c2b8bc4afce5cf803"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "21fb27551fb9ac805e8e18f8",
+        "47ab5de3bc1fa37408c5a7ab",
+        "9a19681b6a72391af75a5a90",
+        "e2a4048bf6596a6ba561bed5",
+        "5350896b548bf9640345f5f0",
+        "5c89e11bc1978a90406ceb67",
+        "7236ef3db54fe8867f07084c",
+        "5568985435e2e9f02190bdcf",
+        "5681a05f76589afbe6e1dd15",
+        "05be54719a876db23808bb88",
+        "5aa4def5219c45f63e48d474",
+        "4d02cc67c2af959c07f7e3bc",
+        "e43d3ed15708f28d14235c86",
+        "876966d407b4f9e39f3f9b55",
+        "222c74eea73f753b81afbfcf",
+        "a5bb70c3006e5304e546ecaa",
+        "3415451143207c45de82bf84",
+        "8dac5241a8125e7c0ec4a316",
+        "ebe84a31ed498234dfa09db1",
+        "4be73423051ccd4c532dc33e",
+        "1bcf9fe506a7ed591b1527ad",
+        "8dde3168793baa86e004fcdf",
+        "a1b74a5f7201942f8344338d",
+        "8f49efb3adf08b7e46d0c117"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "f84637f84ecb8287f9b7054e",
+        "757fb7537b2bd912af79b41c",
+        "75ded31ae2285dd039da415b",
+        "066f60f144298b38d063d94c",
+        "969ac970eb75f43de708f515",
+        "8eab1f99047bef01f5750d56",
+        "de24b031fdd892db2e69391a",
+        "b79e838c701fbf751a3b2319",
+        "5f475a0c2d7c5e07a351c095",
+        "62f6ffe0ff733da32f0d9779",
+        "9b6fb8c3e71e5a4b261e3488",
+        "aa5b699489de1608ef295cda",
+        "f762f1c0847ee4f8e94eaf1d",
+        "30f0ef9e78e59c56d2979d7b",
+        "4afd7742244a81bf2ccb9fda",
+        "d6ada6e1f6892b9ed32f97d8"
+      ],
+      "definition": "General machine performance not tied to a more specific dimension."
+    },
+    {
+      "local_theme_name": "Convenience / utility",
+      "member_cluster_ids": [
+        "0a99b741a9d9c7085d33ec5d",
+        "cb96f86c3d19d0dcb26a1765",
+        "43a72ba50aa51ef18a8fd53e",
+        "ee8d49415eea23e1b7b93e24",
+        "c1f97e90a023756ac50bf698",
+        "73284cd0a31275f334c6203d",
+        "7a4910211dc910020d69601f",
+        "6bd970e54e7ef74c6c410387",
+        "1e139dd536bf0fefe00994f6",
+        "a66903fddd34f845af60edc7",
+        "86ff628726d943fe48c74a9a",
+        "a49395d1b3e7fa08d6fbf5d9",
+        "652ca5d9f00affcf47386feb",
+        "6e28794eb950a1fc8321a177",
+        "5f16d5609c49c2d6ecd35f62",
+        "16588bdfa0523109b9e2a3fc",
+        "07bd1b1f4238aa52f554c03a",
+        "a56c48c8f5d1536f37c3fc21",
+        "6f1e279ee09fbf1a570a24b1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Convenience / utility'."
+    },
+    {
+      "local_theme_name": "Freezing performance",
+      "member_cluster_ids": [
+        "e7dd43146a60f2cba02d10cc",
+        "8253f3d0e3ad4bd2b5c0eb2c",
+        "5d852bcf4d9493a66f8b7721",
+        "89d1697d1efeebcb08cc69a9",
+        "af2a9d7dbe7712cb45f36b5e",
+        "c941f9f2632078117f05eca7",
+        "4ceab6123c161e9cd44ed241"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing performance'."
+    },
+    {
+      "local_theme_name": "Cooling performance",
+      "member_cluster_ids": [
+        "d275ddb46f4812971631880e",
+        "aacabeb7c7ec656cf4da0059",
+        "c9cdba5ce01ff8ffefbf6e6d",
+        "1c13c8ee66226b9d3c36a512",
+        "a256f5a304e031a13b25c5c0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cooling performance'."
+    },
+    {
+      "local_theme_name": "Ease of use",
+      "member_cluster_ids": [
+        "ec328decfd72c58b8f137e46",
+        "4d072f6fdea5723bd905bb99",
+        "54143a2163ccc5459bdb7e92",
+        "92ac7901145353a97f29dc1f",
+        "2d2a6ce75462708ef3e83ff2",
+        "81c3446e5bac223f7305d89c",
+        "dac69b8cf08cc3165faf794d",
+        "1d93da609bd1d6d2a41633d5",
+        "cba862501ef4a7bddd72ebb8",
+        "b4bd63d7372f7a16a7703dc5",
+        "e43c5a66c1ff7f1f0b17e874"
+      ],
+      "definition": "Ease of everyday operation."
+    },
+    {
+      "local_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "99d72faed26fca2d915ab317",
+        "f39b9f5087caeafb9e2bb66d",
+        "df625d172caf0abeb9de72ff",
+        "2494c0e065ac607ffd5b7136",
+        "cccb01da058166563e139f25",
+        "aafc42284c88876ddb80cd3f",
+        "054e9d59276625674769c877",
+        "ac4915d0620326e6edbdb74a"
+      ],
+      "definition": "Perceived value relative to price or alternative options."
+    },
+    {
+      "local_theme_name": "Portability",
+      "member_cluster_ids": [
+        "c86dfe8733e08f29d81246d4",
+        "9d8dfb455c6215ed7112657a",
+        "b2b4e7b4ffed0bc381ac3afc",
+        "f075141a5fec36caea346711",
+        "2ed8ce33f81c89b8e88542fd"
+      ],
+      "definition": "Ease of moving or transporting the appliance."
+    },
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "783558deb3034893e102fb83",
+        "b52dd39e080a9fc6c9a2eab6",
+        "d9286cfcd1d3556423a187ef",
+        "7225b7dcaaccaf90a3f38d4f"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Recommendation",
+      "member_cluster_ids": [
+        "ade2bf67869b96e38a5b503d",
+        "df21c3742480e0214587248a",
+        "5b42e73f7babaeb907ed678c",
+        "36d6049acac82b004febd919",
+        "4433ce1a4cac2e7397e357f5",
+        "d46f353c413f3406c931a0af"
+      ],
+      "definition": "Whether reviewers recommend the product."
+    },
+    {
+      "local_theme_name": "Ice availability",
+      "member_cluster_ids": [
+        "51ebaac0e354dfc54122cac0",
+        "9a14bd6821117321d9d68e0c",
+        "485da50bf134cb91eb14d0dc",
+        "afdde6137b365bf179631f52",
+        "4f18e89ab738b577185037c2",
+        "8b48a57e4c8e8f18d9431cdb",
+        "46acdf8a5dffe3c6891502e8"
+      ],
+      "definition": "Whether ice is readily available when needed."
+    },
+    {
+      "local_theme_name": "Cost savings",
+      "member_cluster_ids": [
+        "2b54c2f0316c5c87f69e0617",
+        "a06dd47bac9e7e1399ffdb1a",
+        "a0da0afdebba1680a21f031e",
+        "802c0e6353f598d777c3476b"
+      ],
+      "definition": "Money saved compared with alternatives such as buying bagged ice, repair, or replacement."
+    },
+    {
+      "local_theme_name": "Ice Longevity",
+      "member_cluster_ids": [
+        "f1b7b3d60760d47bb13bcf1c",
+        "1e3f0d68a5b820c8d42f2d5f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Longevity'."
+    },
+    {
+      "local_theme_name": "Maintenance",
+      "member_cluster_ids": [
+        "6e910175a2637337c116a51c",
+        "953972840887a6ad3c023788"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance'."
+    },
+    {
+      "local_theme_name": "Compatibility",
+      "member_cluster_ids": [
+        "6b8d2aa7745296882be02272",
+        "fb11e78a287b7f1614bcee9b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compatibility'."
+    },
+    {
+      "local_theme_name": "Freezing",
+      "member_cluster_ids": [
+        "79e8beee4b8c8fd7fec5f72f",
+        "328c75ff86378e60c7aaa802"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing'."
+    },
+    {
+      "local_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "3990aac3b95d4654ba0df4f1",
+        "2b7cd2f1dac483a3ed4cdcd7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature control'."
+    },
+    {
+      "local_theme_name": "Insulation Quality",
+      "member_cluster_ids": [
+        "23a9f133ba89dccddc2ab30c",
+        "f6a7e3411169aacb8248c75c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Insulation Quality'."
+    },
+    {
+      "local_theme_name": "Ice retention",
+      "member_cluster_ids": [
+        "1028b188fd188828e7e3682f",
+        "33644e6a15fe1f8668b9b8ac"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice retention'."
+    },
+    {
+      "local_theme_name": "Temperature Maintenance",
+      "member_cluster_ids": [
+        "ad1637c50b3f8429842ae8cc",
+        "6dab78a2533234427dcc4412"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature Maintenance'."
+    },
+    {
+      "local_theme_name": "Storage Convenience",
+      "member_cluster_ids": [
+        "3e4a07cd2418bc574efba3d9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Storage Convenience'."
+    },
+    {
+      "local_theme_name": "Temperature Performance",
+      "member_cluster_ids": [
+        "6fc8d5d79c5f55abeb4e6447"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature Performance'."
+    },
+    {
+      "local_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "27faf1b6acf8f529a3c461e8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Capacity'."
+    },
+    {
+      "local_theme_name": "Ice cube durability",
+      "member_cluster_ids": [
+        "6421cf2b019b865d316fb5d7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice cube durability'."
+    },
+    {
+      "local_theme_name": "Product condition",
+      "member_cluster_ids": [
+        "f44ac3cc19a89dd62dd5a705"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product condition'."
+    },
+    {
+      "local_theme_name": "Replacement Effectiveness",
+      "member_cluster_ids": [
+        "426b11314ff92eef2b8d8387"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Effectiveness'."
+    },
+    {
+      "local_theme_name": "Maintenance Requirement",
+      "member_cluster_ids": [
+        "24bebf9dcfbcfcf067952daa"
+      ],
+      "definition": "Clusters describing the analytical concept 'Maintenance Requirement'."
+    },
+    {
+      "local_theme_name": "Installation",
+      "member_cluster_ids": [
+        "f86d9822c2a5f908e082acaa"
+      ],
+      "definition": "Ease or difficulty of installing or connecting the machine."
+    },
+    {
+      "local_theme_name": "Installation time",
+      "member_cluster_ids": [
+        "63071a091b1fcb8d1b6d57a8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Installation time'."
+    },
+    {
+      "local_theme_name": "Defrosting Frequency",
+      "member_cluster_ids": [
+        "fd0874712ae9307bb4649ef7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Defrosting Frequency'."
+    },
+    {
+      "local_theme_name": "Ice Maker Utility",
+      "member_cluster_ids": [
+        "f0f9ebf4420cc19ed2e8f136"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Maker Utility'."
+    },
+    {
+      "local_theme_name": "Ice_Durability",
+      "member_cluster_ids": [
+        "6f564b58eb1bb8258aaca36e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice_Durability'."
+    },
+    {
+      "local_theme_name": "Motor Performance",
+      "member_cluster_ids": [
+        "cd13449f300a4a96de5a1f73"
+      ],
+      "definition": "Clusters describing the analytical concept 'Motor Performance'."
+    },
+    {
+      "local_theme_name": "Space Efficiency",
+      "member_cluster_ids": [
+        "3ecad211a44f078a1dee0d6f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Space Efficiency'."
+    },
+    {
+      "local_theme_name": "Visual Appeal",
+      "member_cluster_ids": [
+        "ae206ffe1be63d858d2cf498"
+      ],
+      "definition": "Clusters describing the analytical concept 'Visual Appeal'."
+    },
+    {
+      "local_theme_name": "Water Efficiency",
+      "member_cluster_ids": [
+        "5045a90d4bc8f2b7ca66e6b6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Efficiency'."
+    },
+    {
+      "local_theme_name": "Cooling Coils",
+      "member_cluster_ids": [
+        "a6c514024f8d1929a9f17281"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cooling Coils'."
+    },
+    {
+      "local_theme_name": "Machine size",
+      "member_cluster_ids": [
+        "544de85ac1d506aae4063664"
+      ],
+      "definition": "Physical dimensions or compactness of the appliance."
+    },
+    {
+      "local_theme_name": "Readiness",
+      "member_cluster_ids": [
+        "29ccb739eb302e962e1b6517"
+      ],
+      "definition": "Clusters describing the analytical concept 'Readiness'."
+    },
+    {
+      "local_theme_name": "Refill Convenience",
+      "member_cluster_ids": [
+        "f41e91a1175a0eeb27d14bae"
+      ],
+      "definition": "Clusters describing the analytical concept 'Refill Convenience'."
+    },
+    {
+      "local_theme_name": "Tray Management",
+      "member_cluster_ids": [
+        "b00d01507c7d6698736b10f6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Tray Management'."
+    },
+    {
+      "local_theme_name": "Setup time",
+      "member_cluster_ids": [
+        "62016a3783ebfe704250838e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Setup time'."
+    },
+    {
+      "local_theme_name": "Style",
+      "member_cluster_ids": [
+        "9ff205880ef6f7218f484718"
+      ],
+      "definition": "Clusters describing the analytical concept 'Style'."
+    },
+    {
+      "local_theme_name": "Usage Frequency",
+      "member_cluster_ids": [
+        "82cf3c3c49ccbbbd885a59b6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Usage Frequency'."
+    },
+    {
+      "local_theme_name": "Accessibility",
+      "member_cluster_ids": [
+        "3f14fc7dcc415ac4bb09bb3b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Accessibility'."
+    },
+    {
+      "local_theme_name": "Basket Temperature",
+      "member_cluster_ids": [
+        "e8b44f0b3cde672acf429e88"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Temperature'."
+    },
+    {
+      "local_theme_name": "Cleanability",
+      "member_cluster_ids": [
+        "c32e436bc6cc99cf375159cc"
+      ],
+      "definition": "Ease or effectiveness of cleaning the machine."
+    },
+    {
+      "local_theme_name": "Efficiency",
+      "member_cluster_ids": [
+        "90c83b6dfb87a517eecd3b77"
+      ],
+      "definition": "Clusters describing the analytical concept 'Efficiency'."
+    },
+    {
+      "local_theme_name": "Freezing Behavior",
+      "member_cluster_ids": [
+        "9c895cc04a76be88bf0269cf"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing Behavior'."
+    },
+    {
+      "local_theme_name": "Freezing speed",
+      "member_cluster_ids": [
+        "95cebff19fca54d36dbffdd8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Freezing speed'."
+    },
+    {
+      "local_theme_name": "Ice Keeping Ability",
+      "member_cluster_ids": [
+        "aab671aad8a8b64dbdcfab26"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Keeping Ability'."
+    },
+    {
+      "local_theme_name": "Replenishment Speed",
+      "member_cluster_ids": [
+        "a67d1c3c23e2c34d9fb2ca76"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replenishment Speed'."
+    },
+    {
+      "local_theme_name": "Start-Up Time",
+      "member_cluster_ids": [
+        "bf68715cc17b7018386aa8a7"
+      ],
+      "definition": "Clusters describing the analytical concept 'Start-Up Time'."
+    },
+    {
+      "local_theme_name": "Usage Convenience",
+      "member_cluster_ids": [
+        "2e3762e1ae33775ac203e085"
+      ],
+      "definition": "Clusters describing the analytical concept 'Usage Convenience'."
+    }
+  ]
+}

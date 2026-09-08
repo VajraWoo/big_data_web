@@ -1,0 +1,556 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-015",
+  "local_themes": [
+    {
+      "local_theme_name": "Ice quality",
+      "member_cluster_ids": [
+        "deee79daa562e12826c39626",
+        "cf5b9bd2f10274eaea4cb41a",
+        "4a5817b70808e69940462671",
+        "a98bd634b91420fe1a4917af",
+        "4ecf3587027038230660088a",
+        "34781d3c1d5e59284004920c",
+        "faefdf94d9354eb0fd5000c1",
+        "be951f863bee1c5316677b63",
+        "d9c912a6ded4b3f3fe33b20d",
+        "af6bbf69189d162967192f10",
+        "65c4fdc3d9eef43cf3f80ae6",
+        "60d8549fd79954fab2b14a79",
+        "970e1d748d530b6a03e7c9d8",
+        "4adc4447685d0e0b4b341a86",
+        "8446bef030d3f869b24d0057",
+        "0fd9537b35ed6e4a87484d53",
+        "82396ddcd44cf81898c7d62c",
+        "d70d5bba8c73d4a89ca8a0f9",
+        "2a8f7c46fc7b0e64da9b6e8a",
+        "762c92aeb89f3184016d8d80",
+        "f577afd5ed73c286a7605a90",
+        "421c39e797c351371725e695",
+        "c4c9c08fac84b5f0f8227379",
+        "d6366f56c36a701a23ca768c",
+        "79587f60d855ed6575898220",
+        "0bdf87d5fb8779393290b595",
+        "aa79786b1a10fdb713f20fe7",
+        "993a35b0dba85f5490757d32"
+      ],
+      "definition": "Overall perceived quality of produced ice, excluding distinct size/taste/texture dimensions."
+    },
+    {
+      "local_theme_name": "Appearance",
+      "member_cluster_ids": [
+        "6bcf46e9056b5b7c836f75b9",
+        "6630f81673ac82214e26c6e5",
+        "6d7a00dad11e28f90f3e8a29",
+        "314dffc7c354c7dde33d97b0",
+        "85946b0f2e06d737cc3e6c19",
+        "fcf6fd14011dfb6d362132d4",
+        "0f39ea29a3571a93d4e71997",
+        "047ccb9253e1b838fc49bd04",
+        "fdc56ee49de5f174cc0cf95c",
+        "7fb2c43df2a59f3a65d5bf38",
+        "c646d73f0bbcfe2eed19c774",
+        "8efbe373c6047a08e27ffd98",
+        "83f28f689088a32c729d5443",
+        "fa5655522c1ce90214450e6f",
+        "975b428020eb627bd7f30009",
+        "f3602b99a7a38f44bb19b584",
+        "39614b6696f9cc410c1d43b2",
+        "a988946cb247c5319d334c42",
+        "78ae7c7c6880e7fb96c11755",
+        "2e23831e491c4618b02cb9f8",
+        "1fd813c0d1da8792ddbda032"
+      ],
+      "definition": "Visual appearance of the appliance."
+    },
+    {
+      "local_theme_name": "Product condition",
+      "member_cluster_ids": [
+        "5f601edf4238c22e9a366089",
+        "2bf9c477321aeb7266b4d66a",
+        "38414b5f56f66392ddd624c1",
+        "5adc439f9044ce8a75204427",
+        "3a7546784cb3f63c01efd3c4",
+        "83468d05f51162e5d7f6a031",
+        "e9e3c674e39e1156dd7e7e51",
+        "5ca11d815a459720b5f239d3",
+        "ae9e0823f1d5893483f0376c",
+        "bd5ec65f8736b34dc05cd22a",
+        "c9210bcae6330fd2384541dd",
+        "4821eedb3b731e8103cdae0f",
+        "85fd21a41a74ef3e04e966bc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product condition'."
+    },
+    {
+      "local_theme_name": "Build quality",
+      "member_cluster_ids": [
+        "52574a2457c22505dad89c66",
+        "318ef20d149673f96beb652d",
+        "3512ca4122b982367e4acf12",
+        "8a5a3eff1cd211564c6bbf64",
+        "0213a17ca36c00a036279622",
+        "6d5c8c5f0c1c7fbc5f4125b2",
+        "33b6e5a9605c7afff75e7542",
+        "5d909cb05afad4032ab7a1ac"
+      ],
+      "definition": "Clusters describing the analytical concept 'Build quality'."
+    },
+    {
+      "local_theme_name": "Design",
+      "member_cluster_ids": [
+        "75a5b7a42aace281366b9991",
+        "b1587ad39c12fe428b1d310d",
+        "3628a8b527affe577093c355",
+        "501175a6ce8b68b0734bd85c",
+        "2d8eb8b9089d212b65b3e851",
+        "eae2361cf0efcbf11792d5a3",
+        "610081937d62c3594a873c50",
+        "01d4757f7f6cbcba5dd6d891",
+        "6e5be4fb365b3cb4ad54f4e8",
+        "fe6c5db76790b5264e2026ed"
+      ],
+      "definition": "Design features or layout of the appliance."
+    },
+    {
+      "local_theme_name": "Fit",
+      "member_cluster_ids": [
+        "a4969a32096bd6542c61f7c3",
+        "c74611757ed18888a88c30d1",
+        "d9c0c1adb6618c359bc9cbef",
+        "5a4887ca6de7c6cfd5e809f0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fit'."
+    },
+    {
+      "local_theme_name": "Color",
+      "member_cluster_ids": [
+        "513a6e908e4b838785301e3a",
+        "19d48cb43633ebcf2ad0b0fb",
+        "cf4b994a81a05c51318ee48d",
+        "043918f55579af3702b1b116"
+      ],
+      "definition": "Clusters describing the analytical concept 'Color'."
+    },
+    {
+      "local_theme_name": "Description Accuracy",
+      "member_cluster_ids": [
+        "62860588760d84f447497c1a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Description Accuracy'."
+    },
+    {
+      "local_theme_name": "Gift Suitability",
+      "member_cluster_ids": [
+        "4ed840ac7bb7d17f6655a950"
+      ],
+      "definition": "Clusters describing the analytical concept 'Gift Suitability'."
+    },
+    {
+      "local_theme_name": "Replacement Quality",
+      "member_cluster_ids": [
+        "1feabe112a3e11f301c5aa58",
+        "a59e753c17d233996662339b",
+        "63d236d25788999fee1ea550"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Quality'."
+    },
+    {
+      "local_theme_name": "Machine Quality",
+      "member_cluster_ids": [
+        "b9f1a84c06c3402803872ad9",
+        "94ed00d51c8b02c597996f6d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Machine Quality'."
+    },
+    {
+      "local_theme_name": "Suitability",
+      "member_cluster_ids": [
+        "d0e4d332e380959b8fb6fb62",
+        "68fec02a206cff20fc5f02be",
+        "8793a547ed8a4321083ff524",
+        "f812615ce00bf54d21e1d9fe",
+        "114d9190860faf290d05b852"
+      ],
+      "definition": "Clusters describing the analytical concept 'Suitability'."
+    },
+    {
+      "local_theme_name": "Instructions Clarity",
+      "member_cluster_ids": [
+        "390cba3dcfb17e48d690b751"
+      ],
+      "definition": "Clusters describing the analytical concept 'Instructions Clarity'."
+    },
+    {
+      "local_theme_name": "Defects",
+      "member_cluster_ids": [
+        "5b410296bd486db42903bdac",
+        "3da4a2bab09aa1fa7b0bb199",
+        "1034731f3e0388c8c9d9e100"
+      ],
+      "definition": "Clusters describing the analytical concept 'Defects'."
+    },
+    {
+      "local_theme_name": "Packaging",
+      "member_cluster_ids": [
+        "c3b963e5766dc4098f41dbe5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Packaging'."
+    },
+    {
+      "local_theme_name": "Odor",
+      "member_cluster_ids": [
+        "cbae483f41ed4ef25f0c654f",
+        "caea3cf1e41325179668c291",
+        "e461d52f352b6ebcd3b96aa1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Odor'."
+    },
+    {
+      "local_theme_name": "Product Quality",
+      "member_cluster_ids": [
+        "c860fb0495e4480335fe017d",
+        "f6b4384a41a47d63143fdaa6",
+        "8365e9cddece9119eba5355f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Quality'."
+    },
+    {
+      "local_theme_name": "Handiness",
+      "member_cluster_ids": [
+        "e6dad929550b9df9aa8e6002"
+      ],
+      "definition": "Clusters describing the analytical concept 'Handiness'."
+    },
+    {
+      "local_theme_name": "Replacement Fit",
+      "member_cluster_ids": [
+        "611b1a32b7320332f1b1ad96"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Fit'."
+    },
+    {
+      "local_theme_name": "Party Suitability",
+      "member_cluster_ids": [
+        "34b986e491e60e88c7f4dc30"
+      ],
+      "definition": "Clusters describing the analytical concept 'Party Suitability'."
+    },
+    {
+      "local_theme_name": "Consistency",
+      "member_cluster_ids": [
+        "3eb0d7eec39d49e11897519a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Consistency'."
+    },
+    {
+      "local_theme_name": "Color Accuracy",
+      "member_cluster_ids": [
+        "6172c795be679df639d16ec3",
+        "8afa03aad4989329c2d0b66b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Color Accuracy'."
+    },
+    {
+      "local_theme_name": "Unit Quality",
+      "member_cluster_ids": [
+        "954d30edb7191156c23ede24",
+        "b5cd6bd4194af2231c3cedf6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Unit Quality'."
+    },
+    {
+      "local_theme_name": "Purchase Quality",
+      "member_cluster_ids": [
+        "256f86364dd1cdac143bdea4",
+        "dc404fd606e64df5be80d07a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Purchase Quality'."
+    },
+    {
+      "local_theme_name": "Expectations",
+      "member_cluster_ids": [
+        "c45753e3cf7023da39d28159"
+      ],
+      "definition": "Clusters describing the analytical concept 'Expectations'."
+    },
+    {
+      "local_theme_name": "Versatility",
+      "member_cluster_ids": [
+        "11d1f09aed1d847846d9da67",
+        "39fd96ad97c29a1c87493a5c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Versatility'."
+    },
+    {
+      "local_theme_name": "Plastic Quality",
+      "member_cluster_ids": [
+        "947b6a557df43bdfab303ffb",
+        "68cfb2070536096bc581ebbb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Plastic Quality'."
+    },
+    {
+      "local_theme_name": "Compatibility",
+      "member_cluster_ids": [
+        "93729fc615ea9987d3579503"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compatibility'."
+    },
+    {
+      "local_theme_name": "Noise level",
+      "member_cluster_ids": [
+        "c2609da791a4159e9a48e1ac",
+        "e5418003a13fbf511f76e436"
+      ],
+      "definition": "Operating sound or fan/compressor noise."
+    },
+    {
+      "local_theme_name": "Portability",
+      "member_cluster_ids": [
+        "6da14906f31ca062eff99856"
+      ],
+      "definition": "Ease of moving or transporting the appliance."
+    },
+    {
+      "local_theme_name": "Aesthetics",
+      "member_cluster_ids": [
+        "37b8d9847bcd1f2a8a9ace7c",
+        "d88187719fdc7b279732cd14"
+      ],
+      "definition": "Clusters describing the analytical concept 'Aesthetics'."
+    },
+    {
+      "local_theme_name": "Arrival Condition",
+      "member_cluster_ids": [
+        "bdefa0117ff43e3bfe538c5b",
+        "6aa7dd686b6943013dffb6ec"
+      ],
+      "definition": "Clusters describing the analytical concept 'Arrival Condition'."
+    },
+    {
+      "local_theme_name": "Durability",
+      "member_cluster_ids": [
+        "ca6965234dd5ad49c8a5df4e"
+      ],
+      "definition": "Longevity and resistance to wear or failure."
+    },
+    {
+      "local_theme_name": "Features",
+      "member_cluster_ids": [
+        "af18f9da09be2f054c579b7d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Features'."
+    },
+    {
+      "local_theme_name": "Product Description Accuracy",
+      "member_cluster_ids": [
+        "2cd0782f43c98abdf2678ba3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Description Accuracy'."
+    },
+    {
+      "local_theme_name": "Overall Impression",
+      "member_cluster_ids": [
+        "da4cc3dc75211a65f1c8ffa8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Overall Impression'."
+    },
+    {
+      "local_theme_name": "Insulation",
+      "member_cluster_ids": [
+        "b3b75ef26f1fbe01b683322d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Insulation'."
+    },
+    {
+      "local_theme_name": "Lid Sealing",
+      "member_cluster_ids": [
+        "f310a232f03faf9cdef797d6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Lid Sealing'."
+    },
+    {
+      "local_theme_name": "Parts Completeness",
+      "member_cluster_ids": [
+        "b55bf3114e20f39f3985a4d1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Parts Completeness'."
+    },
+    {
+      "local_theme_name": "Style",
+      "member_cluster_ids": [
+        "28dc4653d6e1521398dcc7c4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Style'."
+    },
+    {
+      "local_theme_name": "Completeness",
+      "member_cluster_ids": [
+        "c3b78b90ede138fdf7213d39"
+      ],
+      "definition": "Clusters describing the analytical concept 'Completeness'."
+    },
+    {
+      "local_theme_name": "Products Quality",
+      "member_cluster_ids": [
+        "ffb9940cc03144e08a960e70"
+      ],
+      "definition": "Clusters describing the analytical concept 'Products Quality'."
+    },
+    {
+      "local_theme_name": "Sturdiness",
+      "member_cluster_ids": [
+        "e146b449845b51f23657a9dd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sturdiness'."
+    },
+    {
+      "local_theme_name": "Countertop Suitability",
+      "member_cluster_ids": [
+        "fbc70a98b30810c2f726b12a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Countertop Suitability'."
+    },
+    {
+      "local_theme_name": "Placement",
+      "member_cluster_ids": [
+        "909e546975b9a8407c60e28e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Placement'."
+    },
+    {
+      "local_theme_name": "Cube Quality",
+      "member_cluster_ids": [
+        "ef1b085ed0439b2eec2d18ba"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cube Quality'."
+    },
+    {
+      "local_theme_name": "Part Quality",
+      "member_cluster_ids": [
+        "016a2bfcf17c0f8f12e3df93"
+      ],
+      "definition": "Clusters describing the analytical concept 'Part Quality'."
+    },
+    {
+      "local_theme_name": "Reviews",
+      "member_cluster_ids": [
+        "de77bcda640db11d12dcad7d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reviews'."
+    },
+    {
+      "local_theme_name": "Build_Quality",
+      "member_cluster_ids": [
+        "d440832abc861075ff25e03e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Build_Quality'."
+    },
+    {
+      "local_theme_name": "Visual Appeal",
+      "member_cluster_ids": [
+        "33f57bb2eed6482a6ae8abf0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Visual Appeal'."
+    },
+    {
+      "local_theme_name": "Engineering Quality",
+      "member_cluster_ids": [
+        "8932ce908754bf4b956de732"
+      ],
+      "definition": "Clusters describing the analytical concept 'Engineering Quality'."
+    },
+    {
+      "local_theme_name": "Finish",
+      "member_cluster_ids": [
+        "8e07f6862fc6bec1c2594a4b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Finish'."
+    },
+    {
+      "local_theme_name": "Material Quality",
+      "member_cluster_ids": [
+        "075f0790ccc6acd5fc0887cd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Material Quality'."
+    },
+    {
+      "local_theme_name": "Mold Resistance",
+      "member_cluster_ids": [
+        "6d0b70f179beadc1a1edd37a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mold Resistance'."
+    },
+    {
+      "local_theme_name": "Part Fit",
+      "member_cluster_ids": [
+        "5eff25cbe8dd6b14ccb39a6c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Part Fit'."
+    },
+    {
+      "local_theme_name": "Replacement Accuracy",
+      "member_cluster_ids": [
+        "861eada20362af8a0c4d423e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Replacement Accuracy'."
+    },
+    {
+      "local_theme_name": "Advertising Accuracy",
+      "member_cluster_ids": [
+        "23ab30973e47223c728f96cb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Advertising Accuracy'."
+    },
+    {
+      "local_theme_name": "Authenticity",
+      "member_cluster_ids": [
+        "ca7c44c4f7bd83dd6eb46ec1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Authenticity'."
+    },
+    {
+      "local_theme_name": "Construction Quality",
+      "member_cluster_ids": [
+        "c6ccd89a26b5ffd8da325732"
+      ],
+      "definition": "Clusters describing the analytical concept 'Construction Quality'."
+    },
+    {
+      "local_theme_name": "Design Quality",
+      "member_cluster_ids": [
+        "9ab5593ac18c3350f514f4f5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Design Quality'."
+    },
+    {
+      "local_theme_name": "Directions",
+      "member_cluster_ids": [
+        "12905fbba7327f6a5a5ad5b6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Directions'."
+    },
+    {
+      "local_theme_name": "Expectation Match",
+      "member_cluster_ids": [
+        "d86b7c118c883a8aafc15887"
+      ],
+      "definition": "Clusters describing the analytical concept 'Expectation Match'."
+    },
+    {
+      "local_theme_name": "Output",
+      "member_cluster_ids": [
+        "59f84414bdbced89d9e426fc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Output'."
+    },
+    {
+      "local_theme_name": "Product Condition On Arrival",
+      "member_cluster_ids": [
+        "971b6aba424b5ebdefdce6f3"
+      ],
+      "definition": "Clusters describing the analytical concept 'Product Condition On Arrival'."
+    }
+  ]
+}

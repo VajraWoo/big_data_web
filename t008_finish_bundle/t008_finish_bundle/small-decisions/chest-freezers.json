@@ -1,0 +1,275 @@
+{
+  "product_category": "Chest Freezers",
+  "themes": [
+    {
+      "canonical_theme_name": "Product condition",
+      "member_cluster_ids": [
+        "541ede3f0215915e58449325",
+        "cf463354b7f165389c48a8e7",
+        "623ace6c47440b1b1617c343",
+        "3b7f136f73e1598441e137b5",
+        "2f668dcd497e26c5e2e3bb78",
+        "02851051eeab31442963290b",
+        "00734d44a95ef43277767d1c",
+        "9aef7f62e1e614da398bf705"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Product condition'."
+    },
+    {
+      "canonical_theme_name": "Size",
+      "member_cluster_ids": [
+        "36384c5cf45d4f304a8617e3",
+        "e365f3abb4d692b9d5c5771b",
+        "ef69b065cb663311c23bb2cc",
+        "0be183dcad458cd4506275d5",
+        "75827c8c2321272bf8e8a2af",
+        "86967b268544f86abba9189f",
+        "9c7a0e60abfeaec5ce7b42ba"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Size'."
+    },
+    {
+      "canonical_theme_name": "Overall performance",
+      "member_cluster_ids": [
+        "bb6661e87d47c2ba3767b3f4",
+        "d41c94003b3de5d1c23ca556"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Overall performance'."
+    },
+    {
+      "canonical_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "a97eea92845202e0a42c2eb9",
+        "cf46c67ba633343df78e1d19",
+        "d208ee69d754ebb94df00eeb",
+        "713e26078d696e942728fa65",
+        "beb847c6e76d7bad24cfeecb",
+        "9d49e20d13855ebf712215ec"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Reliability'."
+    },
+    {
+      "canonical_theme_name": "Capacity",
+      "member_cluster_ids": [
+        "e6a8ee5b184cad29184e51ea",
+        "99e996fc74c90a209bcddafb",
+        "6f4286960512f8d27af3f6f5",
+        "7d5404db33da523d77576b2c",
+        "2943a42cdb3bcfdd999f7f71",
+        "2ace23e4182ac84b89d6b13b",
+        "12262936fae65256620ea8c1",
+        "1180777bddfce42bb1fd3d2d"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Capacity'."
+    },
+    {
+      "canonical_theme_name": "Product quality",
+      "member_cluster_ids": [
+        "27ddd462f4808f10c1d60a3c",
+        "085b2f4061cd6fc8c3b0cf30",
+        "ff21005804235620e841eee4",
+        "ea6689e612f2bcd41754818d"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Product quality'."
+    },
+    {
+      "canonical_theme_name": "Noise level",
+      "member_cluster_ids": [
+        "b706d4104eb3298223b61c21",
+        "1d1b6833b9693faf8697e7b6"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Noise level'."
+    },
+    {
+      "canonical_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "a94bbc623b5c57d915312808",
+        "b2788929d48973859ec90a4d",
+        "70c2b0f39d679e1321c0cd1b",
+        "efd0889e647f8185e5dad6ff"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Functionality'."
+    },
+    {
+      "canonical_theme_name": "Durability",
+      "member_cluster_ids": [
+        "564c1fdd294adad6578d6184",
+        "265773aa08b8b682b4243021",
+        "380d463d1c50b8b035f9137a"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Durability'."
+    },
+    {
+      "canonical_theme_name": "Value for money",
+      "member_cluster_ids": [
+        "8dab638ad538c6471b72e003",
+        "5c01fef28fd58e4d7a6aa676",
+        "b25bb9eb85c50e0358cf4bc4",
+        "01a83d07fa8f6ee4c47f280a"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Value for money'."
+    },
+    {
+      "canonical_theme_name": "Fit / size suitability",
+      "member_cluster_ids": [
+        "4462402face0f0d73f2240f4",
+        "e01672431653ce7b6371da57",
+        "acad2d1a048b89a4c7901c2b",
+        "c279192b6f648abbb79353a9",
+        "c6799826dd75e0169ac5f408"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Fit / size suitability'."
+    },
+    {
+      "canonical_theme_name": "Freezing performance",
+      "member_cluster_ids": [
+        "e671c733dc67c9506155cf00",
+        "5914fe8e82dae7bed1916dc1"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Freezing performance'."
+    },
+    {
+      "canonical_theme_name": "Cooling performance",
+      "member_cluster_ids": [
+        "51bdb1496a4bbf2e6495864f",
+        "02d58d937efdf7fb1c9c2237"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Cooling performance'."
+    },
+    {
+      "canonical_theme_name": "Energy efficiency",
+      "member_cluster_ids": [
+        "0e297e50cb5f61665518f262",
+        "a325724e26cbc9737a35493c"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Energy efficiency'."
+    },
+    {
+      "canonical_theme_name": "Overall satisfaction",
+      "member_cluster_ids": [
+        "741a61cec8e9482e2de07737"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Overall satisfaction'."
+    },
+    {
+      "canonical_theme_name": "Weight",
+      "member_cluster_ids": [
+        "e474392d26197a63cbd69d34"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Weight'."
+    },
+    {
+      "canonical_theme_name": "Space efficiency",
+      "member_cluster_ids": [
+        "e8817e7551e4d2b6226f1389",
+        "69c07067167567326b12dbce"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Space efficiency'."
+    },
+    {
+      "canonical_theme_name": "Cooling speed",
+      "member_cluster_ids": [
+        "5520d863edd8d850cd944078"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Cooling speed'."
+    },
+    {
+      "canonical_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "6579ee98567a02970360e81c"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Temperature control'."
+    },
+    {
+      "canonical_theme_name": "Food preservation",
+      "member_cluster_ids": [
+        "2c86cb8254a1550b6e475520"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Food preservation'."
+    },
+    {
+      "canonical_theme_name": "Portability",
+      "member_cluster_ids": [
+        "2b219e806a956fff93b5bfb4"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Portability'."
+    },
+    {
+      "canonical_theme_name": "Appearance",
+      "member_cluster_ids": [
+        "c5d9fd1b613a6696107548b1"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Appearance'."
+    },
+    {
+      "canonical_theme_name": "Setup",
+      "member_cluster_ids": [
+        "8c81bcf09c97c09ef3fc8b2b"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Setup'."
+    },
+    {
+      "canonical_theme_name": "Packaging quality",
+      "member_cluster_ids": [
+        "875e9b370ac789b60af26f05"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Packaging quality'."
+    },
+    {
+      "canonical_theme_name": "Recommendation",
+      "member_cluster_ids": [
+        "73c35cb50cede4dcd053ac4d"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Recommendation'."
+    },
+    {
+      "canonical_theme_name": "Frost buildup",
+      "member_cluster_ids": [
+        "08d766df31c2251583edc837"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Frost buildup'."
+    },
+    {
+      "canonical_theme_name": "Basket / organization",
+      "member_cluster_ids": [
+        "b6c393485f6b57b0a6ad7b04"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Basket / organization'."
+    },
+    {
+      "canonical_theme_name": "Suitability",
+      "member_cluster_ids": [
+        "6072d5faa4b2e5c9acac423c"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Suitability'."
+    },
+    {
+      "canonical_theme_name": "Packaging condition",
+      "member_cluster_ids": [
+        "ed7b18605a64b1f8b9c08b9b"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Packaging condition'."
+    },
+    {
+      "canonical_theme_name": "Price",
+      "member_cluster_ids": [
+        "737ed8b8c83982414eae413b"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Price'."
+    },
+    {
+      "canonical_theme_name": "Seal quality",
+      "member_cluster_ids": [
+        "0afb1110f8e5df097f016ef4"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Seal quality'."
+    },
+    {
+      "canonical_theme_name": "Lid condition",
+      "member_cluster_ids": [
+        "234d2dc832e5357edffc7980"
+      ],
+      "rationale": "Conservative semantic consolidation of first-level clusters for the analytical dimension 'Lid condition'."
+    }
+  ]
+}

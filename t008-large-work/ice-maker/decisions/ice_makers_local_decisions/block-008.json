@@ -1,0 +1,451 @@
+{
+  "product_category": "Ice Makers",
+  "block_id": "block-008",
+  "local_themes": [
+    {
+      "local_theme_name": "Water Level Indicator",
+      "member_cluster_ids": [
+        "8a96f9d9cf211339040f19d6",
+        "855c269f810d8344e7e3657b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Level Indicator'."
+    },
+    {
+      "local_theme_name": "Usage Frequency",
+      "member_cluster_ids": [
+        "e2ddb2add98a83779eaea60c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Usage Frequency'."
+    },
+    {
+      "local_theme_name": "Temperature control",
+      "member_cluster_ids": [
+        "1afbcc55cee8a0fc12b67b23",
+        "4b697d7622cf634b177d407c",
+        "e98b39943caccb6f85353a07",
+        "5819c3c8df080a066ed812ef",
+        "da5eed60c2db32873ed0ad92"
+      ],
+      "definition": "Clusters describing the analytical concept 'Temperature control'."
+    },
+    {
+      "local_theme_name": "Functionality",
+      "member_cluster_ids": [
+        "41fe65ebcd7f8bcaa0916200",
+        "1b3ffa6c544f8e26859c3185",
+        "8291fafd8e72c4f020c806cc",
+        "56ea45e2dfacaddf405a7000"
+      ],
+      "definition": "Whether the machine and its functions work as intended."
+    },
+    {
+      "local_theme_name": "Odor",
+      "member_cluster_ids": [
+        "52b72a0beab819ab063f47cc",
+        "3b36b080837475a1970530e5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Odor'."
+    },
+    {
+      "local_theme_name": "Sensor Functionality",
+      "member_cluster_ids": [
+        "8bf0013f76ab7fe84abc38f1",
+        "7f76b9c21ab46bbbac29392d",
+        "eebb5ba01f22ddd528e15057"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sensor Functionality'."
+    },
+    {
+      "local_theme_name": "Fan Functionality",
+      "member_cluster_ids": [
+        "d036201aa156b68d234b8a91"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fan Functionality'."
+    },
+    {
+      "local_theme_name": "Heat Generation",
+      "member_cluster_ids": [
+        "d6cfdb99b7c3c113e5c67823"
+      ],
+      "definition": "Clusters describing the analytical concept 'Heat Generation'."
+    },
+    {
+      "local_theme_name": "Water Level Detection",
+      "member_cluster_ids": [
+        "98fe373afb325737324aff92"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Level Detection'."
+    },
+    {
+      "local_theme_name": "Shut-Off Function",
+      "member_cluster_ids": [
+        "7abbd0138871af80e0561939",
+        "f05672490261fad4029c3f27"
+      ],
+      "definition": "Clusters describing the analytical concept 'Shut-Off Function'."
+    },
+    {
+      "local_theme_name": "Auto Shut-Off",
+      "member_cluster_ids": [
+        "18d3485a8756c65bb30919d8",
+        "bd02acef7b5685602bf9041b"
+      ],
+      "definition": "Clusters describing the analytical concept 'Auto Shut-Off'."
+    },
+    {
+      "local_theme_name": "Safety",
+      "member_cluster_ids": [
+        "4e4653c594794075f75cf164",
+        "51f280aef33f241b7515c8bb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Safety'."
+    },
+    {
+      "local_theme_name": "Water Detection",
+      "member_cluster_ids": [
+        "838fbc7c0f936e251d20866b",
+        "96031c5e99cc80efbf663f6e",
+        "3f0d6c859e6c9d3db26d567d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Detection'."
+    },
+    {
+      "local_theme_name": "Heat Emission",
+      "member_cluster_ids": [
+        "b0b04b8c38aa6914f2af2189"
+      ],
+      "definition": "Clusters describing the analytical concept 'Heat Emission'."
+    },
+    {
+      "local_theme_name": "Pump Functionality",
+      "member_cluster_ids": [
+        "bafd66439cc6322eb6233194"
+      ],
+      "definition": "Clusters describing the analytical concept 'Pump Functionality'."
+    },
+    {
+      "local_theme_name": "Reliability",
+      "member_cluster_ids": [
+        "05a8200377b874d1f412ee6d",
+        "253edf70aa9e24637ad72a0d"
+      ],
+      "definition": "Consistency and trouble-free operation over time."
+    },
+    {
+      "local_theme_name": "Jamming",
+      "member_cluster_ids": [
+        "110b706242f8998f9780d5dd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Jamming'."
+    },
+    {
+      "local_theme_name": "Lights Behavior",
+      "member_cluster_ids": [
+        "67b48bf09ae009ab566db8ae"
+      ],
+      "definition": "Clusters describing the analytical concept 'Lights Behavior'."
+    },
+    {
+      "local_theme_name": "Water Sensor",
+      "member_cluster_ids": [
+        "b79fa54fa1da169ca560dbbe",
+        "322aa919b0ddd6d653ab8542"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Sensor'."
+    },
+    {
+      "local_theme_name": "Auto Shut-Off Feature",
+      "member_cluster_ids": [
+        "dd5f955e9826c1fc00bad221"
+      ],
+      "definition": "Clusters describing the analytical concept 'Auto Shut-Off Feature'."
+    },
+    {
+      "local_theme_name": "Cord Length",
+      "member_cluster_ids": [
+        "9c18545aa109b96128a4b152"
+      ],
+      "definition": "Clusters describing the analytical concept 'Cord Length'."
+    },
+    {
+      "local_theme_name": "Vibration",
+      "member_cluster_ids": [
+        "9bd939d502983b851f784b02"
+      ],
+      "definition": "Clusters describing the analytical concept 'Vibration'."
+    },
+    {
+      "local_theme_name": "Notification Feature",
+      "member_cluster_ids": [
+        "cde8a09f2f03ca0150ac360a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Notification Feature'."
+    },
+    {
+      "local_theme_name": "Indicator Behavior",
+      "member_cluster_ids": [
+        "5ef5a919bb13d65681e50c98"
+      ],
+      "definition": "Clusters describing the analytical concept 'Indicator Behavior'."
+    },
+    {
+      "local_theme_name": "Sensor Accuracy",
+      "member_cluster_ids": [
+        "c0e31b39f3b1eeccdeb3f815"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sensor Accuracy'."
+    },
+    {
+      "local_theme_name": "Fan Operation",
+      "member_cluster_ids": [
+        "9b1fda56fa580af440fd588e"
+      ],
+      "definition": "Clusters describing the analytical concept 'Fan Operation'."
+    },
+    {
+      "local_theme_name": "Full Indicator",
+      "member_cluster_ids": [
+        "8e66c2ab4331790d6170bd15"
+      ],
+      "definition": "Clusters describing the analytical concept 'Full Indicator'."
+    },
+    {
+      "local_theme_name": "Mode Behavior",
+      "member_cluster_ids": [
+        "29b1c6e1497a94bac630b9ab"
+      ],
+      "definition": "Clusters describing the analytical concept 'Mode Behavior'."
+    },
+    {
+      "local_theme_name": "Readiness",
+      "member_cluster_ids": [
+        "11a63db5f55c46137af5d57f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Readiness'."
+    },
+    {
+      "local_theme_name": "Auto-Stop Feature",
+      "member_cluster_ids": [
+        "d10d30e78ff795523a423c14"
+      ],
+      "definition": "Clusters describing the analytical concept 'Auto-Stop Feature'."
+    },
+    {
+      "local_theme_name": "Shutoff Behavior",
+      "member_cluster_ids": [
+        "f00499275eb069ca3fbba8f9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Shutoff Behavior'."
+    },
+    {
+      "local_theme_name": "Wetness",
+      "member_cluster_ids": [
+        "e7b4aa0d285eb06165846b96"
+      ],
+      "definition": "Clusters describing the analytical concept 'Wetness'."
+    },
+    {
+      "local_theme_name": "Compatibility",
+      "member_cluster_ids": [
+        "ba2dfd37620ecc475e464128"
+      ],
+      "definition": "Clusters describing the analytical concept 'Compatibility'."
+    },
+    {
+      "local_theme_name": "Ice Level Indicator",
+      "member_cluster_ids": [
+        "f0fa7915f6167ed44358367a"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Level Indicator'."
+    },
+    {
+      "local_theme_name": "Automatic Shut-Off",
+      "member_cluster_ids": [
+        "a72368ce4e3f45f3d26de741"
+      ],
+      "definition": "Clusters describing the analytical concept 'Automatic Shut-Off'."
+    },
+    {
+      "local_theme_name": "Bluetooth Connectivity",
+      "member_cluster_ids": [
+        "fb26f470f5543d5bb748d1e1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Bluetooth Connectivity'."
+    },
+    {
+      "local_theme_name": "Monitoring Requirement",
+      "member_cluster_ids": [
+        "bb97b3b1605534c51c9e14e8"
+      ],
+      "definition": "Clusters describing the analytical concept 'Monitoring Requirement'."
+    },
+    {
+      "local_theme_name": "Power Control",
+      "member_cluster_ids": [
+        "5d86a32bb6f9549216902467"
+      ],
+      "definition": "Clusters describing the analytical concept 'Power Control'."
+    },
+    {
+      "local_theme_name": "Water Indicator",
+      "member_cluster_ids": [
+        "7ff6ffd57c8891ada9cc6bfd"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Indicator'."
+    },
+    {
+      "local_theme_name": "Wiring Harness Inclusion",
+      "member_cluster_ids": [
+        "8dc65cf1fe2c4782e7f182fb"
+      ],
+      "definition": "Clusters describing the analytical concept 'Wiring Harness Inclusion'."
+    },
+    {
+      "local_theme_name": "Automation",
+      "member_cluster_ids": [
+        "e63b043e7183337dd2416b18"
+      ],
+      "definition": "Clusters describing the analytical concept 'Automation'."
+    },
+    {
+      "local_theme_name": "Error Display",
+      "member_cluster_ids": [
+        "95185769ad52c91fbc5522f5"
+      ],
+      "definition": "Clusters describing the analytical concept 'Error Display'."
+    },
+    {
+      "local_theme_name": "Indicator Accuracy",
+      "member_cluster_ids": [
+        "8718f39c53f94abc32b48c3c"
+      ],
+      "definition": "Clusters describing the analytical concept 'Indicator Accuracy'."
+    },
+    {
+      "local_theme_name": "Indicator Light Behavior",
+      "member_cluster_ids": [
+        "f2b46eaa6a94894ce33a04d0"
+      ],
+      "definition": "Clusters describing the analytical concept 'Indicator Light Behavior'."
+    },
+    {
+      "local_theme_name": "Notification System",
+      "member_cluster_ids": [
+        "b6209f7e9049ed0f2ad2a4a6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Notification System'."
+    },
+    {
+      "local_theme_name": "Sensor Reliability",
+      "member_cluster_ids": [
+        "83693a833f891709778da2b1"
+      ],
+      "definition": "Clusters describing the analytical concept 'Sensor Reliability'."
+    },
+    {
+      "local_theme_name": "Adjustments",
+      "member_cluster_ids": [
+        "c59e935077c2cd9854e87dea"
+      ],
+      "definition": "Clusters describing the analytical concept 'Adjustments'."
+    },
+    {
+      "local_theme_name": "Basket Detection",
+      "member_cluster_ids": [
+        "8a58c3b714841f3dae67cdf4"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Detection'."
+    },
+    {
+      "local_theme_name": "Basket Emptying Requirement",
+      "member_cluster_ids": [
+        "be3efb389215487cb072581d"
+      ],
+      "definition": "Clusters describing the analytical concept 'Basket Emptying Requirement'."
+    },
+    {
+      "local_theme_name": "Display accuracy",
+      "member_cluster_ids": [
+        "db41f3a2896e7e535409a29f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Display accuracy'."
+    },
+    {
+      "local_theme_name": "Ice Bin Indicator",
+      "member_cluster_ids": [
+        "3ce1d06dcee58e56e5f5f959"
+      ],
+      "definition": "Clusters describing the analytical concept 'Ice Bin Indicator'."
+    },
+    {
+      "local_theme_name": "Light Indicator",
+      "member_cluster_ids": [
+        "fd3dc3bf90716dd32f3d6293"
+      ],
+      "definition": "Clusters describing the analytical concept 'Light Indicator'."
+    },
+    {
+      "local_theme_name": "Operating Behavior",
+      "member_cluster_ids": [
+        "10882d9c3ae8e495df6616e9"
+      ],
+      "definition": "Clusters describing the analytical concept 'Operating Behavior'."
+    },
+    {
+      "local_theme_name": "Power Button Behavior",
+      "member_cluster_ids": [
+        "bcc223d8139d7b07930ea525"
+      ],
+      "definition": "Clusters describing the analytical concept 'Power Button Behavior'."
+    },
+    {
+      "local_theme_name": "Power Cord Length",
+      "member_cluster_ids": [
+        "68e770e72ba6b708f91fa381"
+      ],
+      "definition": "Clusters describing the analytical concept 'Power Cord Length'."
+    },
+    {
+      "local_theme_name": "Reset Procedure",
+      "member_cluster_ids": [
+        "232cda3a746ff03393f6de8f"
+      ],
+      "definition": "Clusters describing the analytical concept 'Reset Procedure'."
+    },
+    {
+      "local_theme_name": "Safety Feature",
+      "member_cluster_ids": [
+        "cb0c95dcab40e4e910f36085"
+      ],
+      "definition": "Clusters describing the analytical concept 'Safety Feature'."
+    },
+    {
+      "local_theme_name": "Water Addition Prompt",
+      "member_cluster_ids": [
+        "ecfa4e0c7eee031abc4ff260"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Addition Prompt'."
+    },
+    {
+      "local_theme_name": "Water Detection Accuracy",
+      "member_cluster_ids": [
+        "2a3aa94c70599bbd015465da"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Detection Accuracy'."
+    },
+    {
+      "local_theme_name": "Water Level Sensor",
+      "member_cluster_ids": [
+        "2882a00510c1d664d7b700d6"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Level Sensor'."
+    },
+    {
+      "local_theme_name": "Water Sensor Accuracy",
+      "member_cluster_ids": [
+        "820bbd88c75cbf4864f4afbc"
+      ],
+      "definition": "Clusters describing the analytical concept 'Water Sensor Accuracy'."
+    }
+  ]
+}

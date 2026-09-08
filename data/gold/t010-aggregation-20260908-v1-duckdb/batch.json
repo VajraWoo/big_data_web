@@ -1,0 +1,13 @@
+{
+  "batch_id": "t010-aggregation-20260908-v1-duckdb",
+  "data_source": "gold",
+  "is_gold": true,
+  "gold_status": "verified",
+  "analysis_status": "ready",
+  "generated_at": "2026-09-08T10:59:25.985408+00:00",
+  "facets": {
+    "positive_evaluation": "ready",
+    "negative_evaluation": "ready",
+    "improvement": "pending"
+  }
+}

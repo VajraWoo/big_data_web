@@ -1,0 +1,28 @@
+{
+  "status": "ready",
+  "engine": "duckdb",
+  "input": {
+    "candidate_rows": 315400,
+    "unique_candidate_ids": 315400,
+    "mapped_by_cluster": 230278,
+    "unmapped_no_cluster": 85122,
+    "formal_unique_reviews": 116728,
+    "formal_products": 139
+  },
+  "rules": {
+    "canonical_aggregation": "mapped_by_cluster only",
+    "review_theme_dedup": "unique review_id + taxonomy_id",
+    "mixed": "native mixed OR positive+negative within review_id+taxonomy_id => mixed once",
+    "product_ratio": "sentiment-specific unique theme reviews / all formal unique reviews for product",
+    "monthly_ratio": "sentiment-specific unique theme reviews / all formal unique reviews for product-month",
+    "unmapped": "retained in T009, excluded from canonical theme aggregation"
+  },
+  "outputs": {
+    "products": 139,
+    "product_facets": 417,
+    "themes": 15852,
+    "theme_timeseries": 116328,
+    "theme_reviews": 222069
+  },
+  "errors": []
+}
