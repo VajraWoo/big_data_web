@@ -1,18 +1,28 @@
-# Research Decisions：家电整机评论洞察
+# Research Decisions: Merchant Review Insights
 
-**Updated**: 2026-09-06
+**Finalized**: 2026-09-09
 
-本文件只记录已批准结论；技术证据见[technical-selection.md](technical-selection.md)。
+## Accepted decisions
 
-- 第一阶段对象为139个近期仍活跃、历史有效评论不少于300条的家电整机，共116,728条评论。
-- 前端商品集合、完整NLP集合和正式Gold集合相同。
-- VADER负责整体情感；ABSA负责属性及属性情感；两者不能相互替代。
-- 明确建议由`cross-encoder/nli-MiniLM2-L6-H768`处理全部评论句子；只有entailment同时高于neutral和contradiction时才接受，不设置MiniLM召回入口，也不能由关键词认定。
-- 评价主题与改进需求是两条业务链：正负评价只来自对应ABSA；明确建议不作为负面评价。
-- 隐式改进候选来自负面ABSA属性和对应原句；同一负面证据可同时服务负面评价和改进需求，且不视为重复污染。
-- MiniLM与Fast Community Detection按商品及主题类型合并相似表达；固定相似度0.75、至少10条不同评论，无合格社区时返回已完成的空结果，不生成fallback。
-- 主题名来自高频属性、中心观点短语和模板；无法可靠形成改进方向时使用中心问题或建议短语，不生成原文没有表达的方案。
-- Spark负责ETL与聚合，Transformer在Windows XPU运行。
-- 第一阶段不包含零件、配件、预警、推荐、竞品分析、模型训练或模型竞赛。
+1. 完整评论级 grounded insight 比旧 sentence-level ABSA/NLI attribution 更适合作为正式语义来源；T007 使用 Qwen3.5-4B 和完整 `text_raw`。
+2. taxonomy discovery 与全量分类是不同任务。T008 只用高置信度 community 发现稳定主题并按 category 人工审核；未入 cluster 的 insight 在 T009 保留为 unmapped，不强制分类。
+3. T009 映射应是确定性 join，不新增 nearest-theme、embedding 或阈值校准。
+4. T010 是中等规模、单机可完成的确定性聚合，DuckDB 比重新部署 Spark 聚合更直接。Spark 仍是前期全量清洗的正式技术。
+5. 改进建议的业务单位应为商品×负面 taxonomy，而不是单条评论或全类别共用建议。
+6. T011 应消费 T009 的高密度 insight，不重新读取 116,728 条评论做语义识别。
+7. T011 必须离线预生成；FastAPI 只读结果，避免在线 GPU 成本和不稳定延迟。
+8. 超长主题只按固定 insight 顺序分块，不抽样，不做代表性选择、聚类、reranking 或额外压缩算法。
+9. 质量检查发现的少量 polarity 错误应使用独立、版本化 override 修正展示，不重跑或原地改写冻结 Gold。
+10. 改进建议适合放在负面主题详情上下文中，而不是增加第三个顶层入口；这样建议、趋势和证据共享同一 product-theme 语境。
 
-旧TF-IDF主题、CPU Spark四标签DeBERTa zero-shot需求方案、忽略neutral的旧NLI接收结果以及强制fallback主题均已否决，只保留历史结果，不作为新版设计依据。
+## Final evidence
+
+- T007: 116,728 reviews, 350,656 valid insights.
+- T008: 4,992 first-level clusters, 887 reviewed category themes.
+- T009: 230,278 mapped, 85,122 unmapped.
+- T010: 139 products, 15,852 product-theme-sentiment rows, 116,328 timeseries rows, 222,069 evidence rows.
+- T011: 7,747 generated groups; 13 false-negative groups removed/reclassified; 7,734 corrected suggestions.
+
+## Rejected approaches
+
+旧 ABSA/NLI attribution、Qwen 2B、未聚类 insight 强制分类、T010 Spark 重做、在线推理 API、Redis/Celery、向量数据库、新 embedding/clustering/reranking 和 batch-size benchmark 均不进入当前实现。

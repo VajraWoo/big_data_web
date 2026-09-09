@@ -1,99 +1,55 @@
-# Feature Specification：家电整机评论洞察
+# Feature Specification: Merchant Review Insights
 
-**Status**: Approved scope and method
-**Updated**: 2026-09-08
+**Status**: Data pipeline complete; backend/frontend integrated
+**Authoritative date**: 2026-09-09
 
-## T007 superseding delta（2026-09-07）
+## 1. Objective
 
-本节仅取代旧的 sentence-level ABSA、NLI attribution patch 及其下游主题来源约定；旧结果保留为历史 baseline，不进入新版 Gold。T006-v2 已完成并冻结，正式输入为 `data/gold/nlp-input-20260907-v2/review_inputs.parquet`，T007 读取 `text_raw` 以及当前商品元数据。
+面向家电商品评论构建可追溯洞察系统。用户可以选择正式商品，分别查看正面与负面主题、数量、占比和时间趋势，下钻真实评论证据，并在负面主题详情中查看基于该商品真实问题生成的产品改进建议。
 
-新版 T007 从完整评论中抽取零个或多个 `{topic_raw, polarity, evidence, target_scope}` insight。`evidence` 必须是 `text_raw` 的原始连续子串，字符位置由程序计算；多次命中不得任意选择。输出记录 `model_id`、`revision`、`prompt_version` 和 `processing_status`。模型输出不是 Gold。
+## 2. Completed scope
 
-固定边界：不训练或微调；不回到 sentence-only ABSA；不静默回退 CPU；不覆盖旧产物；每条输入都必须保存 `success|partial_success|failed` 处理状态，失败和被拒绝的 insight 不得静默丢弃；模型输出不写入人工 Gold。
+| Stage | Contract | Accepted result |
+|---|---|---|
+| T007 | 完整 `text_raw` → grounded insight | 116,728 条输入；350,656 条有效 insight；已验收并冻结 |
+| T008 | `current_product` insight → category taxonomy | 315,400 candidates；4,992 一级 cluster；887 个审核后 category-level theme；已冻结 |
+| T009 | candidate → cluster/taxonomy mapping | 230,278 mapped，85,122 unmapped；exact-once；已冻结 |
+| T010 | mapped insight → product/theme aggregates | 139 products；15,852 themes rows；116,328 timeseries；222,069 evidence rows；已冻结 |
+| T011 | product × negative taxonomy → suggestion | 7,747 trigger groups；纠正 13 个假负面后正式保留 7,734 条建议；已完成 |
 
-当前采用 `Qwen/Qwen3.5-4B`（revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`）作为 T007 全量候选，使用 NVIDIA/Linux 上的 vLLM continuous batching 与原生 structured JSON output。旧 Transformers 单条 `generate()`＋LMFE callback 仅保留为质量 baseline，不再作为全量执行层。v2.1 prompt 强化多观点召回、当前商品/旧商品/比较商品/服务背景 scope、简洁 topic/evidence 和逐 insight 校验；生成上限为1024 tokens。本次全量仍是可审计候选产物，不因成功加载或完成运行自动成为正式 Gold。
+`15,852` 表示 `product × taxonomy × sentiment` 聚合记录数，不能解释为 taxonomy 数量；taxonomy 总数为 887。
 
-实验自由：prompt、constrained-decoding 实现、量化格式、batch size、生成上限、推理后端、有限重试次数和验收阈值可根据有记录的小规模实测调整，无需先改 SDD；这些运行参数不是永久业务约束。改变业务 schema、数据范围、Gold 定义或上述固定边界才需要更新本规约。
+## 3. Functional requirements
 
-T008–T010 的新版细节暂不在本轮冻结；只保留下游原则：按 category 构建并人工审核 taxonomy，T009 映射全量 insight，T010 按唯一 `review_id` 聚合并明确 ratio 分母与 mixed 规则。
+- **FR-001** 系统只允许查询正式范围中的 139 个商品。
+- **FR-002** T007 必须保留 `topic_raw`、`polarity`、`evidence`、evidence offsets、`target_scope`、处理状态和失败信息；下游只消费有效的 `current_product` insight。
+- **FR-003** T008 taxonomy 必须按 category 构建并经过人工审核，不允许把全局语义聚类直接发布为正式 taxonomy。
+- **FR-004** T009 必须为 315,400 条 candidate 保留 exact-once 映射状态。未进入 community 的记录标记为 `unmapped_no_cluster`，不得强制 nearest-theme 映射。
+- **FR-005** T010 只聚合 `mapped_by_cluster`，按唯一 `review_id` 计算主题评论数、占比和月度趋势。
+- **FR-006** T010 商品级 ratio 分母是该商品全部正式唯一评论；月度 ratio 分母是该商品当月全部正式唯一评论。
+- **FR-007** 同一商品、taxonomy 和 review 同时存在正负观点，或存在原生 mixed 时，聚合 polarity 为 mixed；mixed 不重复计入 positive 或 negative。
+- **FR-008** T011 的唯一生成键是 `parent_asin + taxonomy_id`。只有含 negative insight 的组触发；mixed 只能作为已触发组的补充证据。
+- **FR-009** T011 必须是离线批处理。API 和前端不得实时调用 Qwen。
+- **FR-010** 最终改进建议必须具体、可执行、由该组 evidence 支持，不得虚构问题或生成营销文案。
+- **FR-011** 13 个已确认的假负面组通过版本化 polarity override 在展示/API 层改为 positive，不修改或重跑冻结的 T009/T010。
+- **FR-012** negative 查询必须排除 13 个 override 组；positive 查询必须按 positive 返回；improvement API 不得返回这些组的建议。
+- **FR-013** 前端只保留正面/负面两个顶层入口。改进建议显示在负面主题详情抽屉中，正面主题不显示建议。
+- **FR-014** 主题详情必须同时支持趋势和真实评论证据；主题列表默认前 8 个并支持展开/收起。
+- **FR-015** 单个分析维度无数据时返回明确空状态，不生成 fallback 主题。
+- **FR-016** API 请求只读取已验证的本地 Gold，不启动 Spark、DuckDB 聚合作业或模型推理。
 
-## 目标
+## 4. Non-functional requirements
 
-面向商品运营人员，对一组数据充分且近期仍活跃的家电整机完成统一评论分析。用户选择具体商品后，系统必须完成且只完成以下业务链：
+- 数据和生成结果必须可追溯到 `review_id`、`candidate_id`、`taxonomy_id` 和正式批次。
+- 所有离线阶段保留失败状态，不静默删除输入。
+- 冻结批次不原地覆盖；修正使用独立版本文件或展示层 override。
+- 后端接口面向只读查询，前端加载不依赖 GPU。
+- 正式代码、文档和验证记录必须区分当前实现与历史 baseline。
 
-1. 自动归纳正面和负面主题；
-2. 统计各主题的评论数量、占比和时间趋势；
-3. 点击主题查看对应评论原文、评分和日期；
-4. 从明确建议和负面抱怨中整理产品改进需求。
+## 5. Acceptance state
 
-## 已批准能力表
+数据链 T007→T011 已完成；T011 已完成全量质量检查和局部清洗；`GoldInsightsRepository` 已接入 T010、T011 和 polarity override；Vue 前端已接入正负主题、趋势、证据和负面主题改进建议。当前剩余范围仅为联调、小修、视觉调整、汇报材料和最终验收。
 
-| 业务任务 | 大数据处理任务 | 技术选型 | 是否完成 |
-|---|---|---|---|
-| 确定前端商品范围 | 从全量评论中筛选整机、近期活跃且评论充足的商品 | Parquet＋DuckDB；整机类目白名单；截至2023-09；最近12个月仍有评论；至少12个有评论月份；每商品至少300条 | 已完成：139个商品、13类、116,728条评论 |
-| 判断评论整体倾向 | 对英文评论计算整体正面、中性和负面 | VADER | 已完成，可复用已有结果 |
-| 抽取属性及属性情感 | 找出评论评价的产品属性及其正负倾向，同时保留原句 | `yangheng/deberta-v3-base-end2end-absa`；Windows XPU批量推理 | 已完成：116,728条评论，474,954个有效属性，0失败 |
-| 识别明确建议 | 按句切分，对全部句子判断是否明确提出改变、增加或改进 | `cross-encoder/nli-MiniLM2-L6-H768`；entailment必须同时高于neutral和contradiction；关键词不得参与判断 | 三分类分数已完成；旧二分比较误召回严重，待按新规则重算 |
-| 形成评价主题 | 正面ABSA只形成正面评价主题，负面ABSA只形成负面评价主题 | `all-MiniLM-L6-v2`＋Fast Community Detection | 待按拆分后的业务口径重建 |
-| 提炼改进需求 | 合并合格的明确建议与负面ABSA产生的隐式问题候选 | `all-MiniLM-L6-v2`＋Fast Community Detection；保留来源 | 待按拆分后的业务口径重建 |
-| 形成可读主题名称 | 从聚类中提取高频属性、中心观点短语并规范化命名 | 高频属性＋聚类中心短语＋模板；无法规范化时使用中心短语 | 技术已批准，尚未实现 |
-| 统计数量和趋势 | 按商品、主题、情感和月份计算数量、占比与变化 | Spark分组与月度聚合 | 尚未按新版主题运行 |
-| 点击主题查看原文 | 保存主题与评论标识的映射并分页查询原文 | Gold Parquet／MongoDB／FastAPI | 尚未完成 |
-| 前端选择商品并查看洞察 | 搜索或筛选商品，展示正负主题、趋势、改进需求和原文 | Vue 3＋ECharts＋FastAPI | 尚未完成 |
+## 6. Frozen boundaries
 
-## 数据范围
-
-- 原始数据为Amazon Reviews 2023的Appliances类别，共2,128,605条评论。
-- 文本准入使用现有fastText语言识别结果；全量有效英文评论为1,815,794条。
-- 第一阶段只分析家电整机，不混入零件、配件、滤芯、替换件或耗材；它们可在后续阶段复用同一流程单独处理。
-- 入选商品必须具有`parent_asin`、标题和正式整机类目；截至2023-09，最近12个月内至少出现一条有效评论，历史上至少12个不同月份出现评论，并拥有至少300条有效英文、非精确重复、有日期的评论。
-- 正面或负面评论数量不是商品准入条件。
-- 入选商品的全部历史有效评论都进入正式处理，不只截取最近60个月。
-- 当前规则得到139个具体商品、13个整机种类、116,728条评论。前端商品集合、完整NLP商品集合和Gold商品集合必须完全一致。
-- “至少12个有评论月份”不要求连续。当前数据中它对最终139个商品没有额外淘汰作用，但仍作为已执行规则保留；改变或删除须先更新本规约。
-
-## 功能要求
-
-- **FR-001** 前端只能展示当前正式范围中的139个商品，不展示未完整处理的商品。
-- **FR-002** 每条正式评论必须保留原文、`review_id`、`parent_asin`、评分、月份、处理批次和模型版本。
-- **FR-003** VADER只表示整句整体情感，不得替代属性级情感或具体主题。
-- **FR-004** ABSA结果至少包含属性、属性情感和属性所在原句；不要求单独生成结构化观点跨度。
-- **FR-005** 明确建议不得由`wish/need/should`等关键词直接判定；关键词最多作为解释信息，不是准入条件或最终标签。
-- **FR-006** 未被判为明确建议的负面评论仍可通过ABSA进入隐式改进路线。
-- **FR-007** 评价主题与改进需求必须分开：评价主题只来自对应极性的ABSA；明确建议不得作为负面评价主题输入。
-- **FR-008** 改进需求由合格的明确建议和负面ABSA产生的隐式问题候选组成；两类来源可合并到同一改进方向，但必须保留来源。
-- **FR-009** 同一条负面ABSA证据可同时服务负面评价主题和隐式改进候选，这是跨业务任务复用，不作为重复数据删除。
-- **FR-010** 负面ABSA只是隐式改进候选来源；能够可靠规范化时形成改进方向，否则保留中心问题短语，不生成原文没有表达的解决方案。
-- **FR-011** 所有139个商品都必须执行正面评价、负面评价和改进需求分析；任一维度允许0个主题，并记录`ready`、`theme_count=0`和`no_qualified_theme`，不得强制生成fallback主题。
-- **FR-012** 主题命名必须来自高频属性、中心短语和固定模板；无法可靠规范化时保留中心短语，不生成无证据名称。
-- **FR-013** API查询期间不得启动Spark或模型；页面只读取已验证的Gold批次。
-- **FR-014** 缺失字段不得填造。缺时间的评论退出趋势计算；缺必要文本或商品标识的记录退出相应任务并保留原始去向。
-
-## 本地运行边界
-
-- 已完成的正式商品范围由Windows DuckDB读取Parquet并筛选；Spark在现有Docker单机双Worker环境中负责全量Silver处理以及后续分组、趋势和Gold聚合。
-- Transformer不得放入Spark executor。ABSA、MiniLM和NLI在Windows原生`ml/xpu/.venv`中以Intel Arc XPU批量运行。
-- MongoDB、FastAPI和Vue用于结果查询与展示；它们不参与模型推理。
-- 每个正式阶段先输出输入总量；长任务必须写最终状态和计数，不允许数小时无可见进度。
-
-## 验收标准
-
-- 116,728条正式评论均可核对其处理状态，并进入完整业务处理链；不得用只完成清洗的212万条代替核心NLP处理量。
-- 139个前端商品全部具有整体情感、属性结果，以及正面评价、负面评价和改进需求三个分析维度的完成状态；主题结果可以为空，但不得缺少状态和原因。
-- 用户能够完成“选商品→看正负主题→看数量和趋势→查看原文→查看改进需求”。
-- 任一主题的数量可由其去重`review_id`重新计算，任一主题名称可追溯到属性、中心短语或固定模板。
-- 正式全量任务不训练模型、不进行候选模型或规则竞赛、不建立人工标注评价集，也不使用关键词直接认定建议。
-- 明确建议必须满足entailment同时高于neutral和contradiction；neutral最高的句子不得进入明确建议。
-
-## 明确排除
-
-- 第一阶段不处理零件、配件和耗材。
-- 不做推荐系统、商品关系图、竞品分析、评论有用性预测、预警或实时监控。
-- 不自行训练、微调或继续预训练模型。
-- 不把旧TF-IDF主题和未完成的旧zero-shot需求目录发布为新版Gold。
-
-## 变更边界
-
-- 始终：保持前端集合＝完整NLP集合；保留真实原文与批次；只使用已批准技术；分析完成不等于结果必须非空。
-- 需先确认：改变139个商品范围、增加模型、改变业务链、重新纳入非整机、调整语义阈值后影响业务口径。
-- 禁止：为了达到数量要求把未完成核心NLP的评论计入正式处理量；未经讨论扩展功能。
+禁止重跑 T007–T011，禁止重新配置 GPU/AutoDL，禁止把正式 T010 改回 Spark，禁止新增 embedding、clustering、nearest mapping、reranking、threshold tuning 或在线推理服务。除非出现新的、可复现的正式数据缺陷并由项目负责人明确授权，否则不得突破上述边界。

@@ -3,7 +3,28 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { getJson } from './api/client'
 import StoryTrendChart from './components/StoryTrendChart.vue'
 import DynamicWordCloud from './components/DynamicWordCloud.vue'
-import type { Facet, FacetName, Product, ReviewEvidence, Theme } from './types'
+import type { Facet, Product, ReviewEvidence, Theme } from './types'
+
+type AnalysisMode = 'positive' | 'negative'
+
+type ImprovementItem = {
+  input_id: string
+  taxonomy_id: string
+  theme_id: string | null
+  name: string
+  improvement_suggestion: string
+  support_insight_count: number
+  support_review_count: number
+  negative_insight_count: number
+  mixed_insight_count: number
+  generation_mode: string
+  review_count: number
+  ratio: {
+    value: number | null
+    status: string
+    definition_id: string
+  } | null
+}
 
 const products = ref<Product[]>([])
 const selectedId = ref('')
@@ -12,21 +33,28 @@ const themes = ref<Theme[]>([])
 const enrichedThemes = ref<Theme[]>([])
 const selectedTheme = ref<Theme | null>(null)
 const reviews = ref<ReviewEvidence[]>([])
-const activeFacet = ref<FacetName>('positive_evaluation')
+const improvements = ref<ImprovementItem[]>([])
+const activeMode = ref<AnalysisMode>('positive')
 const category = ref('')
 const loading = ref(true)
 const detailLoading = ref(false)
 const error = ref(false)
 const detailError = ref(false)
 const evidenceOpen = ref(false)
+const showAllThemes = ref(false)
 
 const selectedProduct = computed(() =>
   products.value.find(item => item.parent_asin === selectedId.value),
 )
 
-const currentFacet = computed(() =>
-  facets.value.find(item => item.facet === activeFacet.value),
-)
+const currentFacet = computed(() => {
+  const facetName =
+    activeMode.value === 'positive'
+      ? 'positive_evaluation'
+      : 'negative_evaluation'
+
+  return facets.value.find(item => item.facet === facetName)
+})
 
 const categories = computed(() =>
   Array.from(new Set(products.value.map(item => item.category))).sort(),
@@ -38,8 +66,43 @@ const activeMonths = computed(() => {
 })
 
 const facetLabel = computed(() =>
-  activeFacet.value === 'positive_evaluation' ? '正面评价' : '负面评价',
+  activeMode.value === 'positive' ? '正面评价' : '负面评价',
 )
+
+const currentItemCount = computed(() => themes.value.length)
+
+const visibleThemes = computed(() =>
+  showAllThemes.value ? themes.value : themes.value.slice(0, 8),
+)
+
+const selectedImprovement = computed(() => {
+  if (!selectedTheme.value || selectedTheme.value.sentiment !== 'negative') {
+    return null
+  }
+
+  const selectedTaxonomyId = (
+    selectedTheme.value as Theme & { taxonomy_id?: string }
+  ).taxonomy_id
+
+  return (
+    improvements.value.find(item =>
+      item.theme_id === selectedTheme.value?.theme_id ||
+      (
+        selectedTaxonomyId &&
+        item.taxonomy_id === selectedTaxonomyId
+      ),
+    ) ?? null
+  )
+})
+
+function shortProductTitle(title: string) {
+  const firstClause = title.split(',')[0]?.trim() || title.trim()
+  const maxLength = 58
+
+  return firstClause.length > maxLength
+    ? `${firstClause.slice(0, maxLength).trimEnd()}…`
+    : firstClause
+}
 
 async function loadProducts() {
   loading.value = true
@@ -86,7 +149,7 @@ async function loadOverview() {
 
     facets.value = result.data.facets
 
-    await loadThemes()
+    await loadAnalysis()
   } catch {
     detailError.value = true
   } finally {
@@ -94,22 +157,25 @@ async function loadOverview() {
   }
 }
 
-async function loadThemes() {
+async function loadAnalysis() {
   selectedTheme.value = null
   reviews.value = []
   enrichedThemes.value = []
+  themes.value = []
+  improvements.value = []
   evidenceOpen.value = false
   detailError.value = false
-
-  const sentiment =
-    activeFacet.value === 'positive_evaluation'
-      ? 'positive'
-      : 'negative'
-
-  const path =
-    `/api/v1/products/${selectedId.value}/themes?sentiment=${sentiment}`
+  showAllThemes.value = false
 
   try {
+    const sentiment =
+      activeMode.value === 'positive'
+        ? 'positive'
+        : 'negative'
+
+    const path =
+      `/api/v1/products/${selectedId.value}/themes?sentiment=${sentiment}`
+
     const result = await getJson<{
       data: {
         items: Theme[]
@@ -117,6 +183,16 @@ async function loadThemes() {
     }>(path)
 
     themes.value = result.data.items
+
+    if (sentiment === 'negative') {
+      const improvementResult = await getJson<{
+        data: {
+          items: ImprovementItem[]
+        }
+      }>(`/api/v1/products/${selectedId.value}/improvements`)
+
+      improvements.value = improvementResult.data.items
+    }
 
     const details = await Promise.all(
       themes.value.slice(0, 8).map(async theme => {
@@ -136,6 +212,7 @@ async function loadThemes() {
   } catch {
     detailError.value = true
     themes.value = []
+    improvements.value = []
     enrichedThemes.value = []
   }
 }
@@ -174,9 +251,9 @@ watch(selectedId, async (value, oldValue) => {
   }
 })
 
-watch(activeFacet, async () => {
+watch(activeMode, async () => {
   if (selectedId.value) {
-    await loadThemes()
+    await loadAnalysis()
   }
 })
 
@@ -209,8 +286,9 @@ onMounted(loadProducts)
             v-for="product in products"
             :key="product.parent_asin"
             :value="product.parent_asin"
+            :title="product.title"
           >
-            {{ product.title }}
+            {{ shortProductTitle(product.title) }}
           </option>
         </select>
       </div>
@@ -242,18 +320,19 @@ onMounted(loadProducts)
         aria-label="分析维度"
       >
         <button
-          :class="{ active: activeFacet === 'positive_evaluation' }"
-          @click="activeFacet = 'positive_evaluation'"
+          :class="{ active: activeMode === 'positive' }"
+          @click="activeMode = 'positive'"
         >
           正面
         </button>
 
         <button
-          :class="{ active: activeFacet === 'negative_evaluation' }"
-          @click="activeFacet = 'negative_evaluation'"
+          :class="{ active: activeMode === 'negative' }"
+          @click="activeMode = 'negative'"
         >
           负面
         </button>
+
       </nav>
     </section>
 
@@ -289,7 +368,7 @@ onMounted(loadProducts)
 
         <article>
           <span>当前主题</span>
-          <strong>{{ themes.length }}</strong>
+          <strong>{{ currentItemCount }}</strong>
         </article>
 
         <article>
@@ -341,18 +420,32 @@ onMounted(loadProducts)
             <div>
               <h2>{{ facetLabel }}主题排行</h2>
               <span>
-                点击主题可查看趋势和原始评论证据
+                点击主题可查看趋势、改进建议与原始评论证据
               </span>
             </div>
 
-            <strong>
-              {{ themes.length }} 个主题
-            </strong>
+            <div class="theme-count-actions">
+              <strong>
+                {{ themes.length }} 个主题
+              </strong>
+
+              <button
+                v-if="themes.length > 8"
+                class="show-all-button"
+                @click="showAllThemes = !showAllThemes"
+              >
+                {{
+                  showAllThemes
+                    ? '收起'
+                    : `查看全部 ${themes.length} 个`
+                }}
+              </button>
+            </div>
           </div>
 
           <div class="ranking-list">
             <button
-              v-for="(theme, index) in themes.slice(0, 8)"
+              v-for="(theme, index) in visibleThemes"
               :key="theme.theme_id"
               class="rank-row"
               @click="openTheme(theme)"
@@ -473,6 +566,19 @@ onMounted(loadProducts)
           :themes="[selectedTheme]"
         />
 
+        <section
+          v-if="selectedImprovement"
+          class="drawer-improvement"
+        >
+          <span>产品改进建议</span>
+          <p>
+            {{ selectedImprovement.improvement_suggestion }}
+          </p>
+          <small>
+            {{ selectedImprovement.support_review_count }} 条评论支撑
+          </small>
+        </section>
+
         <h3>真实评论证据</h3>
 
         <article
@@ -481,7 +587,7 @@ onMounted(loadProducts)
           class="review"
         >
           <div>
-            <span>★ {{ review.rating }}</span>
+            <span class="review-rating">★ {{ review.rating }}</span>
             <time>{{ review.review_date }}</time>
           </div>
 
@@ -675,7 +781,7 @@ select {
 }
 
 .segmented button {
-  min-width: 74px;
+  min-width: 88px;
 
   padding: 9px 16px;
 
@@ -716,8 +822,57 @@ select {
   margin-bottom: 14px;
 }
 
-.kpi-row article,
-.panel,
+.theme-count-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.show-all-button {
+  padding: 7px 11px;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 700;
+  background: #eff6ff;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.show-all-button:hover {
+  background: #dbeafe;
+}
+
+.drawer-improvement {
+  margin: 22px 0 26px;
+  padding: 18px 20px;
+  background: #f7f9fc;
+  border-left: 4px solid #4f7df3;
+  border-radius: 10px;
+}
+
+.drawer-improvement > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #50627c;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.drawer-improvement p {
+  margin: 0;
+  color: #1f2d42;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.drawer-improvement small {
+  display: block;
+  margin-top: 9px;
+  color: #7a8798;
+  font-size: 14px;
+}
+
 .state-card {
   background:
     rgba(255, 255, 255, 0.94);
@@ -1060,12 +1215,23 @@ select {
 
   color: #7d8999;
 
-  font-size: 12px;
+  font-size: 15px;
+}
+
+.review-rating {
+  color: #b7791f;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.review time {
+  font-size: 14px;
 }
 
 .review p {
-  font-size: 14px;
-  line-height: 1.7;
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .review blockquote {
@@ -1075,8 +1241,8 @@ select {
 
   color: #42556f;
 
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.75;
 
   background: #f6f9fc;
 
@@ -1116,7 +1282,8 @@ select {
   }
 
   .ranking-list,
-  .visual-grid {
+  .visual-grid,
+  .improvement-list {
     grid-template-columns:
       1fr;
   }
@@ -1183,4 +1350,222 @@ select {
     padding: 16px;
   }
 }
+
+/* ===== Final layout / typography correction ===== */
+
+.kpi-row {
+  gap: 20px;
+  margin: 18px 0 24px;
+}
+
+.kpi-row article {
+  display: grid;
+  gap: 8px;
+  padding: 22px 26px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #dde6f0;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(29, 43, 67, 0.06);
+}
+
+.kpi-row span {
+  color: #66778d;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.kpi-row strong {
+  color: #142033;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.panel {
+  display: block;
+  min-width: 0;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #dde6f0;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(29, 43, 67, 0.05);
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.panel-head h2 {
+  margin: 0 0 7px;
+  color: #142033;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.panel-head span {
+  color: #697b91;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.theme-count-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.theme-count-actions > strong {
+  color: #26364d;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.show-all-button {
+  min-width: 86px;
+  padding: 9px 17px;
+  color: #2458c6;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  background: #eef4ff;
+  border: 1px solid #d7e4ff;
+  border-radius: 999px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.show-all-button:hover {
+  background: #e3edff;
+  border-color: #c5d8ff;
+}
+
+.ranking-list {
+  column-gap: 34px;
+}
+
+.rank-row {
+  padding: 15px 2px;
+}
+
+.rank-row i {
+  color: #8798ad;
+  font-size: 14px;
+}
+
+.rank-row b {
+  color: #152033;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.rank-row small {
+  color: #74869c;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.rank-row strong {
+  font-size: 16px;
+}
+
+.visual-grid {
+  gap: 18px;
+}
+
+.trend-panel,
+.cloud-panel {
+  min-width: 0;
+}
+
+.muted {
+  color: #708196;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Drawer / evidence: make all supporting text comfortably readable. */
+.drawer h2 {
+  font-size: 36px;
+}
+
+.drawer h3 {
+  font-size: 25px;
+}
+
+.drawer-metrics span {
+  color: #687a90;
+  font-size: 17px;
+}
+
+.drawer-metrics strong {
+  font-size: 30px;
+}
+
+.drawer-improvement > span {
+  font-size: 17px;
+}
+
+.drawer-improvement p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.drawer-improvement small {
+  color: #6f8196;
+  font-size: 15px;
+}
+
+.review > div span,
+.review time {
+  font-size: 15px;
+}
+
+.review-rating {
+  font-size: 21px !important;
+}
+
+.review p {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.review blockquote {
+  color: #38516e;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Other gray/helper text on the page. */
+.hero p,
+.controls label,
+.controls small,
+.control-label,
+.selector label,
+.selector small {
+  color: #697b91 !important;
+  font-size: 16px !important;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .kpi-row strong {
+    font-size: 34px;
+  }
+
+  .panel-head h2 {
+    font-size: 23px;
+  }
+
+  .theme-count-actions {
+    white-space: normal;
+  }
+}
+
 </style>

@@ -1,88 +1,158 @@
-# Data Model：家电整机评论洞察
+# Data Model: Merchant Review Insights
 
-**Updated**: 2026-09-08
+**Status**: Implemented through T011
+**Updated**: 2026-09-09
 
-## Silver（保留现状）
+## 1. Identity rules
 
-- `reviews`：`review_id`、`asin`、`parent_asin`、原文、规范化正文、评分、月份、重复状态和批次。
-- `products`：`parent_asin`、标题、店铺、正式类目路径和原始元数据。
-- `text_features`：语言、置信度、长度、token数和`eligible_nlp`。
+- Review identity: `review_id`
+- Insight identity: `candidate_id`
+- Taxonomy identity: `taxonomy_id`
+- Product-theme identity: `parent_asin + taxonomy_id`
+- Product-theme-sentiment aggregate identity: `parent_asin + taxonomy_id + sentiment`
+- T011 generation identity: `input_id`, deterministically derived from `parent_asin + taxonomy_id`
 
-## 新版Gold
+## 2. T007 review insight record
 
-T007当前输出是候选批次，不因全量运行完成自动成为Gold。人工Gold与模型输出必须分离。
+每条输入评论保留一条处理记录：
 
-### `review_insight_runs`（T007候选）
+```text
+review_id, parent_asin, asin,
+model_id, revision, prompt_version,
+processing_status,
+insights[], rejected_insights[],
+error_type?, error_message?, raw_output?
+```
 
-每条评论一条运行记录：`review_id`、`parent_asin`、`asin`、`model_id`、`revision`、`prompt_version`、`processing_status`、`insights`、可选的`rejected_insights`、错误摘要和run id。
+每个有效 insight：
 
-- `processing_status`: `success|partial_success|failed`。
-- `success`表示响应及全部insight通过结构和grounding校验，允许`insights=[]`。
-- `partial_success`表示至少一个insight有效，同时一个或多个候选被拒绝；合法结果和拒绝原因都必须保留。
-- `failed`表示该评论没有可交付结构化结果；失败记录仍写入输出，不得省略。
+```text
+topic_raw, polarity, evidence,
+evidence_char_start, evidence_char_end,
+target_scope
+```
 
-每个`insights`元素包含：`topic_raw`、`polarity`、`evidence`、`evidence_char_start`、`evidence_char_end`、`target_scope`。`evidence`必须是`text_raw`连续原始子串，offset由程序计算；多次命中必须显式消歧，不能默认取第一次。`target_scope`用于区分当前商品、其他/旧/比较商品及服务或购买背景。模型不得直接提供最终offset。
+`evidence` 是 `text_raw` 的连续原始子串；offset 由程序计算。`processing_status` 为 `success | partial_success | failed`，失败不得静默删除。
 
-### `insight_taxonomy_mappings`（T009）
+## 3. T008 taxonomy model
 
-每个T008 `current_product` candidate恰好一条：`candidate_id`、`review_id`、`parent_asin`、`product_category`、`topic_raw`、`evidence`、`polarity`、`target_scope`、可空的`cluster_id/taxonomy_id/canonical_theme_name`、`mapping_status`和批次。
+### Candidate
 
-- `mapped_by_cluster`：candidate是一级cluster member，且可沿`cluster_id → taxonomy_id`唯一映射到审核后taxonomy。
-- `unmapped_no_cluster`：candidate未进入任何一级community；保留原始insight，但不进入canonical-theme聚合。
-- 不执行nearest-theme补映射，不设置相似度阈值，不创造`low_confidence`状态。
+从有效 `current_product` insight 形成：
 
-### `analysis_products`
+```text
+candidate_id, review_id, parent_asin,
+product_title, product_category,
+polarity, topic_raw, evidence, candidate_text
+```
 
-139个正式商品：`parent_asin`、标题、整机种类、历史评论数、活跃月份数、最后评论月份、scope版本和状态。
+### First-level cluster
 
-### `review_sentiment`
+```text
+cluster_id, product_category,
+member candidate_ids, center/label metadata
+```
 
-复用VADER结果：`review_id`、`parent_asin`、月份、compound、`positive|neutral|negative`、方法版本。
+### Reviewed taxonomy
 
-### `review_aspects`
+```text
+taxonomy_id, product_category,
+canonical_theme_name
+```
 
-每个属性一条：`aspect_id`、`review_id`、`parent_asin`、属性文本、`positive|neutral|negative|unknown`、置信度、字符起止位置、原句、模型revision和批次。
+每个一级 cluster 在 `cluster-to-taxonomy` 中 exact-once；taxonomy 不跨 category 发布。
 
-无属性和失败不伪造成空属性，记录在评论处理状态中。
+## 4. T009 insight-taxonomy mapping
 
-### `explicit_suggestions`
+315,400 条 candidate 各保留一条：
 
-每个确认建议句一条：`suggestion_id`、`review_id`、`parent_asin`、原句、NLI的entailment、neutral与contradiction分数、确认标签、模型revision和批次。只有entailment同时高于neutral和contradiction时确认。
+```text
+candidate_id, review_id, parent_asin,
+product_title, product_category,
+polarity, target_scope,
+topic_raw, evidence, candidate_text,
+cluster_id?, taxonomy_id?, canonical_theme_name?,
+mapping_status
+```
 
-### `product_analysis_facets`
+`mapping_status`：
 
-每个商品固定记录三个分析维度：正面评价、负面评价和改进需求。字段为`parent_asin`、`theme_type`、可空的`sentiment`、`status`、`theme_count`、可空的`reason`和批次。分析完成但没有合格社区时记录`status=ready`、`theme_count=0`、`reason=no_qualified_theme`。
+- `mapped_by_cluster`: 通过一级 cluster 确定性映射到 taxonomy；
+- `unmapped_no_cluster`: 未进入 community，保留但不进入 canonical-theme 聚合。
 
-### `themes`
+## 5. T010 aggregate model
 
-每个商品主题一条：`theme_id`、`parent_asin`、`evaluation|improvement`主题类型、主题名称、可空的`positive|negative`情感、来源类型集合、中心短语、高频属性、命名方式、评论数、占比和批次。评价主题的情感不可为空；改进需求的情感为空。
+### products
 
-- 正面评价来源为`absa_positive`，负面评价来源为`absa_negative`。
-- 改进需求来源为`explicit_suggestion|implicit_problem`，可同时包含两者。
-- 不存在`nearest_review_fallback`主题。
+一行一个 `parent_asin`，包含 title、category、正式 review_count、active_month_count、last_review_month 和 analysis_status。
 
-### `theme_reviews`
+### product_facets
 
-主题证据映射：`theme_id`、`review_id`、`parent_asin`、来源类型、原句、原文、评分、月份和到聚类中心的相似度。
+一行一个商品分析维度：`positive_evaluation | negative_evaluation | improvement`。字段包含 facet、status、theme_count、empty_reason 和 error_summary。后端可根据 effective sentiment 和 T011 结果刷新展示计数。
 
-### `theme_timeseries`
+### themes
 
-`theme_id`、`parent_asin`、月份、主题评论数、该商品当月正式评论分母和占比。无日期评论不进入该集合。
+唯一键为 `theme_id`，业务聚合键为 `parent_asin + taxonomy_id + sentiment`：
 
-T010固定口径：商品级分母为该`parent_asin`全部正式唯一`review_id`；月度分母为该商品该月全部正式唯一`review_id`。先按`parent_asin + taxonomy_id + review_id`去重并归并polarity：同一评论同一主题同时含正负观点或含原生`mixed`时记为一次`mixed`；仅有neutral与单一方向时保留该方向；仅neutral时为`neutral`。mixed不重复计入positive或negative。
+```text
+theme_id, parent_asin, taxonomy_id,
+name, sentiment, review_count,
+ratio_value, ratio_status, ratio_definition_id
+```
 
-### `analysis_runs`
+### theme_timeseries
 
-阶段、输入路径、输出路径、模型与revision、设备、参数、开始/结束时间、输入/成功/无结果/失败数量、状态和错误摘要。
+```text
+theme_id, month, review_count,
+ratio_value, ratio_status, ratio_definition_id
+```
 
-## 状态约束
+### theme_reviews
 
-- `analysis_status`: `pending|processing|ready|failed`
-- `empty_reason`: `no_qualified_theme|null`
-- `aspect_sentiment`: `positive|neutral|negative|unknown`
-- `theme_type`: `evaluation|improvement`
-- `theme_sentiment`: `positive|negative|null`
-- `theme_source`: `absa_positive|absa_negative|explicit_suggestion|implicit_problem`
-- `naming_method`: `template|center_phrase`
+```text
+theme_id, review_id, text, evidence_text,
+rating, review_date, review_month
+```
 
-只有所有阶段计数验证通过的同一批次才可发布为MongoDB活动Gold。
+### Ratio and mixed rules
+
+商品级分母为该 `parent_asin` 全部正式唯一 `review_id`；月度分母为该商品该月全部正式唯一 `review_id`。先按 `parent_asin + taxonomy_id + review_id` 去重：同时存在 positive/negative 或原生 mixed 时记一次 mixed；mixed 不重复进入 positive/negative。
+
+## 6. T011 improvement record
+
+正式 corrected 文件一行一个 `parent_asin + taxonomy_id`：
+
+```text
+input_id,
+parent_asin, product_title, product_category,
+taxonomy_id, canonical_theme_name,
+support_insight_count, support_review_count,
+negative_insight_count, mixed_insight_count,
+improvement_suggestion,
+model_id, revision, prompt_version,
+generation_mode, chunk_count,
+input_tokens, output_tokens,
+generation_status
+```
+
+`support_review_count` 使用唯一 review_id；`generation_mode` 为 `direct | chunked`。正式 corrected 文件含 7,734 条 success 记录。
+
+## 7. Polarity override record
+
+`t010-polarity-overrides-20260909-v1.json` 是版本化展示/API 修正：
+
+```text
+version, correction_count, policy,
+corrections[] {
+  parent_asin,
+  taxonomy_id,
+  from_sentiment,
+  to_sentiment
+}
+```
+
+当前 13 条 correction 均为 negative→positive。override 不改变冻结的 T009/T010 文件，只改变 effective sentiment 和 improvement 可见性。
+
+## 8. API projection
+
+`GoldInsightsRepository` 将 T010、T011 和 override 投影为：products、categories、product overview、positive/negative themes、theme detail/trend/reviews 和 product improvements。API 不暴露在线生成状态，也不启动离线作业。

@@ -1,0 +1,5 @@
+cd D:\CS_Projects\big_data_web\backend_generated
+D:\CS_Projects\big_data_web\backend_generated\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --reload
+
+cd D:\CS_Projects\big_data_web\frontend_story_dashboard\frontend
+npm.cmd run dev

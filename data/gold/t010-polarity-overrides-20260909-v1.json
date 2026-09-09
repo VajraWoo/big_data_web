@@ -1,0 +1,257 @@
+{
+  "version": "t010-t011-polarity-corrections-20260909-v1",
+  "correction_count": 13,
+  "policy": {
+    "all_13_reclassified_as": "positive",
+    "t011": "No improvement suggestion should be shown for these product×taxonomy groups.",
+    "t010_effective_behavior": "Treat these 13 product×taxonomy groups as positive rather than negative in the presentation/API layer."
+  },
+  "corrections": [
+    {
+      "parent_asin": "B08MMJ8RM7",
+      "taxonomy_id": "e4f249105e24fd4d91844cf9",
+      "canonical_theme_name": "Noise level",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "not noisy"
+      ],
+      "review_ids": [
+        "4f315b6c03f0025c7fec5582651ed8ebdef2f9fba37ed1cf91e798200f0761f0"
+      ],
+      "candidate_ids": [
+        "a36905712d2e33c244218edf"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B00DM8K1NS",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "No problems at all"
+      ],
+      "review_ids": [
+        "de71567acfaf38b900458993321cf044e5f48d33133f030135f74790fb08729c"
+      ],
+      "candidate_ids": [
+        "5dd87050d31354c0bcbdf362"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B07NVJP82G",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "No problems"
+      ],
+      "review_ids": [
+        "0762490b3a790d849350718573da38d9fdfbb1426c561c87a61d0a10adf211e6"
+      ],
+      "candidate_ids": [
+        "004f0259b73720e605914b81"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B087B9YCX4",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems"
+      ],
+      "review_ids": [
+        "55fd05c36a719771516d4622c8309dd7496497f08d1ee6a16ad197c43748605c"
+      ],
+      "candidate_ids": [
+        "adb7baed85c608823f651747"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B08GKVMRP5",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems functioning"
+      ],
+      "review_ids": [
+        "e62b947a0426a9e7f08886fb0962baee222a3249d78ee7a372bd5bd5c1e4efc1"
+      ],
+      "candidate_ids": [
+        "71cc5dd1933fcafb0ffdfef4"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B098W5ND23",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "No problems"
+      ],
+      "review_ids": [
+        "6a356f4abfaa01cd6e6fd19d2d456aec64a70f021383f9f157ad31ecf3dc63c6"
+      ],
+      "candidate_ids": [
+        "e742fffd6eb8d178c7a68c74"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0C5HQ6LFJ",
+      "taxonomy_id": "82a29434951457258df289f4",
+      "canonical_theme_name": "Problems / malfunctions",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no issues"
+      ],
+      "review_ids": [
+        "2d88558c21e3bf08267010dbdece470ecb591c1e94a7c5544ffbc12f5f4d78a5"
+      ],
+      "candidate_ids": [
+        "22fd733813dfb2893bc43c88"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B072MZJMR5",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no issues"
+      ],
+      "review_ids": [
+        "e0f971373db8e08f316fbc13251e4689f3ff6a974159cf54f13acebef5b7288e"
+      ],
+      "candidate_ids": [
+        "3c3fc0dd0861b14040eea210"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0BSV3RK3X",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems at all",
+        "no problems at all"
+      ],
+      "review_ids": [
+        "77475a5975bd0d59c0f65ccd26638aa4eef6a68d841ffbaf62dc347dbd0e454f",
+        "ee0da279c412fa10b0c8cc529477152c160f7decac965a4f5966bcee94318aa6"
+      ],
+      "candidate_ids": [
+        "775c773c4aa6cc7ad0c0aa4c",
+        "aeca1140fa2bbd387cfc3a76"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0BW9B4YZL",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems with it",
+        "No problems.",
+        "No issues with this",
+        "No issues at all"
+      ],
+      "review_ids": [
+        "499733465b7dfded588ae436964ca9eae237115ab740028dde3754ba2b25d8f9",
+        "5076baf8ab728693b58247d197e815c1c36001c8d5b3db6b13e9408364cb1347",
+        "5ea568c1e5c0b299f4183e37df0cd80612b0a6be5b204964a11162b62a8ba775",
+        "8462f9c117cec980f49e8190d4ba35e9a07b1d5a06fdead9ad2fe38e13eb73c7"
+      ],
+      "candidate_ids": [
+        "0492bcf617a4da711f16157b",
+        "3afcb627a1343c95632021fe",
+        "3c7e91a58161837da9e3218b",
+        "54b1046c44c544cb23ee3edf"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0C35WFNZF",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems at all"
+      ],
+      "review_ids": [
+        "07a8057a8080cf828e2ed3ceccd4294088902ca50e938a8a6f5ffb9918d921e7"
+      ],
+      "candidate_ids": [
+        "fcd1f8dd7ec80c43b87037b4"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0C41SQ3X8",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "no problems with it"
+      ],
+      "review_ids": [
+        "4434531823cd5f8f7ddfc4e58a07c7b565961733b8a46a372ec73e1781aaaf08"
+      ],
+      "candidate_ids": [
+        "c39a85bdc5e6fd75a7b902f2"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    },
+    {
+      "parent_asin": "B0C5YSMG64",
+      "taxonomy_id": "922627b50d01bf83c100a68b",
+      "canonical_theme_name": "issues",
+      "from_sentiment": "negative",
+      "to_sentiment": "positive",
+      "reason": "Negated problem statement expresses absence of the problem; reclassify as positive.",
+      "evidence": [
+        "No issues at All"
+      ],
+      "review_ids": [
+        "34286a349f98ddf4cb1281efee2780043878140a0726ee406a5023227c2b08a9"
+      ],
+      "candidate_ids": [
+        "d8577804a6f65c1bad993d5f"
+      ],
+      "t011_action": "exclude_from_improvement_suggestions"
+    }
+  ]
+}

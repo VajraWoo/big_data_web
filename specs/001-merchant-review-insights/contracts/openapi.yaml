@@ -1,7 +1,8 @@
 openapi: 3.1.0
 info:
-  title: Whole Appliance Review Insights API
-  version: 2.1.0
+  title: Merchant Review Insights API
+  version: 3.0.0
+  description: T010 Gold aggregation and T011 product-improvement read API.
 servers:
   - url: http://localhost:8000/api/v1
 paths:
@@ -10,169 +11,284 @@ paths:
       operationId: getHealth
       responses:
         '200':
-          description: Service status and active Gold run
+          description: Gold repository and loaded T011/override status
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/Health'}
+              schema: {$ref: '#/components/schemas/HealthEnvelope'}
+  /catalog/categories:
+    get:
+      operationId: listCategories
+      responses:
+        '200': {description: Product categories in the active Gold dataset}
   /products:
     get:
       operationId: listProducts
       parameters:
         - {name: q, in: query, schema: {type: string}}
         - {name: category, in: query, schema: {type: string}}
+        - {name: analysis_status, in: query, schema: {type: string}}
         - {name: page, in: query, schema: {type: integer, minimum: 1, default: 1}}
         - {name: page_size, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
       responses:
         '200':
-          description: Only fully processed products from the active Gold run
+          description: Paginated formal product list
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ProductPage'}
-  /products/{parentAsin}:
+  /products/{parent_asin}/overview:
     get:
-      operationId: getProduct
+      operationId: getProductOverview
       parameters:
         - {$ref: '#/components/parameters/ParentAsin'}
       responses:
         '200':
-          description: Product overview
+          description: Product metadata and positive, negative, improvement facet status
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/Product'}
-  /products/{parentAsin}/themes:
+              schema: {$ref: '#/components/schemas/ProductOverviewEnvelope'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /products/{parent_asin}/themes:
     get:
-      operationId: listThemes
+      operationId: listProductThemes
       parameters:
         - {$ref: '#/components/parameters/ParentAsin'}
-        - {name: sentiment, in: query, schema: {enum: [positive, negative]}}
+        - name: sentiment
+          in: query
+          required: true
+          schema: {type: string, enum: [positive, negative]}
       responses:
         '200':
-          description: Positive and negative evaluation themes derived only from ABSA
+          description: Effective-polarity themes after the 13 verified display corrections
           content:
             application/json:
-              schema:
-                type: array
-                items: {$ref: '#/components/schemas/Theme'}
-  /products/{parentAsin}/analysis-status:
+              schema: {$ref: '#/components/schemas/ThemeListEnvelope'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /products/{parent_asin}/improvements:
     get:
-      operationId: getProductAnalysisStatus
+      operationId: listProductImprovements
       parameters:
         - {$ref: '#/components/parameters/ParentAsin'}
       responses:
         '200':
-          description: Completion and empty-result status for all three analysis facets
+          description: T011 suggestions for valid negative product-taxonomy groups
           content:
             application/json:
-              schema:
-                type: array
-                items: {$ref: '#/components/schemas/ProductAnalysisFacet'}
-  /themes/{themeId}/reviews:
+              schema: {$ref: '#/components/schemas/ImprovementListEnvelope'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /themes/{theme_id}:
+    get:
+      operationId: getThemeDetail
+      parameters:
+        - {$ref: '#/components/parameters/ThemeId'}
+      responses:
+        '200':
+          description: Theme detail with effective polarity, ratio and monthly trend
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/ThemeDetailEnvelope'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /themes/{theme_id}/reviews:
     get:
       operationId: listThemeReviews
       parameters:
-        - {name: themeId, in: path, required: true, schema: {type: string}}
+        - {$ref: '#/components/parameters/ThemeId'}
         - {name: page, in: query, schema: {type: integer, minimum: 1, default: 1}}
+        - {name: page_size, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+        - {name: sort, in: query, schema: {type: string, default: date_desc}}
       responses:
         '200':
-          description: Original review evidence for one theme
+          description: Paginated original review and evidence rows for a theme
           content:
             application/json:
-              schema:
-                type: array
-                items: {$ref: '#/components/schemas/ReviewEvidence'}
-  /products/{parentAsin}/improvements:
+              schema: {$ref: '#/components/schemas/ReviewPage'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /analysis/batch:
     get:
-      operationId: listImprovements
-      parameters:
-        - {$ref: '#/components/parameters/ParentAsin'}
-        - {name: source, in: query, schema: {enum: [explicit_suggestion, implicit_problem]}}
+      operationId: getAnalysisBatch
       responses:
-        '200':
-          description: Improvement themes derived from explicit suggestions and implicit problems
-          content:
-            application/json:
-              schema:
-                type: array
-                items: {$ref: '#/components/schemas/Theme'}
+        '200': {description: Frozen T010 batch plus T011 and correction metadata}
 components:
   parameters:
     ParentAsin:
-      name: parentAsin
+      name: parent_asin
       in: path
       required: true
       schema: {type: string}
+    ThemeId:
+      name: theme_id
+      in: path
+      required: true
+      schema: {type: string}
+  responses:
+    NotFound:
+      description: Product or theme not found
   schemas:
-    Health:
+    Meta:
       type: object
-      required: [service, active_run]
+      required: [data_source, is_gold, batch_id, gold_status]
       properties:
-        service: {enum: [ok, degraded]}
-        active_run: {type: [string, 'null']}
-    ProductPage:
+        data_source: {type: string, example: gold}
+        is_gold: {type: boolean, const: true}
+        batch_id: {type: string}
+        generated_at: {type: [string, 'null']}
+        gold_status: {type: string}
+    Ratio:
       type: object
-      required: [items, page, page_size, total]
+      required: [value, status, definition_id]
       properties:
-        items: {type: array, items: {$ref: '#/components/schemas/Product'}}
-        page: {type: integer}
-        page_size: {type: integer}
-        total: {type: integer}
+        value: {type: [number, 'null']}
+        status: {type: string}
+        definition_id: {type: string}
     Product:
       type: object
-      required: [parent_asin, title, category, review_count, analysis_status]
+      required: [parent_asin, title, category, review_count, active_month_count, analysis_status]
       properties:
         parent_asin: {type: string}
         title: {type: string}
         category: {type: string}
         review_count: {type: integer}
-        average_rating: {type: [number, 'null']}
-        analysis_status: {enum: [pending, processing, ready, failed]}
-    Theme:
+        active_month_count: {type: integer}
+        last_review_month: {type: [string, 'null']}
+        analysis_status: {type: string}
+    Facet:
       type: object
-      required: [theme_id, theme_type, name, sentiment, sources, review_count, share, trend]
+      required: [facet, status, theme_count]
+      properties:
+        facet: {type: string, enum: [positive_evaluation, negative_evaluation, improvement]}
+        status: {type: string, enum: [ready, empty]}
+        theme_count: {type: integer, minimum: 0}
+        empty_reason: {type: [string, 'null']}
+        error_summary: {type: [string, 'null']}
+    ThemeSummary:
+      type: object
+      required: [theme_id, taxonomy_id, name, sentiment, review_count, ratio]
       properties:
         theme_id: {type: string}
-        theme_type: {enum: [evaluation, improvement]}
+        taxonomy_id: {type: string}
         name: {type: string}
-        sentiment:
-          type: [string, 'null']
-          enum: [positive, negative, null]
-          description: Required for evaluation themes and null for improvement themes
-        sources:
-          type: array
-          items: {enum: [absa_positive, absa_negative, explicit_suggestion, implicit_problem]}
+        sentiment: {type: string, enum: [positive, negative]}
         review_count: {type: integer}
-        share: {type: number}
-        naming_method: {enum: [template, center_phrase]}
-        trend:
-          type: array
-          items: {$ref: '#/components/schemas/TrendPoint'}
-    ProductAnalysisFacet:
+        ratio: {$ref: '#/components/schemas/Ratio'}
+    TrendPoint:
       type: object
-      required: [parent_asin, theme_type, sentiment, status, theme_count, reason]
+      required: [month, review_count, ratio]
       properties:
-        parent_asin: {type: string}
-        theme_type: {enum: [evaluation, improvement]}
-        sentiment:
-          type: [string, 'null']
-          enum: [positive, negative, null]
-        status: {enum: [pending, processing, ready, failed]}
-        theme_count: {type: integer, minimum: 0}
-        reason:
-          type: [string, 'null']
-          enum: [no_qualified_theme, null]
+        month: {type: string}
+        review_count: {type: integer}
+        ratio: {$ref: '#/components/schemas/Ratio'}
+    ThemeDetail:
+      allOf:
+        - {$ref: '#/components/schemas/ThemeSummary'}
+        - type: object
+          required: [parent_asin, theme_type, trend]
+          properties:
+            parent_asin: {type: string}
+            theme_type: {type: string, const: evaluation}
+            trend: {type: array, items: {$ref: '#/components/schemas/TrendPoint'}}
+    Improvement:
+      type: object
+      required: [input_id, taxonomy_id, name, improvement_suggestion, support_insight_count, support_review_count, generation_mode]
+      properties:
+        input_id: {type: string}
+        taxonomy_id: {type: string}
+        theme_id: {type: [string, 'null']}
+        name: {type: string}
+        improvement_suggestion: {type: string}
+        support_insight_count: {type: integer}
+        support_review_count: {type: integer}
+        negative_insight_count: {type: integer}
+        mixed_insight_count: {type: integer}
+        generation_mode: {type: string}
+        review_count: {type: integer}
+        ratio:
+          oneOf:
+            - {$ref: '#/components/schemas/Ratio'}
+            - {type: 'null'}
     ReviewEvidence:
       type: object
-      required: [review_id, text, rating, review_month]
+      required: [review_id, text, evidence_text, rating, review_date, review_month]
       properties:
         review_id: {type: string}
         text: {type: string}
-        evidence_sentence: {type: [string, 'null']}
-        rating: {type: number}
+        evidence_text: {type: [string, 'null']}
+        rating: {type: [number, 'null']}
+        review_date: {type: [string, 'null']}
         review_month: {type: [string, 'null']}
-    TrendPoint:
+    HealthEnvelope:
       type: object
-      required: [month, review_count, share]
+      required: [data, meta]
       properties:
-        month: {type: string, pattern: '^\\d{4}-(0[1-9]|1[0-2])$'}
-        review_count: {type: integer}
-        share: {type: number}
+        data:
+          type: object
+          required: [status, repository, data_source, t011_group_count, polarity_override_count]
+          properties:
+            status: {type: string, const: ok}
+            repository: {type: string, const: gold}
+            data_source: {type: string, const: t010_gold+t011_gold}
+            t011_group_count: {type: integer, const: 7734}
+            polarity_override_count: {type: integer, const: 13}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ProductPage:
+      type: object
+      required: [data, pagination, meta]
+      properties:
+        data:
+          type: object
+          properties:
+            items: {type: array, items: {$ref: '#/components/schemas/Product'}}
+        pagination: {$ref: '#/components/schemas/Pagination'}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ProductOverviewEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          properties:
+            product: {$ref: '#/components/schemas/Product'}
+            facets: {type: array, items: {$ref: '#/components/schemas/Facet'}}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ThemeListEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          properties:
+            facet: {$ref: '#/components/schemas/Facet'}
+            items: {type: array, items: {$ref: '#/components/schemas/ThemeSummary'}}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ImprovementListEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          properties:
+            facet: {$ref: '#/components/schemas/Facet'}
+            items: {type: array, items: {$ref: '#/components/schemas/Improvement'}}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ThemeDetailEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data: {$ref: '#/components/schemas/ThemeDetail'}
+        meta: {$ref: '#/components/schemas/Meta'}
+    ReviewPage:
+      type: object
+      required: [data, pagination, meta]
+      properties:
+        data:
+          type: object
+          properties:
+            items: {type: array, items: {$ref: '#/components/schemas/ReviewEvidence'}}
+        pagination: {$ref: '#/components/schemas/Pagination'}
+        meta: {$ref: '#/components/schemas/Meta'}
+    Pagination:
+      type: object
+      required: [page, page_size, total_items, total_pages]
+      properties:
+        page: {type: integer}
+        page_size: {type: integer}
+        total_items: {type: integer}
+        total_pages: {type: integer}

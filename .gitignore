@@ -4,7 +4,9 @@ data/models/
 data/silver/
 data/gold/**
 
-# Keep only small, reproducible run summaries in Git
+# Keep reproducible summaries plus the compact formal T011 delivery in Git
+!data/gold/t011-final-corrected-20260909-v1.ndjson
+!data/gold/t010-polarity-overrides-20260909-v1.json
 !data/gold/t008-final-20260908-v1/
 data/gold/t008-final-20260908-v1/*
 !data/gold/t008-final-20260908-v1/validation.json

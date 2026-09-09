@@ -46,7 +46,9 @@ def test_health_reports_gold_repository():
     assert response.status_code == 200
     body = response.json()
     assert body["data"]["repository"] == "gold"
-    assert body["data"]["data_source"] == "t010_gold"
+    assert body["data"]["data_source"] == "t010_gold+t011_gold"
+    assert body["data"]["t011_group_count"] == 7734
+    assert body["data"]["polarity_override_count"] == 13
     assert body["meta"]["is_gold"] is True
     assert body["meta"]["data_source"] == "gold"
 
@@ -88,6 +90,24 @@ def test_theme_detail_and_reviews_use_dynamic_gold_theme(gold_selection):
     assert reviews.status_code == 200
     assert reviews.json()["pagination"]["total_items"] > 0
     assert reviews.json()["data"]["items"]
+
+
+def test_product_improvements_use_t011_gold(gold_selection):
+    products = gold_selection["products_response"].json()["data"]["items"]
+
+    for product in products:
+        parent_asin = product["parent_asin"]
+        response = client.get(f"/api/v1/products/{parent_asin}/improvements")
+        assert response.status_code == 200
+
+        items = response.json()["data"]["items"]
+        if items:
+            assert items[0]["taxonomy_id"]
+            assert items[0]["improvement_suggestion"]
+            assert response.json()["meta"]["data_source"] == "gold"
+            return
+
+    pytest.fail("The current T011 Gold dataset contains no improvement suggestions")
 
 
 def test_not_found_uses_error_envelope():

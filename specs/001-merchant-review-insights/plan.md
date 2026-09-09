@@ -1,84 +1,71 @@
-# Implementation Plan：家电整机评论洞察
+# Implementation Plan: Merchant Review Insights
 
-**Updated**: 2026-09-08
-**Spec**: [spec.md](spec.md)
-**Technical selection**: [technical-selection.md](technical-selection.md)
+**Status**: Implemented through T011 and Web integration
+**Updated**: 2026-09-09
 
-## 当前执行覆盖说明
-
-旧 ABSA→NLI attribution 链和 Transformers＋LMFE 串行 runner 仅作历史 baseline。新版T007已验收；T008已按category完成审核后taxonomy并冻结887个主题。当前推进T009：将315,400条`current_product` candidate逐条连接到一级cluster及taxonomy；未进入community的candidate保留为`unmapped_no_cluster`，不强制分类。
-
-实现可在不修改 SDD 的情况下调整 prompt、量化、batch、constrained-decoding 后端和有限重试策略；每次候选实验必须记录配置与结果。业务 schema、数据范围、Gold 定义和禁止项不可由实现自行改变。
-
-## 唯一处理链
+## 1. Final architecture
 
 ```text
-Bronze 2,128,605条原始评论
-  → Docker Spark：Silver清洗、关联、语言与文本画像（已完成）
-  → 正式范围：139个整机商品、116,728条评论（已完成）
-  → 复用VADER整体情感（已完成）
-  → NVIDIA/Linux：Qwen3.5-4B读取完整text_raw和商品上下文
-  → vLLM continuous batching＋原生structured JSON生成insight
-  → 程序执行schema校验、evidence grounding和字符offset计算
-  → 保存success、partial_success、failed及rejected_insights
-  → T008按category形成审核后taxonomy（已完成）
-  → T009生成全量insight映射与未映射状态
-  → T010按唯一review_id聚合主题数量、占比和趋势
-  → 高频属性＋中心短语＋模板分别自动命名
-  → Docker Spark：数量、占比、月度趋势、评论映射
-  → Gold Parquet → MongoDB → FastAPI → Vue/ECharts
+Amazon review/product source
+  → Spark Silver cleaning and joins
+  → formal scope: 139 products / 116,728 reviews
+  → T007 Qwen3.5-4B full-review insight extraction
+  → T008 category community discovery + human-reviewed taxonomy
+  → T009 deterministic insight-to-taxonomy mapping
+  → T010 DuckDB product/theme/sentiment aggregation
+  → T011 offline product-theme improvement generation
+  → polarity override for 13 verified false-negative groups
+  → GoldInsightsRepository
+  → FastAPI
+  → Vue dashboard
 ```
 
-## 模块和依赖
+## 2. Runtime boundaries
 
-| 模块 | 责任 | 依赖 |
-|---|---|---|
-| `scope` | 固定前端与完整NLP共同使用的139个整机商品 | Silver、文本画像、VADER |
-| `absa` | 属性、属性情感、原句 | `scope` |
-| `explicit-demand` | 对全部句子执行NLI并以三分类argmax确认明确建议 | `scope` |
-| `evaluation-theme` | 分别合并正面和负面ABSA评价并自动命名 | `absa` |
-| `improvement-theme` | 合并明确建议与隐式问题候选并自动命名 | `absa`、`explicit-demand` |
-| `gold-aggregate` | 两类主题的数量、占比、趋势、状态和评论映射 | `evaluation-theme`、`improvement-theme` |
-| `web` | 商品选择、主题、趋势、需求和原文展示 | `gold-aggregate` |
+- Spark 4.1.2 负责原始评论/商品清洗、关联和 Silver 生产；它是正式前期数据处理技术。
+- T007 和 T011 在 NVIDIA/Linux 上使用 Qwen3.5-4B、vLLM continuous batching 和 RTX 4090 离线运行。
+- T008/T009 使用 Python 完成候选、taxonomy 审核产物和确定性 join。
+- 正式 T010 使用 DuckDB，不依赖 Spark。
+- FastAPI 和 Vue 只读取已经生成的 Gold；请求路径不运行模型或数据 pipeline。
 
-顺序固定为：`scope → absa、explicit-demand → evaluation-theme、improvement-theme → gold-aggregate → web`。
+## 3. Stage decisions
 
-## 本地执行设计
+### T007
 
-- Docker Spark只执行批量读取、join、filter、groupBy和Gold聚合，不加载Transformer。
-- T007 全量执行层为 NVIDIA/Linux vLLM；模型只加载一次并使用 continuous batching。Windows Intel XPU可用于兼容性实验，但不是本次全量后端。
-- 禁止 silent CPU fallback；设备不满足要求时直接失败。
-- runner 支持 resume、分片和逐批追加JSONL；单条失败不终止整个批次。
-- 正式任务开始前打印输入行数；按固定间隔写入已处理量、吞吐和预计剩余时间；完成后核对输入、输出、success、partial_success和failed数量。
-- 正式Gold采用新run id。旧TF-IDF主题和旧demands目录只保留为历史记录，不进入MongoDB活动批次。
+强制读取完整 `text_raw`，一次评论可产生零到多个 grounded insight。模型为 `Qwen/Qwen3.5-4B` revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`；输出保留 success、partial_success、failed、rejected insight 和程序计算的 evidence offsets。最终 116,728 条输出 exact-once，350,656 条有效 insight。
 
-## 输入处理
+### T008
 
-- ABSA保留属性所在原句；超过模型长度的评论按句子边界分块，不直接截掉后半段。
-- 明确建议按句处理，全部句子进入NLI；entailment同时高于neutral和contradiction才确认，不设置MiniLM前置召回阈值，也不使用关键词过滤。
-- 正面主题来自正面属性及原句；负面主题来自负面属性及原句；整体VADER作为评论级辅助字段，不代替属性极性。
-- 明确建议不进入负面评价主题；它只进入改进需求链。
-- 负面ABSA证据同时进入负面评价链和隐式改进候选链；两次出现是跨任务复用。
-- 每个商品、每类主题独立聚类。显式建议和隐式问题可合并到相同改进主题，但必须保留来源类型。
-- 任一分析维度在固定0.75/10参数下没有社区时输出0个主题，并记录`ready/no_qualified_theme`，不生成fallback。
+只使用 `target_scope=current_product`。先按 category 做 MiniLM + Fast Community Detection 高置信度社区发现，再由人工审核合并为正式 taxonomy。未成社区的稀有或不稳定 insight 不强制进入主题。最终为 4,992 一级 cluster、887 taxonomy theme。
 
-## 验证关卡
+### T009
 
-1. `scope`：139个商品、13类、116,728条评论，前端集合与NLP集合一致。
-2. `absa`：无CPU回退；每条输入有成功、无属性或失败状态；属性位置能回指原句。
-3. `explicit-demand`：全部句子进入NLI，不得用关键词决定结果；保存三分类分数与模型版本；neutral最高不得确认。
-4. `evaluation-theme`：只使用对应极性的ABSA；主题只包含同一商品；允许0主题并记录原因。
-5. `improvement-theme`：只使用合格建议和隐式问题候选；来源、中心句和名称均可追溯；允许0主题并记录原因。
-6. `gold-aggregate`：主题数量与映射中的不同`review_id`一致；趋势分母明确；三个分析维度状态齐全。
-7. `web`：完成“选商品→评价主题→趋势→原文→改进需求”，并正确显示无合格主题状态；API请求不触发离线计算。
+通过 `candidate_id` 把 T007/T008 candidate 与一级 cluster、cluster-to-taxonomy 连接。230,278 条 `mapped_by_cluster` 进入 canonical theme；85,122 条 `unmapped_no_cluster` 原样保留但不参与 T010 canonical-theme 聚合。
 
-## 已知风险与限定
+### T010
 
-- ABSA正式处理时间尚未实测；现有89.43分钟只是最大256 token评论级纯推理外推。
-- NLI模型的XPU兼容、吞吐和全量三分类分数已完成；旧接收规则错误忽略neutral，必须从现有分数重算。
-- 模型可能抽取较宽泛属性，例如漏水句得到`water`；必须结合原句聚类，不直接发布属性词。
-- NLI判定固定为entailment同时高于neutral和contradiction；不得另加未批准阈值或通过反复试验进行模型或规则竞赛。
+DuckDB 按商品、taxonomy、唯一 review 和月份完成确定性聚合。正式输出包括 products、product facets、themes、theme timeseries 和 theme reviews。mixed 规则和 ratio 分母固定在 data model 中。
 
-## 不实施
+### T011
 
-预警、推荐、竞品分析、图数据库、评论有用性预测、模型训练、模型竞赛、零件/配件分析均不在本计划内。
+从 T009 mapped insight 按 `parent_asin + taxonomy_id` 聚合。negative 触发生成，mixed 只作补充。Qwen 离线生成一段产品级、主题级修改建议，支持 structured JSON、continuous batching、checkpoint/resume 和超长组顺序分块。初始 7,747 个触发组全部运行完成。
+
+质量检查确认其中 13 组属于假负面。最终 corrected 文件含 7,734 条建议；13 组通过独立 override 文件在 API 展示层视为 positive，不重写 T009/T010。
+
+## 4. Application integration
+
+正式后端位于 `backend_generated/backend`，使用 `GoldInsightsRepository` 读取 T010 Gold、T011 corrected NDJSON 和 polarity override。已有 improvements route 返回离线建议。
+
+正式前端位于 `frontend_story_dashboard/frontend`。顶层仅保留正面和负面；负面主题抽屉依次呈现趋势、T011 建议和真实评论，正面抽屉不呈现建议。
+
+## 5. Verification strategy
+
+- 数据阶段：行数、主键唯一性、exact-once、状态合计、taxonomy 引用完整性和 JSON/Parquet 可读性。
+- T011：触发键覆盖、success/failed、空 suggestion、support review 去重和人工质量检查。
+- override：固定 13 个键，仅允许 negative→positive，negative/positive/improvement API 行为一致。
+- 后端：真实 Gold API tests 和 smoke test。
+- 前端：类型检查、生产 build 和关键交互联调。
+
+## 6. Remaining work
+
+不再安排数据 pipeline 任务。剩余工作只包括前端视觉微调、后端接口小修、联调、README/PPT/汇报材料和最终验收。
