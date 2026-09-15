@@ -11,6 +11,8 @@ data/gold/**
 data/gold/t008-final-20260908-v1/*
 !data/gold/t008-final-20260908-v1/validation.json
 !data/gold/t008-final-20260908-v1/category-summary.csv
+!data/gold/t008-final-20260908-v1/taxonomy.ndjson
+!data/gold/t008-final-20260908-v1/cluster-to-taxonomy.ndjson
 !data/gold/t009-insight-taxonomy-20260908-v1/
 data/gold/t009-insight-taxonomy-20260908-v1/*
 !data/gold/t009-insight-taxonomy-20260908-v1/validation.json
@@ -20,6 +22,11 @@ data/gold/t010-aggregation-20260908-v1-duckdb/*
 !data/gold/t010-aggregation-20260908-v1-duckdb/validation.json
 !data/gold/t010-aggregation-20260908-v1-duckdb/category-summary.csv
 !data/gold/t010-aggregation-20260908-v1-duckdb/batch.json
+!data/gold/t010-aggregation-20260908-v1-duckdb/product_facets.parquet
+!data/gold/t010-aggregation-20260908-v1-duckdb/products.parquet
+!data/gold/t010-aggregation-20260908-v1-duckdb/theme_reviews.parquet
+!data/gold/t010-aggregation-20260908-v1-duckdb/theme_timeseries.parquet
+!data/gold/t010-aggregation-20260908-v1-duckdb/themes.parquet
 
 # Local processing artifacts
 tmp/
