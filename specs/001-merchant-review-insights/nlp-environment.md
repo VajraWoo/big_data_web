@@ -3,6 +3,9 @@
 2026-09-03。用户：“好的。那nlp继续完成？”
 承接plan.md的CPU训练主线，只验证环境，不做真实评论标注、训练、推断或业务结论。
 
+**文档性质**：第一周 NLP 环境验收历史记录。这里验证的 DistilBERT/MiniLM CPU/XPU 环境
+不是最终 T007/T011 推理方案；正式语义流水线后来采用 Qwen3.5-4B，并已完成和冻结。
+
 ## 验收
 
 - NLP-ENV-01：Linux/Python3.12、CPU版PyTorch、Transformers、sentence-transformers
@@ -30,4 +33,5 @@ OpenVINO/IntelGPU为设计中可选后端，本轮不声称其已配置或测出
 - [x] N002 锁定依赖，构建ml/Dockerfile和infra/compose.nlp.yaml。
 - [x] N003 下载固定revision模型并记录文件SHA-256。
 - [x] N004 断网完成CPU推理、反向更新、句向量测试，记录docs/runs/nlp-environment-2026-09-03.md。
-- [x] N005 更新启动说明和第一周进度，注明正式模型训练与数据清洗尚未完成。
+- [x] N005 更新当时的第一周进度；“正式模型训练与数据清洗尚未完成”仅描述 2026-09-03
+  的阶段状态。当前 Silver 清洗和 T007–T011 均已完成。

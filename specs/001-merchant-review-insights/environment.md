@@ -1,7 +1,8 @@
 # 第一周环境实施规约与任务
 
 日期：2026-09-03。上位需求与设计：`spec.md`、`plan.md`；本文件只细化其基础设施部分。
-不生成或执行完整业务 tasks.md，不越过教师选题确认门禁。
+**文档性质**：第一周基础设施验收历史记录，不代表当前项目进度。当前正式状态以
+`spec.md`、`plan.md` 和 `tasks.md` 为准：T001–T011 与 Web 集成均已完成。
 
 ## 需求与验收
 
@@ -60,4 +61,5 @@ Bronze 只读 bind mount；环境测试输出、MongoDB 数据用不同 named vo
 Connector11.1.0/Java Driver5.1.4和5个JAR的SHA-256；实际读写及新镜像回归通过。
 为使executor直连MongoDB，MongoDB现同时连接default与internal database网络，无主机端口；
 Master/Worker仍单网络，前端仍无法直连。原“MongoDB单独接database”描述不再是最新拓扑。
-Web、CPU NLP、Intel XPU及连接器均已有独立验收记录，本机基础环境阶段完成，清洗尚未完成。
+Web、CPU NLP、Intel XPU及连接器均已有独立验收记录。本段记录的第一周结束时，清洗尚未
+完成；此后正式 Silver 清洗以及 T007–T011 已全部完成，不能将该历史状态解释为当前状态。

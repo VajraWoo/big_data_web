@@ -33,6 +33,7 @@ Spark 的正式作用是前期大规模清洗和关联。正式 T010 使用 Duck
 - Inference time: 13,238.895 seconds
 - End-to-end time: 13,308.124 seconds
 - Throughput: 8.81705 reviews/s during inference
+- Frozen production source: `prototypes/t007_context_insight_v2_1`
 
 旧 sentence-level ABSA、NLI attribution、Qwen 2B 和 Transformers 串行 runner 只保留为历史 baseline，不再参与正式结果。
 

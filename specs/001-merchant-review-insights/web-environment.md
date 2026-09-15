@@ -3,6 +3,10 @@
 2026-09-03。细化 spec.md/plan.md 的 Web 环境部分，不启动商家业务开发。
 用户原文：“那现在先搭建web环境吧。”
 
+**文档性质**：第一周 Web 环境验收历史记录，不是当前产品功能规格。其后正式 FastAPI
+后端和 Vue 前端已接入 T010/T011 Gold；现行接口和页面要求以 `spec.md`、`plan.md`、
+`data-model.md` 和 `contracts/openapi.yaml` 为准。
+
 ## 需求与验收
 
 - WEB-ENV-01：Python3.12、FastAPI、PyMongo 依赖锁定，后端可启动。
@@ -39,4 +43,5 @@ backend接web与internal database网络，frontend只接web；端口127.0.0.1:80
 - [x] W004 实测浏览器、真实数据库连通和断连恢复，记录docs/runs/web-environment-2026-09-03.md。
 - [x] W005 更新infra/README.md、根README和第一周剩余清单。
 
-第一周仍需NLP环境和全量基础清洗；两者不在本轮Web环境实施范围内。
+在当次 Web 环境验收结束时，NLP 环境和全量基础清洗仍属后续工作；两者后来均已完成，
+并继续完成了 T007–T011 与正式 Web 集成。
