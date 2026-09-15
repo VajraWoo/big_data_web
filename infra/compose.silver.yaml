@@ -2,7 +2,7 @@
 x-silver-volumes: &silver-volumes
   - ../pipelines:/pipelines:ro
   - ../ml:/ml:ro
-  - ../data/models:/models
+  - ../data/models:/models:ro
   - ../data/silver:/data/silver
   - ../data/gold:/data/gold
 
