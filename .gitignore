@@ -32,6 +32,7 @@ data/gold/t010-aggregation-20260908-v1-duckdb/*
 tmp/
 .tmp/
 *.log
+/docs/prompts/
 
 # Local environments and private configuration
 .env
