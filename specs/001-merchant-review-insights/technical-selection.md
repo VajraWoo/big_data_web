@@ -33,7 +33,7 @@ Spark 的正式作用是前期大规模清洗和关联。正式 T010 使用 Duck
 - Inference time: 13,238.895 seconds
 - End-to-end time: 13,308.124 seconds
 - Throughput: 8.81705 reviews/s during inference
-- Frozen production source: `prototypes/t007_context_insight_v2_1`
+- Frozen production source: `pipelines/t007`
 
 旧 sentence-level ABSA、NLI attribution、Qwen 2B 和 Transformers 串行 runner 只保留为历史 baseline，不再参与正式结果。
 
@@ -45,7 +45,7 @@ T009 通过 candidate/cluster/taxonomy 确定性 join 建立映射，不使用 n
 
 ## 4. T010 formal aggregation
 
-正式 T010 使用 `pipelines/theme_aggregation_duckdb_job.py`。输出目录为 `data/gold/t010-aggregation-20260908-v1-duckdb`。
+正式 T010 使用 `pipelines/t010/theme_aggregation_duckdb_job.py`。输出目录为 `data/gold/t010-aggregation-20260908-v1-duckdb`。
 
 最终规模：
 

@@ -2,8 +2,8 @@
 
 本目录不再包含第一周的本地 CPU NLP 方案。最终 T007 和 T011 使用 Qwen3.5-4B、vLLM、NVIDIA/Linux 离线完成，正式代码分别位于：
 
-- `prototypes/t007_context_insight_v2_1/`
-- `pipelines/run_t011_qwen.py`
+- `pipelines/t007/`
+- `pipelines/t011/run_t011_qwen.py`
 
 当前仅保留：
 

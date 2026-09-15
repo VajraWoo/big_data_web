@@ -28,7 +28,7 @@ review_id/metadata_id = SHA256(发布 ID + 换行 + 文件名 + 换行 + 十进�
 小样本用 Python 3.12 random.Random(20260903).sample(range(1,N+1),10000)，无放回，
 选中行按来源顺序登记，记录实际行号列表、其摘要和种子。全量仍验证 EOF/行数。
 样本元数据使用全量 94,327 行，避免因抽样人为造成关联失败；样本重复统计仅代表样本内部。
-同一入口 `pipelines/run_silver.ps1 -Mode sample|full`，新批次绝不覆盖旧目录。
+同一入口 `pipelines/foundation/run_silver.ps1 -Mode sample|full`，新批次绝不覆盖旧目录。
 
 ## 字段和规则 silver-basic-v1
 
@@ -63,7 +63,7 @@ exact_hash 为整个 JSON 对象的排序键规范 JSON SHA-256（包含全部�
 ## 输出和实现设计
 
 Python 标准库 unittest 延续 infra 的轻量测试习惯；运行时使用既有 Spark4.1.2/Python3.12.12/
-Java21 镜像，不加第三方依赖。代码位于 pipelines/，单元测试在 pipelines/tests/。
+Java21 镜像，不加第三方依赖。代码位于 `pipelines/foundation/`，单元测试在 `pipelines/foundation/tests/`。
 函数采用 snake_case；例如 `rating_valid = type(value) in (int, float) and 1 <= value <= 5`。
 Compose 增量为 Driver/两个 Worker/Master 提供一致的只读代码、只读 Bronze、可写 Silver 路径，
 不变更现有资源预算。16 个 shuffle 分区，禁用无界 collect/toPandas，仅收集有界质量聚合。
@@ -81,8 +81,8 @@ passed_basic_silver 不是 data-model.md 中包含 Gold/模型验收的 publishe
 5. quality.json 中每项指标有 numerator/denominator，画像以分组计数和候选分布落盘；
    文本长度 P50/P90/P95/P99，商品量 20/50/100（现有规约候选）仅描述覆盖，正式门槛仍 null。
 6. 保存实际应用 ID、实际执行主机/行数、Spark event log、代码/输入 hash、参数、耗时和错误。
-7. 复现命令：`powershell -ExecutionPolicy Bypass -File pipelines/run_silver.ps1 -Mode full`；
-   单元测试：`python -m unittest discover -s pipelines/tests -v`。
+7. 复现命令：`powershell -ExecutionPolicy Bypass -File pipelines/foundation/run_silver.ps1 -Mode full`；
+   单元测试：`python -m unittest discover -s pipelines/foundation/tests -v`。
 
 Always：先测试、保留源、保存日志、失败不宣称完成。新增大依赖/管理员操作及时告知。
 Never：修改 Bronze、覆盖成功批次、commit/push、业务门槛拍脑袋、以本机双 Worker 冒充多物理机。

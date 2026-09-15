@@ -20,16 +20,16 @@
 
 ## 设计
 
-backend/ 使用 pyproject.toml + uv.lock；镜像固定 Python3.12.12、uv0.12.9及digest。
+第一周旧 `backend/` 使用 pyproject.toml + uv.lock；该实现已退出正式代码。
 FastAPI0.141.1、PyMongo4.17.0、Uvicorn0.52.4；pytest9.1.1、httpx0.28.1。
 AsyncMongoClient 在应用 lifespan 创建并关闭；健康检查仅发ping，不读写评论或Gold。
 测试以依赖替换覆盖异常；另对真实数据库做HTTP联通测试。暂不提供业务接口。
 
-frontend/ 使用 package-lock.json。Node24.12.0、Vue3.5.38、Vite8.2.2、ECharts6.1.0、
+第一周旧 `frontend/` 使用 package-lock.json。Node24.12.0、Vue3.5.38、Vite8.2.2、ECharts6.1.0、
 TypeScript5.9.3；Vitest和Playwright验证。开发/预览的 /api 请求代理至后端，无宽泛CORS。
 Docker 前端是开发服务器，不宣称生产部署；生产 bundle 在本轮完成构建与预览验证。
 
-infra/compose.web.yaml 是基础Compose的叠加文件，web profile 只增加backend/frontend。
+原 `infra/compose.web.yaml` 已归档至 `historical_experiments/first_week_web_environment/`，当时的 web profile 只增加旧 backend/frontend。
 backend接web与internal database网络，frontend只接web；端口127.0.0.1:8000/5173。
 后端512MiB、前端1GiB，均1CPU。保持原Spark服务配置，不启动其作业。
 延续本机开发数据库无账号且不发布端口的边界：本轮只做健康ping；正式业务数据接入前

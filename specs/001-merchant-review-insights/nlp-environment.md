@@ -21,16 +21,16 @@
 
 ## 设计与任务
 
-ml/pyproject.toml + ml/uv.lock独立锁定NLP环境，避免与Web依赖相互污染。
+原 `ml/pyproject.toml` 与 `ml/uv.lock` 已归档到 `historical_experiments/local_cpu_nlp/ml/`；它们曾用于独立锁定第一周 NLP 环境。
 固定Python3.12.12/uv0.12.9基础镜像digest。torch2.14.0+cpu使用官方CPU索引，
 Transformers5.16.1、sentence-transformers6.0.1、huggingface-hub1.29.0使用PyPI。
-ml/model-lock.json保存模型repo/commit/许可和明确文件列表。下载流程与离线验收分开：
+`ml/model-lock.json` 保存模型 repo/commit、许可和明确文件列表。下载流程与离线验收分开：
 nlp-download容器允许网络；nlp-check容器network_mode=none、模型卷只读、只写报告卷。
 两个服务默认不启动；不需要停止空闲Web/数据库，但执行前确认没有Spark作业。
 OpenVINO/IntelGPU为设计中可选后端，本轮不声称其已配置或测出加速效果。
 
 - [x] N001 写配置验收与模型锁文件，记录环境文件缺失的失败证据。
-- [x] N002 锁定依赖，构建ml/Dockerfile和infra/compose.nlp.yaml。
+- [x] N002 锁定依赖；原 `ml/Dockerfile` 和 `infra/compose.nlp.yaml` 现归档于 `historical_experiments/local_cpu_nlp/`。
 - [x] N003 下载固定revision模型并记录文件SHA-256。
 - [x] N004 断网完成CPU推理、反向更新、句向量测试，记录docs/runs/nlp-environment-2026-09-03.md。
 - [x] N005 更新当时的第一周进度；“正式模型训练与数据清洗尚未完成”仅描述 2026-09-03

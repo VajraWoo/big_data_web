@@ -17,7 +17,7 @@ class TextProfileRuntime(unittest.TestCase):
         dockerfile = (ROOT / 'infra/spark/Dockerfile').read_text(encoding='utf-8')
         self.assertIn('fasttext==0.9.3', dockerfile)
 
-        lock = json.loads((ROOT / 'pipelines/language-model-lock.json').read_text(encoding='utf-8'))
+        lock = json.loads((ROOT / 'pipelines/foundation/language-model-lock.json').read_text(encoding='utf-8'))
         model = lock['fasttext_lid_176']
         self.assertEqual(model['filename'], 'fasttext/lid.176.bin')
         self.assertEqual(model['url'], 'https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin')

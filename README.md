@@ -15,6 +15,19 @@
 
 T010 的 `15,852` 是商品、taxonomy 和 sentiment 的组合记录数，不是 taxonomy 数；taxonomy 仍为 887。Spark 是前期大规模清洗技术，正式 T010 聚合使用 DuckDB。
 
+## 任务与代码导航
+
+| 阶段 | 正式代码 | 主要产物 |
+|---|---|---|
+| T001–T006 | [`pipelines/foundation/`](pipelines/foundation/) | Silver 数据、139 个商品与 116,728 条评论的正式范围 |
+| T007 | [`pipelines/t007/`](pipelines/t007/) | 350,656 条有效 insight |
+| T008 | [`pipelines/t008/`](pipelines/t008/) | 4,992 个一级 cluster、887 个 taxonomy theme |
+| T009 | [`pipelines/t009/`](pipelines/t009/) | 230,278 条已映射、85,122 条未聚类记录 |
+| T010 | [`pipelines/t010/`](pipelines/t010/) | DuckDB 商品主题、趋势与评论证据 Gold |
+| T011 | [`pipelines/t011/`](pipelines/t011/) | 7,734 条纠正后的改进建议 |
+
+完整的数据流、代码职责和阶段边界见 [`pipelines/README.md`](pipelines/README.md)。未进入最终方案的实验代码统一位于 [`historical_experiments/`](historical_experiments/)。
+
 ## T011 与 polarity correction
 
 T011 的生成单位是 `parent_asin + taxonomy_id`：一个商品的一个负面 taxonomy theme 最多生成一条改进建议。输入来自 T009 的 `mapped_by_cluster` insight，negative 用作触发和主要证据，mixed 只作同组补充证据。生成使用冻结的 `Qwen/Qwen3.5-4B` revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`、NVIDIA/Linux vLLM 和 RTX 4090 离线完成；API 请求不会触发模型。
@@ -50,7 +63,7 @@ T011 的生成单位是 `parent_asin + taxonomy_id`：一个商品的一个负�
 
 ```text
 data/gold/                              冻结数据和正式验证元数据
-pipelines/                              T007–T011 数据处理与离线生成脚本
+pipelines/                              T001–T011 按阶段组织的正式数据处理代码
 backend_generated/backend/              正式 FastAPI 后端
 frontend_story_dashboard/frontend/      正式 Vue 前端
 specs/001-merchant-review-insights/     当前 SDD 规格、计划、任务和数据模型
