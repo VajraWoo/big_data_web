@@ -1,6 +1,6 @@
 # 家电评论洞察平台
 
-本项目从大规模家电评论中提取可追溯的商品洞察，并以商品、主题、情感、趋势、原文证据和产品改进建议的形式提供给 Web 端。截至 2026-09-09，T007–T011 数据链已经全部完成，正式后端和前端已接入，当前进入联调、视觉微调和最终验收阶段。
+本项目从大规模家电评论中提取可追溯的商品洞察，并以商品、主题、情感、趋势、原文证据和产品改进建议的形式提供给 Web 端。截至 2026-09-09，T007–T011 数据链已经全部完成，正式后端和前端已接入。
 
 ## 正式数据链
 
@@ -73,7 +73,3 @@ Set-Location D:\CS_Projects\big_data_web\backend_generated
 Set-Location D:\CS_Projects\big_data_web\frontend_story_dashboard\frontend
 npm.cmd run dev
 ```
-
-## 当前阶段约束
-
-T007、T008、T009、T010 和 T011 均不再重跑。后续工作限于前端视觉微调、后端接口小修、联调、README/PPT/汇报材料和最终验收；不重新配置 GPU，不重新引入 Spark 聚合，也不开展新的 embedding、clustering、reranking 或阈值实验。
