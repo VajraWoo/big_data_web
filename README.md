@@ -71,6 +71,22 @@ infra/                                  Spark、MongoDB 和历史环境配置
 docs/                                   运行证据与验收记录
 ```
 
+## 一键启动
+
+Windows 环境安装 Python 3.12 和 Node.js 24.x 后，在仓库根目录运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start.ps1
+```
+
+脚本会检查正式 Gold 文件，按需创建后端虚拟环境、安装依赖，随后启动 FastAPI 和 Vue，并打开 `http://127.0.0.1:5173`。按 `Ctrl+C` 可同时停止前后端。首次运行需要联网安装依赖，后续可使用 `-SkipInstall` 跳过依赖检查：
+
+```powershell
+.\start.ps1 -SkipInstall
+```
+
+正式应用只读取仓库内已经生成的 T010/T011 Gold，不会启动 Spark、DuckDB 聚合作业或模型推理。运行日志写入 `.tmp/runtime/`。
+
 ## 启动后端
 
 ```powershell

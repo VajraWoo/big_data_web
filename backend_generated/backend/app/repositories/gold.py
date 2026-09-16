@@ -8,12 +8,19 @@ from typing import Any
 import duckdb
 
 
-GOLD_DIR = Path(
-    r"D:\CS_Projects\big_data_web\data\gold\t010-aggregation-20260908-v1-duckdb"
-)
+def resolve_default_gold_paths(
+    module_path: Path = Path(__file__),
+) -> tuple[Path, Path, Path]:
+    project_root = module_path.resolve().parents[4]
+    gold_root = project_root / "data" / "gold"
+    return (
+        gold_root / "t010-aggregation-20260908-v1-duckdb",
+        gold_root / "t011-final-corrected-20260909-v1.ndjson",
+        gold_root / "t010-polarity-overrides-20260909-v1.json",
+    )
 
-T011_PATH = GOLD_DIR.parent / "t011-final-corrected-20260909-v1.ndjson"
-POLARITY_OVERRIDES_PATH = GOLD_DIR.parent / "t010-polarity-overrides-20260909-v1.json"
+
+GOLD_DIR, T011_PATH, POLARITY_OVERRIDES_PATH = resolve_default_gold_paths()
 
 
 class GoldInsightsRepository:
