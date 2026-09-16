@@ -73,19 +73,25 @@ docs/                                   运行证据与验收记录
 
 ## 一键启动
 
-Windows 环境安装 Python 3.12 和 Node.js 24.x 后，在仓库根目录运行：
+运行环境需要 Windows、Python 3.12 和 Node.js 24.x，并确保命令行可以找到 `python.exe` 和 `npm.cmd`。克隆仓库后，无需运行 T001–T011，也无需配置 Spark、GPU 或模型服务；Web 应用直接读取仓库内已经生成的 T010/T011 Gold 数据。
+
+首次运行时，在仓库根目录执行：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\start.ps1
 ```
 
-脚本会检查正式 Gold 文件，按需创建后端虚拟环境、安装依赖，随后启动 FastAPI 和 Vue，并打开 `http://127.0.0.1:5173`。按 `Ctrl+C` 可同时停止前后端。首次运行需要联网安装依赖，后续可使用 `-SkipInstall` 跳过依赖检查：
+启动脚本会先检查页面所需的 Parquet、NDJSON 和 polarity override 文件是否齐全。如果后端虚拟环境不存在，脚本会在 `backend_generated/.venv` 中创建环境并安装 Python 依赖；如果前端依赖尚未安装，则执行 `npm ci`。因此首次运行需要连接网络，安装时间取决于本机环境和网络速度。
+
+依赖准备完成后，脚本会在本机启动 FastAPI 后端和 Vue 开发服务器，并自动打开 `http://127.0.0.1:5173`。后端接口位于 `http://127.0.0.1:8000`。启动窗口需要保持打开；使用完毕后在该窗口按 `Ctrl+C`，脚本会同时停止前端和后端。
+
+已经完成过依赖安装时，可以跳过安装步骤并直接启动：
 
 ```powershell
 .\start.ps1 -SkipInstall
 ```
 
-正式应用只读取仓库内已经生成的 T010/T011 Gold，不会启动 Spark、DuckDB 聚合作业或模型推理。运行日志写入 `.tmp/runtime/`。
+如果 8000 或 5173 端口已被其他程序占用，脚本会停止启动并提示对应端口；关闭占用程序后重新运行即可。前后端运行日志保存在 `.tmp/runtime/`，启动失败时可查看其中的 `backend.stderr.log` 和 `frontend.stderr.log`。
 
 ## 启动后端
 
